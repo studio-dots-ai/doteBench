@@ -1,0 +1,8 @@
+[project]
+name = "dotebench-auk-base"
+version = "0.1.0"
+requires-python = ">=3.10,<3.11"
+dependencies = ["dotebench==1.0.0", "torch==2.7.1", "torchaudio==2.7.1", "torchvision==0.22.1", "transformers==4.57.6", "qwen-omni-utils>=0.0.9", "omegaconf>=2.3.0", "torchdiffeq", "x-transformers>=1.31.14", "safetensors", "fastapi", "uvicorn", "librosa", "accelerate", "httpx", "pytest>=8,<9"]
+
+[tool.uv.sources]
+dotebench = { path = "../../../../..", editable = true }

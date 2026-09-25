@@ -1,0 +1,31 @@
+defaults:
+  - base
+  - _self_
+services:
+  voxcpm2:
+    instance_key: voxcpm2
+    config_key: voxcpm2
+    host: ${runtime.host}
+    port: 18103
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: ${oc.env:DOTEBENCH_VOXCPM2_GPU_IDS,0}
+    startup_timeout_sec: 1800
+    python_bin: ${oc.env:DOTEBENCH_VOXCPM2_PYTHON,${runtime.env_root}/dotebench-voxcpm2/bin/python}
+    upstream: ${runtime.source_root}/third_party/voxcpm
+    model_path: ${runtime.model_root}/VoxCPM2
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    command:
+      - ${..python_bin}
+      - -m
+      - dotebench.materialization.backends.voxcpm2
+      - --host
+      - ${..host}
+      - --port
+      - ${..port}
+      - --upstream
+      - ${..upstream}
+      - --model-path
+      - ${..model_path}

@@ -1,0 +1,39 @@
+defaults:
+- base
+- _self_
+candidate:
+  name: dots-tts-edit
+  options:
+    scratch_dir: ${runtime.output_root}/candidate-scratch
+    generation_options:
+      use_xvector: auto
+      ode_method: euler
+      num_steps: 10
+      guidance_scale: 1.2
+      speaker_scale: 1.5
+services:
+  candidate:
+    instance_key: dots-tts-edit
+    config_key: dots-tts-edit
+    host: ${runtime.host}
+    port: 18000
+    url: http://${.host}:${.port}
+    gpu_ids: '0'
+    startup_timeout_sec: 1800
+    python_bin: ${oc.env:DOTEBENCH_CANDIDATE_PYTHON,${runtime.python}}
+    model_path: ${runtime.model_root}/dots.tts.edit
+    precision: bfloat16
+    command:
+    - ${..python_bin}
+    - -m
+    - dotebench.candidates.dots_tts_edit.backend
+    - --model-path
+    - ${..model_path}
+    - --scratch-dir
+    - ${runtime.output_root}/dots-runtime
+    - --precision
+    - ${..precision}
+    - --host
+    - ${..host}
+    - --port
+    - ${..port}

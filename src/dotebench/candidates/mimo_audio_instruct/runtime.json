@@ -1,0 +1,19 @@
+{
+  "upstream": {
+    "url": "https://github.com/XiaomiMiMo/MiMo-Audio.git",
+    "commit": "62d956b4a1a45419bee5e41f477078c3684dbbcc",
+    "directory": "mimo-audio"
+  },
+  "patches": [
+    {
+      "path": "patches/inference.patch",
+      "sha256": "c28b9f4d2c251d7653d680eb726c576d29fa61a5df5ebaf4616c911d0ced197f"
+    }
+  ],
+  "files": {
+    "src/mimo_audio/mimo_audio.py": {
+      "before": "f9b17435db19d0e124acbc283c10c3c9b362de539fab3dc4276d62616dc15f1f",
+      "after": "e1738b1e09297460ef7d3693a1dd04e1e29477dceb6ed9112c5aa79cefb6d9b9"
+    }
+  }
+}

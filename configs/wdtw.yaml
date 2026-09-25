@@ -1,0 +1,31 @@
+defaults:
+  - base
+  - f0
+  - _self_
+services:
+  wdtw:
+    instance_key: wdtw
+    config_key: wdtw
+    python_bin: ${runtime.python}
+    host: ${runtime.host}
+    port: 8032
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: ""
+    startup_timeout_sec: 1800
+    startup_sleep_sec: 0
+    dependencies:
+      f0: ${services.f0}
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    command:
+      - ${..python_bin}
+      - -m
+      - dotebench.services.backends.wdtw
+      - --host
+      - ${..host}
+      - --port
+      - ${..port}
+      - --f0-url
+      - ${..dependencies.f0.url}

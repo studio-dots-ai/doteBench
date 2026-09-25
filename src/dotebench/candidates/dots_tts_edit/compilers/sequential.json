@@ -1,0 +1,35 @@
+{
+  "entrypoint": "dotebench.candidates.dots_tts_edit.compilers.sequential:SequentialCompiler",
+  "dependencies": {
+    "one_take": "12ac16f5ebf865908d68f1531693c9319422452ef74f188480fbce7974612f9b"
+  },
+  "sources": {
+    "dotebench": "441b684bd185f2ed1b0002b42b8aefa0381773aafb67430c0a68f0f160a14de1",
+    "dotebench.candidates": "8514b57d117ab51b3cf351651b8387117b3ab71f6297a3d8000d98d0043ae173",
+    "dotebench.candidates.dots_tts_edit": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dotebench.candidates.dots_tts_edit.adapter": "cb12c71f4178f55ede6dca2612c5e079226104882703bb5774716c284f0370b4",
+    "dotebench.candidates.dots_tts_edit.compile": "348dc6b04bc073fc56ca5d572b9c70df82cd2a78a95a54ed121e47b7486e22fb",
+    "dotebench.candidates.dots_tts_edit.compilers": "6152fe40f4bcfb99e851d794cced229f3fccebc48ef721d9e1d9e0ce50a69da5",
+    "dotebench.candidates.dots_tts_edit.compilers.one_take": "0cb0c97cdfe78eae3bfc90c12e72d7c11a54dbb6dc96c4ccf5d63b772608eda2",
+    "dotebench.candidates.dots_tts_edit.compilers.sequential": "7a9a7e9a522bd80dba13d25523661d272b62e327ad147f50aff6e3657ebaee90",
+    "dotebench.candidates.registry": "ff86b942f5c44def0f48e579b0c43a1da92ce21c2bafc321c2d2406484cdfad1",
+    "dotebench.compilation": "037b0f8b752fe9d7ffeb6b99a6f47816f76d0b88846adf0ecc925ecc33b8d6a9",
+    "dotebench.compilers": "27f139bae2248c6b4499e7887ba97e1718e32f5ef22dc5009aec0f3795ab215c",
+    "dotebench.compilers.base": "3b6f7be0de6d3656c33534d4fd14549dceb4330d4127d2025f2016320344cea6",
+    "dotebench.compilers.one_take": "dd13dc436c87070a18cefe72ab2318540f3ee6dcc45c54933000273a95d6a0a1",
+    "dotebench.compilers.sequential": "a5fa9a4407ab69a43c782d11220a56456b0061ae01a122f7c266e4ac963dd85b",
+    "dotebench.compilers.sequential.compiler": "82f3e3ba1a704cc2fadee5f39714d2b4a2fa0ed2ecc1efcf6a7396b9ad3e9965",
+    "dotebench.compilers.sequential.planner": "bb1249536cad5cce321934e635569039fe58ac956cc7c14cea9c7775356a9b32",
+    "dotebench.domain": "6e7c7984022b9a256c19d41bb6dd06e37e55746a87f1750fc96dbeacc6346555",
+    "dotebench.instructions": "c48201d7eb97af76c8c927a426bf6cfe7cfc840444b1ef0829974e2cd9548c10",
+    "dotebench.instructions.parser": "2e0ca660eb5842368b80c6cc36871561169e9839ed6f798abdeda63c636015b0",
+    "dotebench.instructions.rendering": "0f83feb22ae73a0e9a432a1166afe63ffd1c7022111ba20ed04624040667a160",
+    "dotebench.instructions.types": "b80a5f0687b22621729bc3a462f5bc4f7f6121918c409c7ed0250dbe6f332734",
+    "dotebench.models": "faa4698d3c9021616ec945de8f7c2e9c93f7e8499e6e49c656bba6cbcfefa167",
+    "dotebench.models.base": "93a8393f54750f2607289909bdd85885871d28f2f949fb9af37cfaabbaae85db",
+    "dotebench.models.executor": "2a48e8e024fedcbba540f03a3218c5a29dc8165bc218f11568b0f55651030faa",
+    "dotebench.models.native": "46b9f27367f8592dcaea9eeb6e01261b37145e5ef6754ff4ee607e4c6732d309",
+    "dotebench.models.requests": "1ee7511484483aec643ab5acad0d8b906cdeb969206c41fe406f59ae7b888185"
+  },
+  "sha256": "494c0f5f7ec967b74ea4e2d2073155b9fe42310522b742d69a23ef3e30a4af7e"
+}

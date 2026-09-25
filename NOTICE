@@ -1,0 +1,26 @@
+doteBench
+Copyright 2026 doteBench contributors
+
+This product is licensed under the Apache License, Version 2.0. The license
+applies to doteBench-authored source code, documentation, XML markup, benchmark
+annotations, edit text, and visual assets.
+
+Benchmark manifests also contain transcripts originating in third-party speech
+datasets. Audio, transcripts, model weights, and upstream source trees retain
+their original licenses and are not relicensed by the doteBench license. See
+release/DATA-NOTICE.md, release/AUDIO-NOTICE.md, release/audio-provenance.jsonl,
+and release/text-provenance.jsonl for the applicable terms and attribution.
+
+The Python distribution includes adapted speaker-model source under
+`src/dotebench/services/backends/resources/speaker_models/`:
+
+- `ecapa_tdnn.py` and doteBench's modifications: CC-BY-SA-3.0
+  (`LICENSE-UniSpeech`);
+- adapted WavLM and fairseq-derived source: MIT (`LICENSE-WavLM` and
+  `LICENSE-fairseq`).
+
+The file-level attribution and modification record is in that directory's
+`NOTICE.md`. The Python distribution carries these license texts and notices.
+
+Third-party dependencies and integrations are listed in
+THIRD_PARTY_LICENSES.md.

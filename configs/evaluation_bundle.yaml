@@ -1,0 +1,12 @@
+defaults:
+  - qwen3_asr
+  - qwen3_aligner
+  - wer
+  - f0
+  - wdtw
+  - utmos
+  - wavlm-ecapa-sv
+  - qwen3-omni-ser
+  - _self_
+evaluation:
+  timeout: 930
