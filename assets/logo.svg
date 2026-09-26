@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
+  <title id="title">doteBench</title>
+  <desc id="desc">XML brackets surrounding a speech waveform beside the doteBench wordmark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f9ff"/>
+      <stop offset="1" stop-color="#eef6ff"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7257ff"/>
+      <stop offset="1" stop-color="#1687d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="240" rx="32" fill="url(#bg)"/>
+  <g transform="translate(48 34)">
+    <rect width="172" height="172" rx="42" fill="#17213d"/>
+    <path d="M54 45 25 86l29 41" fill="none" stroke="#a99cff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m118 45 29 41-29 41" fill="none" stroke="#72c8ff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M59 88h10l7-25 12 49 11-63 10 39h11" fill="none" stroke="url(#wave)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="254" y="117" fill="#17213d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="76" font-weight="750" letter-spacing="-2">doteBench</text>
+  <text x="258" y="162" fill="#52607a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="500" letter-spacing="1">PRECISE SPEECH EDITING, MEASURED</text>
+</svg>

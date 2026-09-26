@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "models": {
+    "qwen3_tts_custom_voice": {
+      "repository": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "revision": "0c0e3051f131929182e2c023b9537f8b1c68adfe",
+      "directory": "Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "role": "generate",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+    },
+    "qwen3_tts_voice_design": {
+      "repository": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "revision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "directory": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "role": "provenance",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
+    },
+    "indextts2": {
+      "repository": "IndexTeam/IndexTTS-2",
+      "revision": "740dcaff396282ffb241903d150ac011cd4b1ede",
+      "directory": "IndexTTS-2",
+      "role": "generate",
+      "license_acceptance": "indextts2",
+      "license": "bilibili Model Use License Agreement",
+      "license_url": "https://github.com/index-tts/index-tts/blob/1eafa935e8887f9ba877f82cf7319fceddfc86cb/LICENSE"
+    },
+    "voxcpm2": {
+      "repository": "openbmb/VoxCPM2",
+      "revision": "32279effe8c19989596f05d353d1447f51d9e915",
+      "directory": "VoxCPM2",
+      "role": "generate",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/openbmb/VoxCPM2"
+    },
+    "mimo_audio_instruct": {
+      "repository": "XiaomiMiMo/MiMo-Audio-7B-Instruct",
+      "revision": "c359441c22c2a1c74be5f99a91e83392680e9cc8",
+      "directory": "MiMo-Audio-7B-Instruct",
+      "role": "generate",
+      "license": "MIT",
+      "license_url": "https://huggingface.co/XiaomiMiMo/MiMo-Audio-7B-Instruct"
+    },
+    "mimo_audio_tokenizer": {
+      "repository": "XiaomiMiMo/MiMo-Audio-Tokenizer",
+      "revision": "5df9914f72d3acda1320d7fecde7d91622edb0c1",
+      "directory": "MiMo-Audio-Tokenizer",
+      "role": "generate",
+      "license": "MIT",
+      "license_url": "https://huggingface.co/XiaomiMiMo/MiMo-Audio-Tokenizer"
+    }
+  }
+}

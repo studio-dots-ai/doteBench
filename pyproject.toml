@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dotebench"
+version = "1.0.0"
+description = "A bilingual benchmark for precise speech editing"
+readme = "README.md"
+license = "Apache-2.0 AND MIT AND CC-BY-SA-3.0"
+license-files = [
+  "LICENSE",
+  "NOTICE",
+  "THIRD_PARTY_LICENSES.md",
+  "src/dotebench/services/backends/resources/speaker_models/LICENSE-*",
+  "src/dotebench/services/backends/resources/speaker_models/NOTICE.md",
+]
+authors = [
+  { name = "Hankun Wang" },
+  { name = "Bohan Li" },
+  { name = "Shi Lian" },
+  { name = "Xiaoyu Gu" },
+  { name = "Jing Peng" },
+  { name = "Da Zheng" },
+  { name = "Yiwei Guo" },
+  { name = "Colin Zhang" },
+  { name = "Kai Yu" },
+]
+keywords = ["speech editing", "benchmark", "text-to-speech", "audio"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+
+requires-python = ">=3.10,<3.13"
+dependencies = ["numpy>=1.26,<3", "soundfile>=0.12,<1", "requests>=2.32,<3", "hydra-core>=1.3,<1.4"]
+
+[project.urls]
+Homepage = "https://github.com/studio-dots-ai/doteBench"
+Repository = "https://github.com/studio-dots-ai/doteBench"
+Documentation = "https://github.com/studio-dots-ai/doteBench#documentation"
+Issues = "https://github.com/studio-dots-ai/doteBench/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.11,<1", "build>=1.2,<2"]
+metrics = ["jiwer>=3,<4", "librosa>=0.10,<1", "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "python-multipart>=0.0.18"]
+
+[project.scripts]
+dotebench = "dotebench.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dotebench"]
+[tool.hatch.build.targets.wheel.force-include]
+"data" = "dotebench/resources/data"
+"release" = "dotebench/resources/release"
+"configs" = "dotebench/resources/configs"
+
+[tool.pytest.ini_options]
+testpaths = [
+  "tests/data",
+  "tests/evaluation",
+  "tests/instructions",
+  "tests/materialization",
+  "tests/publication",
+  "tests/runtime",
+  "tests/candidates/common",
+]
+
+[tool.hatch.build.targets.sdist]
+only-include = ["src", "data", "release", "configs", "envs", "scripts", "tests", "docs", "assets", "README.md", "LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "CITATION.cff", "CONTRIBUTING.md", "SECURITY.md", "pyproject.toml", "uv.lock", ".gitmodules"]

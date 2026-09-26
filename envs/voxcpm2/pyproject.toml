@@ -1,0 +1,24 @@
+[project]
+name = "dotebench-voxcpm2"
+version = "1.0.0"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "dotebench",
+  "fastapi>=0.115,<1",
+  "torch==2.8.*",
+  "torchaudio==2.8.*",
+  "transformers==4.57.3",
+  "uvicorn>=0.30,<1",
+  "voxcpm",
+]
+
+[tool.uv.sources]
+dotebench = { path = "../..", editable = true }
+voxcpm = { path = "../../third_party/voxcpm", editable = true }
+torch = [{ index = "pytorch-cuda", marker = "sys_platform == 'linux'" }]
+torchaudio = [{ index = "pytorch-cuda", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

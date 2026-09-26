@@ -1,0 +1,334 @@
+--- a/tts.py
++++ b/tts.py
+@@ -49,6 +49,7 @@
+         kv_cache_dtype=None,
+         max_num_seqs=None,
+         max_num_batched_tokens=None,
++        attention_backend=None,
+         cosyvoice_dtype="float32",
+         cosyvoice_cuda_graph=True
+     ):
+@@ -69,6 +70,7 @@
+             kv_cache_dtype: KV cache dtype ('fp8_e5m2' for 50% memory reduction)
+             max_num_seqs: Max concurrent sequences (lower = less memory)
+             max_num_batched_tokens: Max tokens per batch (lower = less activation memory)
++            attention_backend: vLLM attention backend override, e.g. TRITON_ATTN
+             cosyvoice_dtype: CosyVoice vocoder dtype ('float32', 'bfloat16', 'float16')
+             cosyvoice_cuda_graph: Enable CUDA Graph for CosyVoice (default: True)
+         """
+@@ -99,6 +101,7 @@
+                 kv_cache_dtype=kv_cache_dtype,
+                 max_num_seqs=max_num_seqs,
+                 max_num_batched_tokens=max_num_batched_tokens,
++                attention_backend=attention_backend,
+             )
+             logger.info(f"✅ Successfully loaded vLLM model: {tts_model_id}")
+         except Exception as e:
+@@ -126,12 +129,27 @@
+         self.edit_clone_sys_prompt_tpl = AUDIO_EDIT_CLONE_SYSTEM_PROMPT_TPL
+         self.edit_sys_prompt = AUDIO_EDIT_SYSTEM_PROMPT
+ 
++    def _apply_chat_template_ids(self, messages):
++        tokenized = self.tokenizer.apply_chat_template(
++            messages,
++            tokenize=True,
++            add_generation_prompt=True,
++        )
++        if isinstance(tokenized, list):
++            return tokenized
++        input_ids = tokenized.get("input_ids")
++        if input_ids and isinstance(input_ids[0], list):
++            return input_ids[0]
++        return input_ids
++
+     def clone(
+         self,
+         prompt_wav_path: str,
+         prompt_text: str,
+-        target_text: str
+-    ) -> Tuple[torch.Tensor, int]:
++        target_text: str,
++        max_new_tokens: Optional[int] = None,
++        return_generation_metadata: bool = False,
++    ):
+         """
+         Clone voice from reference audio
+ 
+@@ -160,18 +178,30 @@
+                 prompt_wav_tokens,
+             )
+ 
+-            output_ids = self._generate(token_ids, max_tokens=8192 - len(token_ids))
++            available_tokens = 8192 - len(token_ids)
++            if available_tokens <= 0:
++                raise ValueError(
++                    f"Encoded clone prompt is too long: {len(token_ids)} tokens"
++                )
++            applied_max_tokens = min(
++                available_tokens,
++                max_new_tokens if max_new_tokens is not None else available_tokens,
++            )
++            output_ids, generation_metadata = self._generate(
++                token_ids,
++                max_tokens=applied_max_tokens,
++            )
+             logger.debug("Voice cloning generation completed")
+             vq0206_codes_vocoder = torch.tensor([vq0206_codes], dtype=torch.long) - 65536
+-            return (
+-                self.cosy_model.token2wav_nonstream(
+-                    output_ids - 65536,
+-                    vq0206_codes_vocoder,
+-                    speech_feat.to(torch.bfloat16),
+-                    speech_embedding.to(torch.bfloat16),
+-                ),
+-                24000,
+-            )
++            audio = self.cosy_model.token2wav_nonstream(
++                output_ids - 65536,
++                vq0206_codes_vocoder,
++                speech_feat.to(torch.bfloat16),
++                speech_embedding.to(torch.bfloat16),
++            )
++            if return_generation_metadata:
++                return audio, 24000, generation_metadata
++            return audio, 24000
+         except Exception as e:
+             logger.error(f"Clone failed: {e}")
+             raise
+@@ -182,8 +212,10 @@
+         prompt_text: str,
+         edit_type: str,
+         edit_info: Optional[str] = None,
+-        target_text: Optional[str] = None
+-    ) -> Tuple[torch.Tensor, int]:
++        target_text: Optional[str] = None,
++        max_new_tokens: Optional[int] = None,
++        return_generation_metadata: bool = False,
++    ):
+         """
+         Edit audio based on specified edit type
+ 
+@@ -197,37 +229,70 @@
+         Returns:
+             Tuple[torch.Tensor, int]: Edited audio tensor and sample rate
+         """
++        instruct_prefix = self._build_audio_edit_instruction(
++            prompt_text, edit_type, edit_info, target_text
++        )
++        return self.edit_freeform(
++            prompt_wav_path,
++            instruct_prefix,
++            max_new_tokens=max_new_tokens,
++            return_generation_metadata=return_generation_metadata,
++        )
++
++    def edit_freeform(
++        self,
++        prompt_wav_path: str,
++        instruction: str,
++        max_new_tokens: Optional[int] = None,
++        return_generation_metadata: bool = False,
++    ):
++        """Edit speech through the model's native free-form instruction slot."""
++        if not isinstance(instruction, str) or not instruction.strip():
++            raise HTTPException(
++                status_code=HTTPStatus.BAD_REQUEST,
++                detail="Free-form edit instruction must be non-empty.",
++            )
+         try:
+-            logger.debug(f"Starting audio editing: {edit_type} - {edit_info}")
++            logger.debug("Starting free-form audio editing")
+             vq0206_codes, vq02_codes_ori, vq06_codes_ori, speech_feat, _, speech_embedding = (
+                 self.preprocess_prompt_wav(prompt_wav_path)
+             )
+             audio_tokens = self.audio_tokenizer.merge_vq0206_to_token_str(
+                 vq02_codes_ori, vq06_codes_ori
+             )
+-            instruct_prefix = self._build_audio_edit_instruction(prompt_text, edit_type, edit_info, target_text)
+-
+             prompt_tokens = self._encode_audio_edit_prompt(
+-                self.edit_sys_prompt, instruct_prefix, audio_tokens
+-            )
+-
+-            logger.debug(f"Edit instruction: {instruct_prefix}")
++                self.edit_sys_prompt, instruction.strip(), audio_tokens
++            )
++
++            logger.debug(f"Edit instruction: {instruction.strip()}")
+             logger.debug(f"Encoded prompt length: {len(prompt_tokens)}")
+ 
+-            output_ids = self._generate(prompt_tokens, max_tokens=8192 - len(prompt_tokens))
++            available_tokens = 8192 - len(prompt_tokens)
++            if available_tokens <= 0:
++                raise ValueError(
++                    f"Encoded edit prompt is too long: {len(prompt_tokens)} tokens"
++                )
++            applied_max_tokens = min(
++                available_tokens,
++                max_new_tokens if max_new_tokens is not None else available_tokens,
++            )
++            output_ids, generation_metadata = self._generate(
++                prompt_tokens,
++                max_tokens=applied_max_tokens,
++            )
+             vq0206_codes_vocoder = torch.tensor([vq0206_codes], dtype=torch.long) - 65536
+             logger.debug("Audio editing generation completed")
+-            return (
+-                self.cosy_model.token2wav_nonstream(
+-                    output_ids - 65536,
+-                    vq0206_codes_vocoder,
+-                    speech_feat.to(torch.bfloat16),
+-                    speech_embedding.to(torch.bfloat16),
+-                ),
+-                24000,
+-            )
++            audio = self.cosy_model.token2wav_nonstream(
++                output_ids - 65536,
++                vq0206_codes_vocoder,
++                speech_feat.to(torch.bfloat16),
++                speech_embedding.to(torch.bfloat16),
++            )
++            if return_generation_metadata:
++                return audio, 24000, generation_metadata
++            return audio, 24000
+         except Exception as e:
+-            logger.error(f"Edit failed: {e}")
++            logger.error(f"Free-form edit failed: {e}")
+             raise
+ 
+     def _build_audio_edit_instruction(
+@@ -262,7 +327,7 @@
+             )
+         return instruct_prefix
+ 
+-    def _generate(self, token_ids: list[int], max_tokens: int = 4096, temperature: float = 0.7) -> torch.Tensor:
++    def _generate(self, token_ids: list[int], max_tokens: int = 4096, temperature: float = 0.7):
+         """
+         Generate output tokens using vLLM
+ 
+@@ -294,7 +359,10 @@
+         outputs = self.llm.generate([prompt], sampling_params, use_tqdm=False)
+ 
+         # Extract output token IDs (vLLM only returns generated tokens, not input)
+-        output_token_ids = list(outputs[0].outputs[0].token_ids)
++        completion = outputs[0].outputs[0]
++        output_token_ids = list(completion.token_ids)
++        raw_output_token_count = len(output_token_ids)
++        finish_reason = getattr(completion, "finish_reason", None)
+         
+         # Debug: analyze token distribution
+         if output_token_ids:
+@@ -307,12 +375,27 @@
+                        f"audio(65536-67583)={audio_count}, text(<65536)={text_count}, other(>=67584)={other_count}")
+         
+         # Remove eos token if present
+-        if len(output_token_ids) > 0 and output_token_ids[-1] == 3: # <|EOT|>
++        ended_with_eot = len(output_token_ids) > 0 and output_token_ids[-1] == 3
++        if ended_with_eot: # <|EOT|>
+             output_token_ids = output_token_ids[:-1]
+         
+         output_ids = torch.tensor(output_token_ids, dtype=torch.long)
+ 
+-        return output_ids
++        generation_metadata = {
++            "max_new_tokens": max_tokens,
++            "generated_token_count": raw_output_token_count,
++            "decoded_audio_token_count": len(output_token_ids),
++            "finish_reason": finish_reason,
++            "truncated_by_token_limit": (
++                finish_reason == "length"
++                or (
++                    raw_output_token_count >= max_tokens
++                    and not ended_with_eot
++                    and finish_reason not in {"stop", "eos"}
++                )
++            ),
++        }
++        return output_ids, generation_metadata
+ 
+     def _encode_audio_edit_prompt(
+         self, sys_prompt: str, instruct_prefix: str, audio_token_str: str
+@@ -323,7 +406,7 @@
+             {"role": "user", "content": f"{instruct_prefix}\n{audio_token_str}\n"}
+         ]
+ 
+-        return self.tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)
++        return self._apply_chat_template_ids(messages)
+ 
+ 
+     def _encode_audio_edit_clone_prompt(
+@@ -340,7 +423,7 @@
+             {"role": "user", "content": f"{text}"}
+         ]
+ 
+-        return self.tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)
++        return self._apply_chat_template_ids(messages)
+ 
+ 
+     def detect_instruction_name(self, text):
+@@ -362,7 +445,8 @@
+             raise
+ 
+     def preprocess_prompt_wav(self, prompt_wav_path: str):
+-        prompt_wav, prompt_wav_sr = torchaudio.load(prompt_wav_path)
++        prompt_wav_np, prompt_wav_sr = sf.read(prompt_wav_path, always_2d=True)
++        prompt_wav = torch.from_numpy(prompt_wav_np.T).float()
+         if prompt_wav.shape[0] > 1:
+             prompt_wav = prompt_wav.mean(dim=0, keepdim=True)
+ 
+--- a/model_loader.py
++++ b/model_loader.py
+@@ -156,6 +156,15 @@
+             if max_num_batched_tokens is not None:
+                 llm_kwargs["max_num_batched_tokens"] = max_num_batched_tokens
+ 
++            attention_backend = kwargs.pop("attention_backend", None)
++            if attention_backend is not None:
++                from vllm.config.attention import AttentionConfig
++                from vllm.v1.attention.backends.registry import AttentionBackendEnum
++
++                llm_kwargs["attention_config"] = AttentionConfig(
++                    backend=AttentionBackendEnum[attention_backend],
++                )
++
+             llm_kwargs.update(kwargs)
+ 
+             self.logger.info(f"🔧 vLLM config: {llm_kwargs}")
+--- a/funasr_detach/utils/load_utils.py
++++ b/funasr_detach/utils/load_utils.py
+@@ -3,6 +3,7 @@
+ import torch
+ import numpy as np
+ import torchaudio
++import soundfile as sf
+ from torch.nn.utils.rnn import pad_sequence
+ 
+ try:
+@@ -19,6 +20,10 @@
+     tokenizer=None,
+     **kwargs
+ ):
++    def _load_soundfile_audio(source):
++        audio_np, audio_fs_ = sf.read(source, always_2d=True)
++        return torch.from_numpy(audio_np.T).float(), audio_fs_
++
+     if isinstance(data_or_path_or_list, (list, tuple)):
+         if data_type is not None and isinstance(data_type, (list, tuple)):
+ 
+@@ -57,14 +62,14 @@
+         data_or_path_or_list = download_from_url(data_or_path_or_list)
+ 
+     if isinstance(data_or_path_or_list, io.BytesIO):
+-        data_or_path_or_list, audio_fs = torchaudio.load(data_or_path_or_list)
++        data_or_path_or_list, audio_fs = _load_soundfile_audio(data_or_path_or_list)
+         if kwargs.get("reduce_channels", True):
+             data_or_path_or_list = data_or_path_or_list.mean(0)
+     elif isinstance(data_or_path_or_list, str) and os.path.exists(
+         data_or_path_or_list
+     ):  # local file
+         if data_type is None or data_type == "sound":
+-            data_or_path_or_list, audio_fs = torchaudio.load(data_or_path_or_list)
++            data_or_path_or_list, audio_fs = _load_soundfile_audio(data_or_path_or_list)
+             if kwargs.get("reduce_channels", True):
+                 data_or_path_or_list = data_or_path_or_list.mean(0)
+         elif data_type == "text" and tokenizer is not None:

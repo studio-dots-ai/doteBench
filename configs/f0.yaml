@@ -1,0 +1,32 @@
+defaults:
+  - base
+  - _self_
+services:
+  f0:
+    instance_key: f0
+    config_key: f0
+    python_bin: ${runtime.python}
+    host: ${runtime.host}
+    port: 8034
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: ""
+    startup_timeout_sec: 1800
+    startup_sleep_sec: 0
+    praat_workers: 4
+    praat_timeout_sec: 60
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    command:
+      - ${..python_bin}
+      - -m
+      - dotebench.services.backends.f0
+      - --host
+      - ${..host}
+      - --port
+      - ${..port}
+      - --praat-workers
+      - ${..praat_workers}
+      - --praat-timeout-sec
+      - ${..praat_timeout_sec}

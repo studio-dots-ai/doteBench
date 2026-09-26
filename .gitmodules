@@ -1,0 +1,24 @@
+[submodule "third_party/ming-uniaudio"]
+	path = third_party/ming-uniaudio
+	url = https://github.com/inclusionAI/Ming-UniAudio.git
+[submodule "third_party/step-audio-editx"]
+	path = third_party/step-audio-editx
+	url = https://github.com/stepfun-ai/Step-Audio-EditX.git
+[submodule "third_party/mimo-audio"]
+	path = third_party/mimo-audio
+	url = https://github.com/XiaomiMiMo/MiMo-Audio.git
+[submodule "third_party/auk"]
+	path = third_party/auk
+	url = https://github.com/Tencent-Hunyuan/AuK.git
+[submodule "third_party/fireredtts3"]
+	path = third_party/fireredtts3
+	url = https://github.com/FireRedTeam/FireRedTTS3.git
+[submodule "third_party/qwen3-tts"]
+	path = third_party/qwen3-tts
+	url = https://github.com/QwenLM/Qwen3-TTS.git
+[submodule "third_party/voxcpm"]
+	path = third_party/voxcpm
+	url = https://github.com/openbmb/VoxCPM.git
+[submodule "third_party/index-tts"]
+	path = third_party/index-tts
+	url = https://github.com/index-tts/index-tts.git

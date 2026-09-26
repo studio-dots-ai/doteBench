@@ -1,0 +1,7 @@
+runtime:
+  python: ${oc.env:DOTEBENCH_PYTHON,python3}
+  env_root: ${oc.env:DOTEBENCH_ENV_ROOT,./.venvs}
+  model_root: ${oc.env:DOTEBENCH_MODEL_ROOT,./models}
+  host: 127.0.0.1
+  output_root: ${oc.env:DOTEBENCH_SERVICE_OUTPUTS}
+  source_root: ${oc.env:DOTEBENCH_SOURCE_ROOT,.}

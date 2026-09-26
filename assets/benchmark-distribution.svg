@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="448.243928pt" height="402.372pt" viewBox="0 0 448.243928 402.372" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-09T10:36:10.536055</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 402.372
+L 448.243928 402.372
+L 448.243928 -0
+L 0 -0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 246.758271 131.615019
+C 239.362078 125.067162 230.83759 119.91697 221.600738 116.415735
+C 212.363885 112.914499 202.56738 111.120104 192.689217 111.120104
+L 192.689217 150.205304
+C 197.834094 150.205304 202.93644 151.139885 207.747301 152.963445
+C 212.558162 154.787005 216.997999 157.469397 220.850183 160.879739
+z
+" clip-path="url(#p82c356c902)" style="fill: #d99870; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 280.565355 47.238503
+C 267.370294 39.266517 253.151578 33.127032 238.30097 28.989205
+C 223.450361 24.851379 208.105514 22.753565 192.689217 22.753565
+L 192.689217 111.120104
+C 200.08904 111.120104 207.454566 112.127055 214.582858 114.113212
+C 221.711151 116.099368 228.536134 119.046321 234.869763 122.872874
+z
+" clip-path="url(#p82c356c902)" style="fill: #e1a37f; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 300.65011 61.454422
+C 297.479854 58.846397 294.216136 56.354104 290.865379 53.98245
+C 287.514622 51.610796 284.079026 49.361338 280.565355 47.238503
+L 234.869763 122.872874
+C 236.556326 123.891835 238.205411 124.971575 239.813775 126.109969
+C 241.422138 127.248363 242.988723 128.444663 244.510446 129.696515
+z
+" clip-path="url(#p82c356c902)" style="fill: #eab99c; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 305.333078 65.451304
+C 304.564731 64.771086 303.790239 64.097842 303.009696 63.431653
+C 302.229153 62.765465 301.442592 62.106361 300.65011 61.454422
+L 244.510446 129.696515
+C 244.890837 130.009446 245.268387 130.325816 245.643047 130.645587
+C 246.017708 130.965357 246.389464 131.288514 246.758271 131.615019
+z
+" clip-path="url(#p82c356c902)" style="fill: #f1cfbb; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 192.689217 111.120104
+C 183.21957 111.120104 173.821851 112.769152 164.917941 115.993217
+C 156.014031 119.217283 147.739191 123.96739 140.464895 130.030297
+C 133.190599 136.093203 127.027352 143.376806 122.251835 151.554131
+C 117.476317 159.731456 114.161074 168.67828 112.454934 177.992962
+C 110.748793 187.307644 110.677674 196.848683 112.244768 206.187764
+C 113.811862 215.526845 116.993363 224.522095 121.646449 232.769702
+C 126.299534 241.017308 132.353517 248.391979 139.536623 254.562652
+C 146.719729 260.733325 154.922838 265.606259 163.777697 268.9627
+C 172.632556 272.319141 182.004648 274.1081 191.473243 274.249266
+C 200.941838 274.390433 210.363095 272.881664 219.314078 269.790689
+C 228.265061 266.699715 236.609792 262.073492 243.973662 256.119699
+C 251.337531 250.165906 257.608671 242.97499 262.50556 234.869763
+C 267.402449 226.764537 270.850697 217.868129 272.695504 208.579916
+C 274.540311 199.291703 274.753654 189.752784 273.325955 180.39138
+C 271.898255 171.029976 268.851202 161.988297 264.321583 153.672242
+C 259.791964 145.356187 253.848591 137.892087 246.758271 131.615019
+L 220.850183 160.879739
+C 224.543058 164.149045 227.638565 168.036597 229.997741 172.367876
+C 232.356918 176.699155 233.943925 181.408362 234.687518 186.284094
+C 235.431112 191.159825 235.319996 196.128012 234.359158 200.965623
+C 233.398321 205.803234 231.602359 210.43678 229.051896 214.658252
+C 226.501433 218.879724 223.235214 222.624993 219.399865 225.725927
+C 215.564517 228.82686 211.218303 231.236352 206.556332 232.846234
+C 201.894362 234.456117 196.987457 235.241934 192.055897 235.16841
+C 187.124337 235.094885 182.243039 234.163136 177.631134 232.41499
+C 173.019228 230.666843 168.746776 228.128857 165.005575 224.914965
+C 161.264374 221.701073 158.111257 217.860098 155.687775 213.56447
+C 153.264293 209.268841 151.607261 204.583815 150.791067 199.71971
+C 149.974872 194.855606 150.011913 189.886315 150.900528 185.034918
+C 151.789143 180.183521 153.515832 175.523717 156.003081 171.264693
+C 158.490329 167.00567 161.700354 163.212127 165.48905 160.054363
+C 169.277745 156.896599 173.587558 154.422585 178.225011 152.743384
+C 182.862464 151.064183 187.757109 150.205304 192.689217 150.205304
+z
+" clip-path="url(#p82c356c902)" style="fill: #b8cce2; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 268.134972 282.448974
+C 281.034667 271.606395 291.446721 258.109358 298.65981 242.879946
+C 305.872899 227.650534 309.718934 211.043641 309.935164 194.193808
+C 310.151394 177.343975 306.73278 160.643856 299.912874 145.234362
+C 293.092967 129.824868 283.030693 116.065089 270.413481 104.895057
+L 246.758271 131.615019
+C 255.535461 139.385476 262.535304 148.957496 267.279587 159.677144
+C 272.02387 170.396792 274.402036 182.014266 274.251615 193.735889
+C 274.101194 205.457512 271.425691 217.010134 266.40789 227.604507
+C 261.39009 238.19888 254.146921 247.588124 245.173221 255.130787
+z
+" clip-path="url(#p82c356c902)" style="fill: #d8bd5c; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 358.707773 156.412985
+C 354.88461 138.91624 348.31939 122.133368 339.255559 106.686697
+C 330.191727 91.240027 318.74272 77.322874 305.333078 65.451304
+L 270.413481 104.895057
+C 279.666134 113.086441 287.565949 122.689276 293.819993 133.347478
+C 300.074036 144.005681 304.604038 155.585863 307.242021 167.658617
+z
+" clip-path="url(#p82c356c902)" style="fill: #ead795; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 302.030891 322.775821
+C 325.741244 302.846561 343.557802 276.809086 353.546179 247.490346
+C 363.534557 218.171605 365.319694 186.672508 358.707773 156.412985
+L 307.242021 167.658617
+C 311.804246 188.537688 310.572502 210.272065 303.680521 230.501996
+C 296.788541 250.731927 284.495116 268.697784 268.134972 282.448974
+z
+" clip-path="url(#p82c356c902)" style="fill: #dfc76e; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 85.717798 240.709955
+C 93.144981 257.254813 104.31028 271.85319 118.332989 283.353582
+C 132.355697 294.853974 148.857161 302.945836 166.535761 306.99089
+C 184.214361 311.035945 202.592723 310.924964 220.221182 306.6667
+C 237.849641 302.408437 254.252176 294.117878 268.134972 282.448974
+L 245.173221 255.130787
+C 235.515623 263.248286 224.105164 269.015631 211.841888 271.977901
+C 199.578613 274.940171 186.793665 275.017376 174.495508 272.203425
+C 162.197352 269.389474 150.718073 263.760352 140.963145 255.76008
+C 131.208218 247.759807 123.441053 237.604414 118.274317 226.094948
+z
+" clip-path="url(#p82c356c902)" style="fill: #72a9a4; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 157.516806 334.538304
+C 179.890122 340.085914 203.261757 340.262333 225.71627 335.053102
+C 248.170783 329.843871 269.077521 319.395295 286.723057 304.563696
+L 268.134972 282.448974
+C 253.977508 294.348745 237.203497 302.731905 219.187667 306.911404
+C 201.171836 311.090903 182.420176 310.949358 164.469492 306.498368
+z
+" clip-path="url(#p82c356c902)" style="fill: #88b7b2; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 256.504135 350.187732
+C 264.751006 346.846282 272.722708 342.862259 280.345674 338.272429
+C 287.968641 333.682598 295.219351 328.501123 302.030891 322.775821
+L 286.723057 304.563696
+C 280.865132 309.487456 274.629522 313.943525 268.07377 317.890779
+C 261.518019 321.838033 254.662355 325.264293 247.570046 328.13794
+z
+" clip-path="url(#p82c356c902)" style="fill: #a8ceca; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 204.736683 362.197283
+C 213.612393 361.566459 222.424863 360.239489 231.092767 358.228618
+C 239.760671 356.217748 248.257264 353.529182 256.504135 350.187732
+L 247.570046 328.13794
+C 240.477737 331.011587 233.170668 333.323754 225.71627 335.053102
+C 218.261872 336.782451 210.683148 337.923645 203.050038 338.466154
+z
+" clip-path="url(#p82c356c902)" style="fill: #9bc5c1; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 151.791065 357.630016
+C 160.427625 359.771508 169.219059 361.23136 178.084235 361.9961
+C 186.94941 362.76084 195.860973 362.828108 204.736683 362.197283
+L 203.050038 338.466154
+C 195.416927 339.008663 187.752983 338.950812 180.128932 338.293136
+C 172.504881 337.63546 164.944248 336.379987 157.516806 334.538304
+z
+" clip-path="url(#p82c356c902)" style="fill: #b5d7d3; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 59.362521 252.541151
+C 68.436534 272.754501 81.989594 290.642127 98.99359 304.847103
+C 115.997586 319.052079 136.011397 329.205897 157.516806 334.538304
+L 164.469492 306.498368
+C 147.215152 302.220041 131.15756 294.073374 117.514819 282.676358
+C 103.872078 271.279343 92.998111 256.927643 85.717798 240.709955
+z
+" clip-path="url(#p82c356c902)" style="fill: #5f9994; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 104.5936 338.007103
+C 111.909734 342.442341 119.550376 346.318749 127.450327 349.603248
+C 135.350277 352.887747 143.487001 355.570969 151.791065 357.630016
+L 157.516806 334.538304
+C 150.375311 332.767524 143.377729 330.459953 136.583771 327.635284
+C 129.789814 324.810614 123.218862 321.476904 116.926986 317.662599
+z
+" clip-path="url(#p82c356c902)" style="fill: #8abab5; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 65.366314 305.237003
+C 71.032614 311.647167 77.174918 317.620277 83.740814 323.105364
+C 90.306709 328.59045 97.277465 333.571866 104.5936 338.007103
+L 116.926986 317.662599
+C 110.635111 313.848295 104.64026 309.564277 98.99359 304.847103
+C 93.34692 300.129929 88.064538 294.993054 83.19152 289.480313
+z
+" clip-path="url(#p82c356c902)" style="fill: #7aaea9; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 37.658175 262.28449
+C 41.162 270.08964 45.250261 277.619054 49.888072 284.808481
+C 54.525883 291.997908 59.700014 298.82684 65.366314 305.237003
+L 83.19152 289.480313
+C 78.318503 283.967573 73.868749 278.094691 69.880232 271.911784
+C 65.891715 265.728876 62.37581 259.25358 59.362521 252.541151
+z
+" clip-path="url(#p82c356c902)" style="fill: #98c4c0; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 100.419046 120.335288
+C 87.231391 137.152994 78.889274 157.260441 76.298419 178.474516
+C 73.707563 199.688591 76.965255 221.212712 85.717798 240.709955
+L 118.274317 226.094948
+C 112.185591 212.531648 109.919371 197.558347 111.721705 182.80073
+C 113.52404 168.043112 119.327251 154.055323 128.501272 142.356049
+z
+" clip-path="url(#p82c356c902)" style="fill: #ac9770; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 23.055613 202.816711
+C 23.667592 213.06724 25.207433 223.241234 27.656229 233.21376
+C 30.105024 243.186286 33.452709 252.916356 37.658175 262.28449
+L 85.717798 240.709955
+C 82.816027 234.245943 80.506124 227.532195 78.816455 220.651152
+C 77.126786 213.770109 76.064296 206.750053 75.64203 199.677188
+z
+" clip-path="url(#p82c356c902)" style="fill: #c7b792; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 30.478957 142.033938
+C 27.417987 151.835893 25.251768 161.895156 24.006901 172.088201
+C 22.762033 182.281247 22.443634 192.566182 23.055613 202.816711
+L 75.64203 199.677188
+C 75.219765 192.604323 75.43946 185.507718 76.298419 178.474516
+C 77.157377 171.441315 78.652068 164.500424 80.764138 157.737075
+z
+" clip-path="url(#p82c356c902)" style="fill: #bca980; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 58.964331 87.828449
+C 52.62786 95.909106 47.036851 104.547502 42.25996 113.637561
+C 37.483068 122.72762 33.539927 132.231983 30.478957 142.033938
+L 80.764138 157.737075
+C 82.876207 150.973725 85.596975 144.415715 88.89303 138.143574
+C 92.189085 131.871434 96.046881 125.91094 100.419046 120.335288
+z
+" clip-path="url(#p82c356c902)" style="fill: #d3c7aa; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 192.689217 75.433617
+C 174.912369 75.433617 157.366105 79.476277 141.381458 87.254927
+C 125.396811 95.033577 111.388457 106.346422 100.419046 120.335288
+L 128.501272 142.356049
+C 136.132166 132.624664 145.877109 124.754859 156.996863 119.343624
+C 168.116618 113.932389 180.322714 111.120104 192.689217 111.120104
+z
+" clip-path="url(#p82c356c902)" style="fill: #8299c5; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 118.330146 39.885898
+C 106.783821 45.504716 95.911475 52.41419 85.921454 60.481916
+C 75.931432 68.549642 66.887958 77.723754 58.964331 87.828449
+L 100.419046 120.335288
+C 105.886348 113.363048 112.126345 107.03291 119.01946 101.46618
+C 125.912575 95.899449 133.414494 91.131911 141.381458 87.254927
+z
+" clip-path="url(#p82c356c902)" style="fill: #aabbdd; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 192.689217 22.753565
+C 179.848317 22.753565 167.048691 24.209017 154.535619 27.092029
+C 142.022547 29.975041 129.876471 34.26708 118.330146 39.885898
+L 141.381458 87.254927
+C 149.348423 83.377943 157.729215 80.416436 166.363235 78.427157
+C 174.997254 76.437879 183.828996 75.433617 192.689217 75.433617
+z
+" clip-path="url(#p82c356c902)" style="fill: #98acd2; stroke: #ffffff; stroke-width: 1.6"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10.4px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(180.524597 122.825338) rotate(-339.24075)">Compositional</text>
+    <text style="font-weight: 700; font-size: 10.4px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(194.815879 137.362553) rotate(-339.24075)">Editing</text>
+    <text style="font-weight: 700; font-size: 10.4px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(199.814648 149.422736) rotate(-339.24075)">240</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(201.862614 62.80892) rotate(-344.430562)">2 Operations</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(217.14844 76.632731) rotate(-344.430562)">180</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10.4px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(146.945413 232.935646) rotate(-339.24075)">Single Task</text>
+    <text style="font-weight: 700; font-size: 10.4px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(153.255568 247.005685) rotate(-339.24075)">Editing</text>
+    <text style="font-weight: 700; font-size: 10.4px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(153.655833 258.963306) rotate(-339.24075)">1,841</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(290.920645 202.89227) rotate(-89.264777)">Text</text>
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(299.945776 202.238571) rotate(-89.264777)">569</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(313.062847 110.328896) rotate(-300.403652)">Easy</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(306.324005 117.211842) rotate(-300.403652)">209</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(324.503888 248.011884) rotate(-71.186929)">Hard</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(333.16089 248.562278) rotate(-71.186929)">360</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(153.279884 284.567993) rotate(-347.111965)">Emotion</text>
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(160.774248 295.531787) rotate(-347.111965)">612</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(206.853471 323.514761) rotate(-13.061028)">Neutral</text>
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(216.289502 330.581131) rotate(-13.061028)">312</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(256.877441 337.354833) rotate(-31.052379)">Utterance</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(271.520299 338.326482) rotate(-31.052379)">104</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(205.819026 350.007764) rotate(-13.061028)">Local Span</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(222.682228 355.554104) rotate(-13.061028)">104</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(158.364714 346.442252) rotate(-355.069678)">Multi-span</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(170.911031 356.854569) rotate(-355.069678)">104</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(96.655783 282.693796) rotate(-320.12494)">Intense</text>
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(96.880496 294.629603) rotate(-320.12494)">300</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(114.271921 330.162837) rotate(-337.424315)">Utterance</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(122.173139 342.529248) rotate(-337.424315)">100</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(75.068134 297.983082) rotate(-320.12494)">Local Span</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(80.805901 314.782115) rotate(-320.12494)">100</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(50.111125 259.694104) rotate(-302.825565)">Multi-span</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(49.560961 275.989003) rotate(-302.825565)">100</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(89.796781 198.204195) rotate(-83.037001)">Prosody</text>
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(100.918564 189.714354) rotate(-83.037001)">360</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(51.778506 216.875452) rotate(-283.796252)">Pitch</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(44.250405 221.325009) rotate(-283.796252)">120</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(48.029051 184.564918) rotate(-83.037001)">Rate</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(56.567697 183.709752) rotate(-83.037001)">120</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(59.125561 136.054108) rotate(-62.277751)">Mixed</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(68.587678 136.045532) rotate(-62.277751)">120</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(136.368031 108.361728) rotate(-25.949063)">Pause</text>
+    <text style="font-size: 9.8px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(145.322937 114.030854) rotate(-25.949063)">300</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(92.894625 87.444385) rotate(-38.923594)">Insert</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(101.209376 91.490711) rotate(-38.923594)">150</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(144.995136 55.312006) rotate(-12.974531)">Reduce</text>
+    <text style="font-size: 9.1px; font-family: 'TeX Gyre Heros', sans-serif; fill: #1f2937" transform="translate(154.713687 61.664188) rotate(-12.974531)">150</text>
+   </g>
+   <g id="patch_26">
+    <path d="M 382.059331 63.275295
+Q 338.207627 53.251416 292.865832 53.946579
+" style="fill: none; stroke: #64748b; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9.2px; font-family: 'TeX Gyre Heros', sans-serif; text-anchor: start; fill: #1f2937" x="374.520365" y="72.939292" transform="rotate(-0 374.520365 72.939292)">3 Operations  48</text>
+   </g>
+   <g id="patch_27">
+    <path d="M 392.999479 90.090417
+Q 350.865808 71.12482 304.988024 63.74426
+" style="fill: none; stroke: #64748b; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9.2px; font-family: 'TeX Gyre Heros', sans-serif; text-anchor: start; fill: #1f2937" x="374.520365" y="100.128996" transform="rotate(-0 374.520365 100.128996)">4 Operations  12</text>
+   </g>
+   <g id="patch_28">
+    <path d="M 192.689217 233.133903
+C 203.415273 233.133903 213.703462 228.872395 221.287929 221.287929
+C 228.872395 213.703462 233.133903 203.415273 233.133903 192.689217
+C 233.133903 181.963161 228.872395 171.674973 221.287929 164.090506
+C 213.703462 156.506039 203.415273 152.244532 192.689217 152.244532
+C 181.963161 152.244532 171.674973 156.506039 164.090506 164.090506
+C 156.506039 171.674973 152.244532 181.963161 152.244532 192.689217
+C 152.244532 203.415273 156.506039 213.703462 164.090506 221.287929
+C 171.674973 228.872395 181.963161 233.133903 192.689217 233.133903
+z
+" clip-path="url(#p82c356c902)" style="fill: #f8fafc; stroke: #d7dee8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'TeX Gyre Heros', sans-serif; text-anchor: middle; fill: #172033" x="192.689217" y="193.268826" transform="rotate(-0 192.689217 193.268826)">doteBench</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9.3px; font-family: 'TeX Gyre Heros', sans-serif; text-anchor: middle; fill: #526071" x="192.689217" y="207.73572" transform="rotate(-0 192.689217 207.73572)">2,081 cases</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p82c356c902">
+   <rect x="5.76" y="5.76" width="409.544922" height="390.852"/>
+  </clipPath>
+ </defs>
+</svg>

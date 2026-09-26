@@ -1,0 +1,14 @@
+[project]
+name = "dotebench-indextts2"
+version = "1.0.0"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "dotebench",
+  "fastapi>=0.115,<1",
+  "indextts",
+  "uvicorn>=0.30,<1",
+]
+
+[tool.uv.sources]
+dotebench = { path = "../..", editable = true }
+indextts = { path = "../../third_party/index-tts", editable = true }
