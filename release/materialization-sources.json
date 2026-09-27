@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "indextts2": {
+      "repository": "https://github.com/index-tts/index-tts.git",
+      "commit": "1eafa935e8887f9ba877f82cf7319fceddfc86cb",
+      "path": "third_party/index-tts",
+      "license": "bilibili Model Use License Agreement"
+    },
+    "mimo_audio": {
+      "repository": "https://github.com/XiaomiMiMo/MiMo-Audio.git",
+      "commit": "62d956b4a1a45419bee5e41f477078c3684dbbcc",
+      "path": "third_party/mimo-audio",
+      "license": "MIT"
+    },
+    "qwen3_tts": {
+      "repository": "https://github.com/QwenLM/Qwen3-TTS.git",
+      "commit": "1ab0dd75353392f28a0d05d9ca960c9954b13c83",
+      "path": "third_party/qwen3-tts",
+      "license": "Apache-2.0"
+    },
+    "voxcpm2": {
+      "repository": "https://github.com/openbmb/VoxCPM.git",
+      "commit": "5510503182e405fb78b6765d24d2e3db5d987a5c",
+      "path": "third_party/voxcpm",
+      "license": "Apache-2.0"
+    }
+  }
+}

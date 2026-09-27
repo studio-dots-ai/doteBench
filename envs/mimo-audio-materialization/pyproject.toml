@@ -1,0 +1,30 @@
+[project]
+name = "dotebench-mimo-audio-materialization"
+version = "1.0.0"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+  "accelerate>=1.9.0",
+  "dotebench",
+  "fastapi>=0.116.1,<1",
+  "flash-attn @ https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x86_64.whl",
+  "librosa>=0.11.0,<1",
+  "pydantic>=2.11.7,<3",
+  "scipy>=1.13,<1.17",
+  "torch==2.6.0",
+  "torchaudio==2.6.0",
+  "transformers==4.49.0",
+  "triton==3.2.0; sys_platform == 'linux'",
+  "uvicorn>=0.35.0,<1",
+  "zhon==2.1.1",
+]
+
+[tool.uv.sources]
+dotebench = { path = "../..", editable = true }
+flash-attn = { url = "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x86_64.whl" }
+torch = [{ index = "pytorch-cuda", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
+torchaudio = [{ index = "pytorch-cuda", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-labelledby="title desc">
+  <title id="title">doteBench mark</title>
+  <desc id="desc">XML brackets surrounding a speech waveform.</desc>
+  <defs>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a99cff"/>
+      <stop offset="1" stop-color="#72c8ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="184" height="184" rx="44" fill="#17213d"/>
+  <path d="M59 52 28 96l31 44" fill="none" stroke="#a99cff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m133 52 31 44-31 44" fill="none" stroke="#72c8ff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64 98h10l8-27 13 52 12-67 11 42h11" fill="none" stroke="url(#wave)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

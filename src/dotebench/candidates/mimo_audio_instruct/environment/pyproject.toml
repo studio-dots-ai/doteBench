@@ -1,0 +1,62 @@
+[project]
+name = "dotebench-mimo-audio-instruct"
+version = "0.1.0"
+description = "MiMo-Audio environment — torch 2.6.0, transformers 4.49.0, flash-attn 2.7.4.post1"
+requires-python = ">=3.10,<3.11"
+
+dependencies = [
+    "dotebench==1.0.0",
+    # ── PyTorch (CUDA 12.4) ────────────────────────────────────────
+    "torch==2.6.0",
+    "torchaudio==2.6.0",
+
+    # ── Core ML ────────────────────────────────────────────────────
+    "transformers==4.49.0",
+    "accelerate>=1.4,<2.0",
+    "safetensors>=0.4",
+
+    # ── Core scientific ────────────────────────────────────────────
+    "numpy>=1.26,<2.0",
+    "scipy>=1.13,<1.17",
+    "librosa>=0.10.2,<0.12",
+    "soundfile>=0.12,<0.14",
+
+    # ── Web framework ─────────────────────────────────────────────
+    "fastapi>=0.116,<1.0",
+    "uvicorn>=0.35,<1.0",
+    "pydantic>=2.7,<3.0",
+    "requests>=2.31,<3.0",
+
+    # ── Common utilities ──────────────────────────────────────────
+    "tqdm>=4.65",
+    "loguru>=0.7",
+    "zhon>=2.0",
+    "pytest>=9.0",
+    "httpx>=0.27,<1",
+
+    # ── MiMo-Audio specific ───────────────────────────────────────
+    "triton==3.2.0",
+
+
+    # ── Flash attention (pre-built wheel via URL source) ──────────
+    "flash-attn @ https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x86_64.whl",
+]
+
+[tool.uv]
+index-url = "https://pypi.org/simple"
+
+[tool.uv.sources]
+dotebench = { path = "../../../../..", editable = true }
+flash-attn = { url = "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.6cxx11abiFALSE-cp310-cp310-linux_x86_64.whl" }
+# Route PyTorch packages to CUDA 12.4 index (for torch 2.6.0)
+torch = [
+    { index = "pytorch-cuda", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchaudio = [
+    { index = "pytorch-cuda", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

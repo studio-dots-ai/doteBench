@@ -1,0 +1,29 @@
+defaults:
+  - base
+  - _self_
+services:
+  emotion:
+    instance_key: qwen3-omni-ser
+    config_key: qwen3-omni-ser
+    python_bin: ${runtime.python}
+    host: ${runtime.host}
+    port: 8057
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: "0,1"
+    startup_timeout_sec: 1800
+    startup_sleep_sec: 0
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    model_path: ${runtime.model_root}/Qwen3-Omni-30B-A3B-Instruct
+    command:
+      - ${..python_bin}
+      - -m
+      - dotebench.services.backends.emotion
+      - --host
+      - ${..host}
+      - --port
+      - ${..port}
+      - --model-path
+      - ${..model_path}

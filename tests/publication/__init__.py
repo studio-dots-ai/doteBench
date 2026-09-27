@@ -1,0 +1,1 @@
+"""CLI and publication tests."""
