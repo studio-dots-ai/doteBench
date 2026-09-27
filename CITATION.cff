@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: "If you use doteBench, please cite this software and the associated paper."
+type: software
+title: "doteBench: A bilingual benchmark for precise speech editing"
+version: 1.0.0
+license: Apache-2.0
+repository-code: "https://github.com/studio-dots-ai/doteBench"
+url: "https://github.com/studio-dots-ai/doteBench"
+authors:
+  - family-names: Wang
+    given-names: Hankun
+  - family-names: Li
+    given-names: Bohan
+  - family-names: Lian
+    given-names: Shi
+  - family-names: Gu
+    given-names: Xiaoyu
+  - family-names: Peng
+    given-names: Jing
+  - family-names: Zheng
+    given-names: Da
+  - family-names: Guo
+    given-names: Yiwei
+  - family-names: Zhang
+    given-names: Colin
+  - family-names: Yu
+    given-names: Kai
+preferred-citation:
+  type: article
+  title: "dots.tts.edit: Precisely Controlled Speech Editing with a Continuous Autoregressive Model"
+  authors:
+    - family-names: Wang
+      given-names: Hankun
+    - family-names: Li
+      given-names: Bohan
+    - family-names: Lian
+      given-names: Shi
+    - family-names: Gu
+      given-names: Xiaoyu
+    - family-names: Peng
+      given-names: Jing
+    - family-names: Zheng
+      given-names: Da
+    - family-names: Guo
+      given-names: Yiwei
+    - family-names: Zhang
+      given-names: Colin
+    - family-names: Yu
+      given-names: Kai
+  year: 2026
+  doi: 10.48550/arXiv.2608.02673
+  url: "https://arxiv.org/abs/2608.02673"

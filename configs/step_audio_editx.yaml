@@ -1,0 +1,54 @@
+defaults:
+- base
+- _self_
+candidate:
+  name: step-audio-editx
+  options:
+    scratch_dir: ${runtime.output_root}/candidate-scratch
+    require_runtime_identity: true
+services:
+  candidate:
+    instance_key: step-audio-editx
+    config_key: step-audio-editx
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: ${oc.env:DOTEBENCH_GPU_IDS,0}
+    startup_timeout_sec: 1800
+    command:
+    - ${..python_bin}
+    - -m
+    - dotebench.candidates.common.launch
+    - --candidate
+    - step-audio-editx
+    - --source-root
+    - ${..source_root}
+    - --runtime-root
+    - ${..runtime_root}
+    - --output-root
+    - ${runtime.output_root}
+    - --
+    - --host
+    - ${..host}
+    - --port
+    - ${..port}
+    - --model-path
+    - ${..model_path}
+    - --tokenizer-path
+    - ${..tokenizer_path}
+    - --model-source
+    - local
+    env:
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      OMP_NUM_THREADS: '4'
+      TOKENIZERS_PARALLELISM: 'false'
+      VLLM_WORKER_MULTIPROC_METHOD: spawn
+      TMPDIR: ${oc.env:DOTEBENCH_IPC_ROOT,/dev/shm/dotebench-step-audio-editx}
+      VLLM_RPC_BASE_PATH: ${oc.env:DOTEBENCH_IPC_ROOT,/dev/shm/dotebench-step-audio-editx}
+    host: ${runtime.host}
+    port: ${oc.env:DOTEBENCH_CANDIDATE_PORT,18000}
+    python_bin: ${oc.env:DOTEBENCH_CANDIDATE_PYTHON,${runtime.python}}
+    model_path: ${oc.env:DOTEBENCH_MODEL_PATH}
+    tokenizer_path: ${oc.env:DOTEBENCH_TOKENIZER_PATH}
+    source_root: ${oc.env:DOTEBENCH_SOURCE_ROOT}
+    runtime_root: ${oc.env:DOTEBENCH_RUNTIME_ROOT}

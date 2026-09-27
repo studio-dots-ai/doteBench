@@ -1,0 +1,29 @@
+defaults:
+  - base
+  - _self_
+services:
+  qwen3_asr:
+    instance_key: qwen3_asr
+    config_key: qwen3_asr
+    python_bin: ${runtime.python}
+    host: ${runtime.host}
+    port: 8033
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: "0"
+    startup_timeout_sec: 1800
+    startup_sleep_sec: 0
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    model_path: ${runtime.model_root}/Qwen3-ASR-1.7B
+    command:
+      - ${..python_bin}
+      - -m
+      - dotebench.services.backends.qwen3_asr
+      - --host
+      - ${..host}
+      - --port
+      - ${..port}
+      - --model-path
+      - ${..model_path}

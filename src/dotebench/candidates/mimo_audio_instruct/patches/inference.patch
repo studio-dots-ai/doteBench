@@ -1,0 +1,139 @@
+--- a/src/mimo_audio/mimo_audio.py
++++ b/src/mimo_audio/mimo_audio.py
+@@ -1071,6 +1071,7 @@
+         max_new_tokens=8192,
+         add_history=False,
+         task_name=None,
++        return_generation_metadata=False,
+     ):
+         
+         task_sampler = self.get_task_sampler(task_name)
+@@ -1104,7 +1105,37 @@
+         self.history = generated_ids
+         generated_ids = generated_ids.int().cpu().reshape(-1, self.audio_channels+1).T[:, prompt_length:]
+ 
+-        text = generated_ids[0, ::self.group_size][:-1]
++        text_with_stop = generated_ids[0, ::self.group_size]
++        generated_step_count = int(text_with_stop.numel())
++        stop_token_ids = {
++            int(token)
++            for token in (
++                self.tokenizer.eos_token_id,
++                self.eostm_idx,
++                self.im_end_idx,
++            )
++            if token is not None
++        }
++        observed_stop_token = next(
++            (
++                int(token)
++                for token in text_with_stop.tolist()
++                if int(token) in stop_token_ids
++            ),
++            None,
++        )
++        generation_metadata = {
++            "max_new_tokens": int(max_new_tokens),
++            "generated_step_count": generated_step_count,
++            "group_size": int(self.group_size),
++            "audio_token_frame_rate_hz": 25.0,
++            "observed_stop_token": observed_stop_token,
++            "truncated_by_token_limit": (
++                generated_step_count >= int(max_new_tokens)
++                and observed_stop_token is None
++            ),
++        }
++        text = text_with_stop[:-1]
+         detokenized_text = self.tokenizer.decode(text, skip_special_tokens=False).strip().replace("<|empty|>", "").replace("<|eot|>", "").replace("<|eostm|>", "")
+         print("Text channel:\t", detokenized_text)
+ 
+@@ -1112,6 +1143,8 @@
+             return_audio = True
+         
+         if not return_audio:
++            if return_generation_metadata:
++                return detokenized_text, generation_metadata
+             return detokenized_text
+         
+         sosp_idx_locations = (text == self.sostm_idx).nonzero(as_tuple=True)[0]
+@@ -1129,6 +1162,9 @@
+ 
+         mask = speech_sequence[0] != (self.speech_zeroemb_idx[0] if isinstance(self.speech_zeroemb_idx, list) else self.speech_zeroemb_idx)
+         speech_sequence = speech_sequence[:, mask]
++        generation_metadata["decoded_audio_frame_count"] = int(
++            speech_sequence.shape[1]
++        )
+ 
+         assert (speech_sequence < torch.tensor(self.speech_zeroemb_idx).unsqueeze(1)).all()
+         
+@@ -1141,8 +1177,13 @@
+ 
+         if tokens.numel() == 0:
+             wav = torch.zeros(24000)
+-            self.save_wav(output_audio_path, wav)
+-            return detokenized_text
++            if output_audio_path is not None:
++                self.save_wav(output_audio_path, wav)
++            generation_metadata["output_duration_seconds"] = 1.0
++            result = detokenized_text if output_audio_path is not None else wav
++            if return_generation_metadata:
++                return result, generation_metadata
++            return result
+         
+         codes = tokens.reshape(-1, self.audio_channels).T
+         codes = codes.type(torch.LongTensor).to(self.device)
+@@ -1153,13 +1194,19 @@
+             wav = self.mimo_audio_tokenizer.decode(codes[:,start:start+segment_len]).float() 
+             wav_list.append(wav)
+         wav_concat = torch.cat(wav_list, dim=-1)
++        generation_metadata["output_duration_seconds"] = (
++            float(wav_concat.numel()) / 24000.0
++        )
+ 
+         #wav = self.mimo_audio_tokenizer.decode(codes).float()
+         if output_audio_path is not None:
+             self.save_wav(output_audio_path, wav_concat)
+-            return detokenized_text
++            result = detokenized_text
+         else:
+-            return wav_concat
++            result = wav_concat
++        if return_generation_metadata:
++            return result, generation_metadata
++        return result
+   
+     def asr_sft(self, audio):
+         stopping_criteria = [
+@@ -1278,7 +1325,15 @@
+         self.history = None
+         print("History cleared")
+     
+-    def in_context_learning_s2s(self, instruction, prompt_examples, audio, max_new_tokens=None, output_audio_path=None):   
++    def in_context_learning_s2s(
++        self,
++        instruction,
++        prompt_examples,
++        audio,
++        max_new_tokens=None,
++        output_audio_path=None,
++        return_generation_metadata=False,
++    ):
+         stopping_criteria = [
+             MiMoStopper(
+                 stop_tokens=[self.tokenizer.eos_token_id, self.eostm_idx],
+@@ -1287,6 +1342,12 @@
+             )
+         ]
+         input_ids = self.get_in_context_learning_s2s_prompt(instruction, prompt_examples, audio)
+-        self.forward(input_ids, output_audio_path=output_audio_path, stopping_criteria=stopping_criteria, max_new_tokens=max_new_tokens, task_name="in_context_learning_s2s")
+-        
+-
++        return self.forward(
++            input_ids,
++            output_audio_path=output_audio_path,
++            stopping_criteria=stopping_criteria,
++            max_new_tokens=max_new_tokens,
++            task_name="in_context_learning_s2s",
++            return_generation_metadata=return_generation_metadata,
++        )
++        

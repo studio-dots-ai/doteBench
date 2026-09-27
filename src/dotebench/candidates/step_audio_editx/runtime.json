@@ -1,0 +1,27 @@
+{
+  "upstream": {
+    "url": "https://github.com/stepfun-ai/Step-Audio-EditX.git",
+    "commit": "a652e87052c109e26f616d60971376ff47a829d4",
+    "directory": "step-audio-editx"
+  },
+  "patches": [
+    {
+      "path": "patches/inference.patch",
+      "sha256": "9ad5affaeed3dcd6d4cae0f212cf0a1abfe6979d87dab4205e8b79868ceba78d"
+    }
+  ],
+  "files": {
+    "tts.py": {
+      "before": "526da0ce80cffe5bbc5fad76c57c235e6367cfadda1bff83c3966b61aead6edd",
+      "after": "4728124dd148791ffe5a7f71fef788b877df7e07ab58b2103157d02548f28e35"
+    },
+    "model_loader.py": {
+      "before": "aacab48252f6460ff636ca66d74361f386b08a081875fd81ec44d230125f24a0",
+      "after": "f68baf4cae9828740d50e843b86e66e96b29c459d66b43cd43e40003d513dd64"
+    },
+    "funasr_detach/utils/load_utils.py": {
+      "before": "ef804e00f8a74fe85d83e9fa542db4c5664dc5b361172b83a036f3d07eaf006f",
+      "after": "e19a79d439ed36f28143fac0bbddda48c373230eb8954a83d74545a0490c243e"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+[project]
+name = "dotebench-qwen3-tts"
+version = "1.0.0"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "dotebench",
+  "fastapi>=0.115,<1",
+  "flash-attn==2.8.3",
+  "qwen-tts",
+  "torch==2.8.*",
+  "torchaudio==2.8.*",
+  "uvicorn>=0.30,<1",
+]
+
+[tool.uv]
+no-build-isolation-package = ["flash-attn"]
+
+[tool.uv.sources]
+dotebench = { path = "../..", editable = true }
+qwen-tts = { path = "../../third_party/qwen3-tts", editable = true }
+torch = [{ index = "pytorch-cuda", marker = "sys_platform == 'linux'" }]
+torchaudio = [{ index = "pytorch-cuda", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

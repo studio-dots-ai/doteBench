@@ -1,0 +1,19 @@
+{
+  "upstream": {
+    "url": "https://github.com/Tencent-Hunyuan/AuK.git",
+    "commit": "d9f30ffe4231dbc90b48cc83a35d310fece0b060",
+    "directory": "auk"
+  },
+  "patches": [
+    {
+      "path": "patches/inference.patch",
+      "sha256": "40f85c63c0345080d8734fb6b0bc12df2caf17c90fc33dbe6374b799eb9395b2"
+    }
+  ],
+  "files": {
+    "src/auk/model/cfm_edit.py": {
+      "before": "fa5dbaa749c43726bf0f12862399761ae2b5470aaa50a848e27cf812346e0703",
+      "after": "59fcbfbc6265039b7c258fff8a834ebbdd694a15343c61f440152ea21c5cb580"
+    }
+  }
+}

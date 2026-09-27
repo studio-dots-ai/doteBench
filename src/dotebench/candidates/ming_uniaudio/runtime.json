@@ -1,0 +1,23 @@
+{
+  "upstream": {
+    "url": "https://github.com/inclusionAI/Ming-UniAudio.git",
+    "commit": "33f86a0a611b16ff1f29f6373303096d230c66dc",
+    "directory": "ming-uniaudio"
+  },
+  "patches": [
+    {
+      "path": "patches/inference.patch",
+      "sha256": "73488c8a634a9ff4fa6d482fd0dab352350c4ab79e8a226217b45c07832dc9d3"
+    }
+  ],
+  "files": {
+    "modeling_bailingmm.py": {
+      "before": "5512c6c378fcce23987ca0c11bbd6a0efb0be3a691359369dd7b5c4358186c4c",
+      "after": "bae2c28a3433129fee05712c0f5dcbdd2f3a6c67bbb3e10fd4d91e976dbed4dc"
+    },
+    "generation_errors.py": {
+      "before": null,
+      "after": "37aade87cc2fc36999ce490b6fd5bc81361402bdb1f20156e8c9420155d188ab"
+    }
+  }
+}

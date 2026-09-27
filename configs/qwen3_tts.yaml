@@ -1,0 +1,31 @@
+defaults:
+  - base
+  - _self_
+services:
+  qwen3_tts:
+    instance_key: qwen3_tts
+    config_key: qwen3_tts
+    host: ${runtime.host}
+    port: 18101
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: ${oc.env:DOTEBENCH_QWEN3_TTS_GPU_IDS,0}
+    startup_timeout_sec: 1800
+    python_bin: ${oc.env:DOTEBENCH_QWEN3_TTS_PYTHON,${runtime.env_root}/dotebench-qwen3-tts/bin/python}
+    upstream: ${runtime.source_root}/third_party/qwen3-tts
+    model_path: ${runtime.model_root}/Qwen3-TTS-12Hz-1.7B-CustomVoice
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    command:
+      - ${..python_bin}
+      - -m
+      - dotebench.materialization.backends.qwen3_tts
+      - --host
+      - ${..host}
+      - --port
+      - ${..port}
+      - --upstream
+      - ${..upstream}
+      - --model-path
+      - ${..model_path}

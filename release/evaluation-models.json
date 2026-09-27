@@ -1,0 +1,32 @@
+{
+  "models": {
+    "qwen3_asr_1_7b": {
+      "repository": "Qwen/Qwen3-ASR-1.7B",
+      "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+      "directory": "Qwen3-ASR-1.7B"
+    },
+    "qwen3_forced_aligner_0_6b": {
+      "repository": "Qwen/Qwen3-ForcedAligner-0.6B",
+      "revision": "c7cbfc2048c462b0d63a45797104fc9db3ad62b7",
+      "directory": "Qwen3-ForcedAligner-0.6B"
+    },
+    "qwen3_omni_30b_a3b_instruct": {
+      "repository": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "revision": "26291f793822fb6be9555850f06dfe95f2d7e695",
+      "directory": "Qwen3-Omni-30B-A3B-Instruct"
+    },
+    "utmos": {
+      "source": "https://github.com/tarepan/SpeechMOS/tree/v1.2.0",
+      "directory": "UTMOS",
+      "filename": "utmos22_strong_step7459_v1.pt",
+      "sha256": "38aa51ab79e2a4e09a1449758a4b37e9cbb2e8235a49662a732d33a9ba1e9bff"
+    },
+    "wavlm_sv": {
+      "source": "https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification",
+      "checkpoint": "WavLM large, fine-tuned",
+      "directory": "wavlm_ecapa",
+      "filename": "wavlm_large_finetune.pth",
+      "sha256": "51f07e3b94d9e0262a6a675ef5a087be3dd09e8c62e9d886827f44f82fe7f94b"
+    }
+  }
+}

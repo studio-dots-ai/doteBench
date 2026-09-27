@@ -1,0 +1,10 @@
+defaults:
+  - qwen3_tts
+  - indextts2
+  - voxcpm2
+  - mimo_audio
+  - qwen3_aligner
+  - _self_
+services:
+  qwen3_aligner:
+    python_bin: ${runtime.env_root}/dotebench-qwen-asr/bin/python

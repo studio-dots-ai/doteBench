@@ -1,0 +1,69 @@
+diff --git a/src/auk/model/cfm_edit.py b/src/auk/model/cfm_edit.py
+index 47bcceb..0614c73 100644
+--- a/src/auk/model/cfm_edit.py
++++ b/src/auk/model/cfm_edit.py
+@@ -156,6 +156,9 @@ class CFMEdit(nn.Module):
+         vocoder: Callable[[float["b d n"]], float["b nw"]] | None = None,
+         use_epss=True,
+         no_ref_audio=False,
++        known_target=None,
++        edit_mask=None,
++        context_mode="clean",
+     ):
+         # ODE state is target-only; ref audio prepended inside backbone.
+         self.eval()
+@@ -186,7 +189,18 @@ class CFMEdit(nn.Module):
+         else:
+             target_mask = None
+ 
+-        def fn(t, x):
++        if (known_target is None) != (edit_mask is None):
++            raise ValueError("known_target and edit_mask must be provided together")
++        if known_target is not None:
++            expected = (batch, int(target_duration.max()), self.num_channels)
++            if tuple(known_target.shape) != expected or tuple(edit_mask.shape) != expected[:2]:
++                raise ValueError("Target context/mask shape does not match target duration")
++            if edit_mask.dtype != torch.bool or context_mode not in ("clean", "bridge"):
++                raise ValueError("Use a boolean edit_mask and clean or bridge context_mode")
++            known_target = known_target.to(device=device, dtype=ref_latent.dtype)
++            edit_mask = edit_mask.to(device=device).unsqueeze(-1)
++
++        def predict(t, x):
+             if cfg_strength < 1e-5:
+                 return self.transformer(
+                     x=x,
+@@ -221,15 +235,32 @@ class CFMEdit(nn.Module):
+             y0.append(torch.randn(dur, self.num_channels, device=self.device, dtype=ref_latent.dtype))
+         y0 = pad_sequence(y0, padding_value=0, batch_first=True)
+ 
++        noise = y0.clone()
++        if known_target is not None and context_mode == "clean":
++            y0 = torch.where(edit_mask, y0, known_target)
++
++        def fn(t, x):
++            if known_target is None:
++                return predict(t, x)
++            context = known_target if context_mode == "clean" else (1 - t) * noise + t * known_target
++            x = torch.where(edit_mask, x, context)
++            velocity = predict(t, x)
++            fixed_velocity = torch.zeros_like(velocity) if context_mode == "clean" else known_target - noise
++            return torch.where(edit_mask, velocity, fixed_velocity)
++
+         t = torch.linspace(0, 1, steps + 1, device=self.device, dtype=torch.float32)
+         if t_grid is not None:
+             t = torch.tensor(t_grid, device=self.device, dtype=torch.float32)
+         elif sway_sampling_coef is not None:
+             t = t + sway_sampling_coef * (torch.cos(torch.pi / 2 * t) - 1 + t)
+ 
+-        trajectory = odeint(fn, y0, t, **self.odeint_kwargs)
+-        self.transformer.clear_cache()
++        try:
++            trajectory = odeint(fn, y0, t, **self.odeint_kwargs)
++        finally:
++            self.transformer.clear_cache()
+         sampled = trajectory[-1]  # [B, max_target_dur, D]
++        if known_target is not None:
++            sampled = torch.where(edit_mask, sampled, known_target)
+ 
+         # assemble [ref | generated] to match caller expectations
+         total_max_dur = duration.amax().item()

@@ -1,0 +1,34 @@
+defaults:
+  - base
+  - _self_
+services:
+  mimo_audio:
+    instance_key: mimo_audio
+    config_key: mimo_audio
+    host: ${runtime.host}
+    port: 18104
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: ${oc.env:DOTEBENCH_MIMO_AUDIO_GPU_IDS,0}
+    startup_timeout_sec: 1800
+    python_bin: ${oc.env:DOTEBENCH_MIMO_AUDIO_PYTHON,${runtime.env_root}/dotebench-mimo-audio-materialization/bin/python}
+    upstream: ${runtime.source_root}/third_party/mimo-audio
+    model_path: ${runtime.model_root}/MiMo-Audio-7B-Instruct
+    tokenizer_path: ${runtime.model_root}/MiMo-Audio-Tokenizer
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    command:
+      - ${..python_bin}
+      - -m
+      - dotebench.materialization.backends.mimo_audio
+      - --host
+      - ${..host}
+      - --port
+      - ${..port}
+      - --upstream
+      - ${..upstream}
+      - --model-path
+      - ${..model_path}
+      - --tokenizer-path
+      - ${..tokenizer_path}

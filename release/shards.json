@@ -1,0 +1,12 @@
+{
+  "version": "v1_0",
+  "manifests": [
+    "text/easy",
+    "text/hard",
+    "emotion/neutral",
+    "emotion/intense",
+    "prosody/default",
+    "pause/default",
+    "compositional/default"
+  ]
+}

@@ -1,0 +1,29 @@
+defaults:
+  - base
+  - _self_
+services:
+  speaker_similarity:
+    instance_key: wavlm-ecapa-sv
+    config_key: wavlm-ecapa-sv
+    python_bin: ${runtime.python}
+    host: ${runtime.host}
+    port: 8019
+    url: http://${.host}:${.port}
+    health_path: /health
+    gpu_ids: "0"
+    startup_timeout_sec: 1800
+    startup_sleep_sec: 0
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    model_path: ${runtime.model_root}/wavlm_ecapa
+    command:
+      - ${..python_bin}
+      - -m
+      - dotebench.services.backends.speaker_similarity
+      - --host
+      - ${..host}
+      - --port
+      - ${..port}
+      - --model-path
+      - ${..model_path}

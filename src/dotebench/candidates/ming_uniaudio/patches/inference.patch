@@ -1,0 +1,225 @@
+--- a/modeling_bailingmm.py
++++ b/modeling_bailingmm.py
+@@ -20,6 +20,11 @@
+ 
+ from configuration_bailingmm import BailingMMConfig
+ from fm.flowloss import FlowLoss
++from generation_errors import (
++    require_audio_latents,
++    resolve_edit_generation_budget,
++    resolve_max_audio_steps,
++)
+ from modeling_bailing_moe import BailingMoeForCausalLM
+ 
+ from modeling_utils import (
+@@ -728,6 +733,7 @@
+         sample_rate=16000,
+         output_wav_path='out.wav',
+         tokenizer=None,
++        max_audio_seconds=None,
+     ):
+         self.tokenizer = tokenizer
+         with torch.autocast(device_type='cuda', dtype=torch.bfloat16):
+@@ -771,15 +777,26 @@
+             else:
+                 rope_deltas = None
+ 
+-            step = 0
+-            max_steps = max(int(input_ids.size(1) * 2.5), 100)
++            generated_steps = 0
+             past_key_values = None
+             edited_text_result = []
+             edited_audio_result = []
+             gene_audio_turn = False
+             audio_step = 0
+-
+-            while step < max_steps:
++            audio_hop_length = int(self.audio.decoder.hop_length)
++            max_audio_steps = resolve_max_audio_steps(
++                max_audio_seconds,
++                sample_rate=sample_rate,
++                patch_size=patch_size,
++                hop_length=audio_hop_length,
++            )
++            generation_budget = resolve_edit_generation_budget(
++                input_token_count=int(input_ids.size(1)),
++                max_audio_steps=max_audio_steps,
++            )
++            stop_reason = "max_total_steps"
++
++            while generated_steps < generation_budget.max_total_steps:
+                 outputs = self.model(
+                     attention_mask=attention_mask,
+                     position_ids=position_ids,
+@@ -793,6 +810,7 @@
+                 )
+                 logits = outputs.logits[:, -1, :]
+                 next_token = torch.softmax(logits, dim=-1).argmax(dim=-1)
++                generated_steps += 1
+ 
+                 if not gene_audio_turn:
+                     inputs_embeds = self.model.get_input_embeddings()(next_token).unsqueeze(0)
+@@ -812,7 +830,15 @@
+                     latent_history = sampled_token_latent
+ 
+                     audio_step += 1
++                    budget_stop_reason = generation_budget.stop_reason(
++                        generated_steps=generated_steps,
++                        audio_steps=audio_step,
++                    )
++                    if budget_stop_reason is not None:
++                        stop_reason = budget_stop_reason
++                        break
+                     if self.stop_head(z_diff)[0][0].softmax(dim=-1)[1]>0.5 and audio_step > 16:
++                        stop_reason = "stop_head"
+                         break
+ 
+                 if self.tokenizer.decode(next_token) == "<gen_audio>":
+@@ -833,10 +859,39 @@
+                     position_ids = position_ids.unsqueeze(0).expand(3, -1, -1)
+ 
+                 attention_mask = torch.ones(next_token.shape[0], 1).to(next_token.device)
+-                step += 1
+-
++
++            edited_text = self.tokenizer.decode(edited_text_result)
++            self.last_edit_metadata = {
++                "input_token_count": int(input_ids.size(1)),
++                "max_steps": int(generation_budget.max_total_steps),
++                "legacy_max_steps": int(generation_budget.legacy_max_steps),
++                "max_total_steps": int(generation_budget.max_total_steps),
++                "generation_budget_mode": (
++                    "legacy"
++                    if max_audio_steps is None
++                    else "audio_cap_with_total_guard"
++                ),
++                "generated_steps": int(generated_steps),
++                "saw_gen_audio": bool(gene_audio_turn),
++                "audio_steps": int(audio_step),
++                "max_audio_steps": max_audio_steps,
++                "max_audio_seconds": max_audio_seconds,
++                "estimated_audio_seconds": (
++                    audio_step * patch_size * audio_hop_length / sample_rate
++                ),
++                "stop_reason": stop_reason,
++                "truncated_by_token_limit": stop_reason
++                in {"max_total_steps", "max_audio_seconds"},
++            }
++            require_audio_latents(
++                edited_audio_result,
++                diagnostics={
++                    **self.last_edit_metadata,
++                    "generated_text": edited_text,
++                    "stop_reason": "max_total_steps_without_gen_audio",
++                },
++            )
+             edited_audio_latents = torch.cat(edited_audio_result, dim = 1)
+             edited_speech = self.audio.decode(edited_audio_latents)[0]
+             torchaudio.save(output_wav_path, edited_speech.cpu()[0], sample_rate=sample_rate)
+-            edited_text = self.tokenizer.decode(edited_text_result)
+             return edited_speech, edited_text
+--- /dev/null
++++ b/generation_errors.py
+@@ -0,0 +1,102 @@
++"""Structured generation failures shared by the Ming model and HTTP service."""
++
++from __future__ import annotations
++
++import math
++from dataclasses import dataclass
++from typing import Any, Sequence, TypeVar
++
++
++T = TypeVar("T")
++DEFAULT_CAPPED_MAX_TOTAL_STEPS = 1024
++
++
++class NoAudioTokensError(RuntimeError):
++    """The language model finished without entering a usable audio turn."""
++
++    error_code = "no_audio_tokens"
++
++    def __init__(self, diagnostics: dict[str, Any]):
++        self.diagnostics = dict(diagnostics)
++        super().__init__("Ming-UniAudio generated no audio latent tokens")
++
++
++@dataclass(frozen=True)
++class EditGenerationBudget:
++    """Independent total-generation and audio-generation limits."""
++
++    legacy_max_steps: int
++    max_audio_steps: int | None
++    max_total_steps: int
++
++    def stop_reason(
++        self,
++        *,
++        generated_steps: int,
++        audio_steps: int,
++    ) -> str | None:
++        if (
++            self.max_audio_steps is not None
++            and audio_steps >= self.max_audio_steps
++        ):
++            return "max_audio_seconds"
++        if generated_steps >= self.max_total_steps:
++            return "max_total_steps"
++        return None
++
++
++def require_audio_latents(
++    latents: Sequence[T],
++    *,
++    diagnostics: dict[str, Any],
++) -> Sequence[T]:
++    """Return non-empty latents or raise a structured model-generation error."""
++
++    if not latents:
++        raise NoAudioTokensError(diagnostics)
++    return latents
++
++
++def resolve_max_audio_steps(
++    max_audio_seconds: float | None,
++    *,
++    sample_rate: int,
++    patch_size: int,
++    hop_length: int,
++) -> int | None:
++    """Convert a wall-clock audio cap to the model's latent patch steps."""
++
++    if max_audio_seconds is None:
++        return None
++    return max(
++        1,
++        math.ceil(
++            float(max_audio_seconds) * sample_rate / (patch_size * hop_length)
++        ),
++    )
++
++
++def resolve_edit_generation_budget(
++    *,
++    input_token_count: int,
++    max_audio_steps: int | None,
++    capped_max_total_steps: int = DEFAULT_CAPPED_MAX_TOTAL_STEPS,
++) -> EditGenerationBudget:
++    """Resolve a bounded edit budget without changing uncapped decoding.
++
++    Upstream decoding historically allows ``max(input_tokens * 2.5, 100)``
++    total steps. An explicit audio-duration cap needs that text/CoT allowance
++    plus an independent safety guard; otherwise a long CoT can consume the
++    entire loop before audio generation starts. The audio-duration limit is
++    tracked separately and does not determine this guard.
++    """
++
++    legacy_max_steps = max(int(input_token_count * 2.5), 100)
++    max_total_steps = legacy_max_steps
++    if max_audio_steps is not None:
++        max_total_steps = max(legacy_max_steps, capped_max_total_steps)
++    return EditGenerationBudget(
++        legacy_max_steps=legacy_max_steps,
++        max_audio_steps=max_audio_steps,
++        max_total_steps=max_total_steps,
++    )
