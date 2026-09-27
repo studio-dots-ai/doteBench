@@ -19,7 +19,7 @@ from dotebench.materialization.backends.common import (
     source_identity,
 )
 from dotebench.materialization.fingerprints import audio_digest
-from dotebench.materialization.manifest import load_inventory
+from dotebench.materialization.manifest import AssetSpec
 from dotebench.materialization.orchestrator import _validate_wav
 from dotebench.materialization.providers import synthesize
 from dotebench.materialization.verification import (
@@ -27,6 +27,7 @@ from dotebench.materialization.verification import (
     _verify_service_identities,
 )
 from dotebench.services import load_service_bundle
+from tests.manifest_fixture import write_manifest
 
 
 def _bundle_builder():
@@ -101,10 +102,19 @@ def test_source_identity_rejects_wrong_remote_commit_and_dirty_checkout(tmp_path
 
 
 def test_provider_request_is_standard_and_preserves_recipe(monkeypatch, tmp_path):
-    spec = next(
-        spec
-        for spec in load_inventory(data_root=Path(__file__).parents[2]).assets.values()
-        if spec.provider == "indextts2"
+    spec = AssetSpec(
+        asset_id="fixture",
+        reference_sha256="a" * 64,
+        source_text="hello",
+        language="en",
+        recipe={
+            "kind": "generate",
+            "provider": "indextts2",
+            "model_id": "fixture",
+            "seed": 7,
+            "parameters": {"temperature": 0.5},
+        },
+        case_ids=("fixture_case",),
     )
     reference = tmp_path / "reference.wav"
     reference.write_bytes(b"reference")
@@ -151,24 +161,14 @@ def test_audio_bundle_rejects_stale_files(tmp_path):
 def test_manifest_contract_rejects_non_audio_mutation(monkeypatch, tmp_path, mutation):
     from dotebench import dataset
 
-    source_root = Path(__file__).parents[2]
-
-    relative = Path("data/emotion/intense/manifest.json")
     canonical_root = tmp_path / "canonical"
     actual_root = tmp_path / "actual"
-    for root in (canonical_root, actual_root):
-        (root / relative.parent).mkdir(parents=True)
-    shutil.copyfile(source_root / relative, canonical_root / relative)
-    shutil.copyfile(source_root / relative, actual_root / relative)
-    (canonical_root / "release").mkdir()
-    (canonical_root / "release/shards.json").write_text(
-        json.dumps(
-            {"version": dataset.data_version(), "manifests": ["emotion/intense"]}
-        )
-    )
+    _, _, canonical_path = write_manifest(canonical_root)
+    shutil.copytree(canonical_root, actual_root)
+    actual_path = actual_root / canonical_path.relative_to(canonical_root)
     monkeypatch.setattr(dataset, "resources", lambda: canonical_root)
     _verify_manifest_contract(actual_root)
-    payload = json.loads((actual_root / relative).read_text())
+    payload = json.loads(actual_path.read_text())
     if mutation == "instruction":
         payload["cases"][0]["instruction_xml"] += " "
     elif mutation == "alignment":
@@ -176,14 +176,8 @@ def test_manifest_contract_rejects_non_audio_mutation(monkeypatch, tmp_path, mut
             "start"
         ] += 0.001
     else:
-        asset_id, recipe = next(
-            (asset_id, recipe)
-            for asset_id, recipe in payload["audio_assets"].items()
-            if recipe["kind"] == "generate"
-        )
-        recipe["seed"] += 1
-        payload["audio_assets"][asset_id] = recipe
-    (actual_root / relative).write_text(json.dumps(payload))
+        payload["audio_assets"]["source"]["path"] = "audio/changed.wav"
+    actual_path.write_text(json.dumps(payload))
     with pytest.raises(ValueError, match="contract|alignment"):
         _verify_manifest_contract(actual_root)
 
@@ -286,7 +280,7 @@ def test_verifier_binds_service_identities_to_release_locks():
             "sha256": MATERIALIZER_IMPLEMENTATION,
         },
         "services": services,
-        "alignment": {"reused": 2081, "generated": 0},
+        "alignment": {"reused": 1, "generated": 0},
     }
     _verify_service_identities(receipt)
     receipt["services"]["mimo_audio"]["source"]["commit"] = "0" * 40
