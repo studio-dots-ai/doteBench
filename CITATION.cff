@@ -23,6 +23,8 @@ authors:
     given-names: Yiwei
   - family-names: Zhang
     given-names: Colin
+  - family-names: Wang
+    given-names: Shuai
   - family-names: Yu
     given-names: Kai
 preferred-citation:
@@ -45,6 +47,8 @@ preferred-citation:
       given-names: Yiwei
     - family-names: Zhang
       given-names: Colin
+    - family-names: Wang
+      given-names: Shuai
     - family-names: Yu
       given-names: Kai
   year: 2026
