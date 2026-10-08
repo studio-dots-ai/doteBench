@@ -187,7 +187,7 @@ Editing with a Continuous Autoregressive Model*](https://arxiv.org/abs/2608.0267
 ```bibtex
 @misc{wang2026dotsttsedit,
   title={dots.tts.edit: Precisely Controlled Speech Editing with a Continuous Autoregressive Model},
-  author={Hankun Wang and Bohan Li and Shi Lian and Xiaoyu Gu and Jing Peng and Da Zheng and Yiwei Guo and Colin Zhang and Kai Yu},
+  author={Hankun Wang and Bohan Li and Shi Lian and Xiaoyu Gu and Jing Peng and Da Zheng and Yiwei Guo and Colin Zhang and Shuai Wang and Kai Yu},
   year={2026},
   eprint={2608.02673},
   archivePrefix={arXiv},
