@@ -2,7 +2,7 @@
   "entrypoint": "dotebench.candidates.ming_uniaudio.compilers.one_take:OneTakeCompiler",
   "dependencies": {},
   "sources": {
-    "dotebench": "441b684bd185f2ed1b0002b42b8aefa0381773aafb67430c0a68f0f160a14de1",
+    "dotebench": "c062ad299cb3bcbcc398b516f284df36193ab73b1c1d6230e24b153c0c7c2fac",
     "dotebench.candidates": "8514b57d117ab51b3cf351651b8387117b3ab71f6297a3d8000d98d0043ae173",
     "dotebench.candidates.common": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "dotebench.candidates.common.selection": "c23c5a7ed14ab6a629aedb6b6184ab6561f945ddff987d94c5b8a0f74cde8210",
@@ -30,5 +30,5 @@
     "dotebench.models.native": "46b9f27367f8592dcaea9eeb6e01261b37145e5ef6754ff4ee607e4c6732d309",
     "dotebench.models.requests": "1ee7511484483aec643ab5acad0d8b906cdeb969206c41fe406f59ae7b888185"
   },
-  "sha256": "2ce38994d21bbc0c52fc4a460fa16505c0fbdc6c54f321dd647c47c17e0aa372"
+  "sha256": "6fb771d8517fa0210381e0a97c653250e21c448651e4b126ad52602705c6dfc2"
 }
