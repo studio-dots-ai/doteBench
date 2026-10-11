@@ -29,11 +29,10 @@ with `source_audio.asset_id`. The entry is one of:
   named synthesis provider with its frozen seed and parameters, and optionally
   use another materialized asset as a reference prompt.
 
-Common Voice output sample rates and WAV serialization profiles are pinned per
-asset in `release/common-voice-conversions.json`. The conversion uses FFmpeg
-swresample and preserves the release WAV metadata where specified. All 226
-source MP3s reproduce their reference WAV hashes with FFmpeg
-`4.4.2-0ubuntu0.22.04.1`; both input and output SHA-256 checks remain mandatory.
+Common Voice conversion profiles in `release/common-voice-conversions.json`
+specify each asset's output sample rate, channels, and WAV serialization. The
+materializer uses FFmpeg swresample and checks the SHA-256 of both the source
+MP3 and the resulting WAV against the release identities.
 
 The recipes are authoritative for construction. The resulting `source_audio.path`
 and `source_audio.sha256` are authoritative for all later benchmark stages.

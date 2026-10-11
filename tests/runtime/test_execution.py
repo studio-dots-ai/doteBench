@@ -34,7 +34,7 @@ def fixture(tmp_path):
 
 class FixtureCandidate(CandidateModel):
     def compilation_identity(self):
-        return {"sha256": "fixture-compiler"}
+        return {"name": "fixture", "compiler": "one_take", "version": 1}
 
     def prepare(self):
         pass
@@ -242,7 +242,11 @@ def test_compiler_change_cannot_complete_run(fixture):
         closed = False
 
         def compilation_identity(self):
-            return {"version": "changed" if self.changed else "original"}
+            return {
+                "name": "fixture",
+                "compiler": "one_take",
+                "version": 2 if self.changed else 1,
+            }
 
         def generate(self, request):
             self.changed = True
@@ -259,12 +263,16 @@ def test_compiler_change_cannot_complete_run(fixture):
 
 
 def test_generation_records_compiler_identity(fixture):
+    from dotebench.candidates.identity.adapter import Identity
+
     case, store = fixture
-    component = FixtureCandidate()
+    component = Identity()
     generate(case, store, component)
-    assert (
-        store.read_json("run.json")["compilation"] == component.compilation_identity()
-    )
+    assert store.read_json("run.json")["compilation"] == {
+        "name": "identity",
+        "compiler": "one_take",
+        "version": 1,
+    }
 
 
 def test_generation_excludes_evaluation_alignment(fixture):
