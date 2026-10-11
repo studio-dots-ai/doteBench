@@ -8,7 +8,7 @@ from pathlib import Path
 
 from dotebench.candidates.registry import CANDIDATES
 
-ALGORITHM = "compiler-source-sha256-v2"
+ALGORITHM = "compiler-source-sha256-v3"
 
 
 def source_path(module):
@@ -117,7 +117,8 @@ def fingerprint(name, compiler="one_take", *, _parents=()):
     modules = set()
     while pending:
         module = pending.pop()
-        if module in modules:
+        # The root package contains distribution metadata, not compiler code.
+        if module == "dotebench" or module in modules:
             continue
         modules.add(module)
         parts = module.split(".")

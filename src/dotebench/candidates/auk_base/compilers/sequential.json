@@ -1,10 +1,9 @@
 {
   "entrypoint": "dotebench.candidates.auk_base.compilers.sequential:SequentialCompiler",
   "dependencies": {
-    "one_take": "dab4f12257fd379cdcc6494bbd8abb83f7bbd8daed1620981aff3db6e5c716e7"
+    "one_take": "408f60141d4c41bba809245fe64921969d3f6b0c7dc4641b07161313502e545d"
   },
   "sources": {
-    "dotebench": "c062ad299cb3bcbcc398b516f284df36193ab73b1c1d6230e24b153c0c7c2fac",
     "dotebench.alignment": "1609e2bced9471685392ecdc098715b26dacae4a4a4f43301ef06bd8f19d5367",
     "dotebench.candidates": "8514b57d117ab51b3cf351651b8387117b3ab71f6297a3d8000d98d0043ae173",
     "dotebench.candidates.auk_base": "16637c1b8a6d4e93c3f531d7bd8a5f3b4fc1192ac4f60b3c8dff81301cd08915",
@@ -15,7 +14,7 @@
     "dotebench.candidates.auk_base.compilers.one_take": "be394dc1e63ba882a7cf660e0f2d7bf3868010d470916be413a377d86f3ccaef",
     "dotebench.candidates.auk_base.compilers.sequential": "71e578819779f066a02593267b2c51fbf4bc7fd67658e0028e70aed6148c054d",
     "dotebench.candidates.registry": "ff86b942f5c44def0f48e579b0c43a1da92ce21c2bafc321c2d2406484cdfad1",
-    "dotebench.compilation": "037b0f8b752fe9d7ffeb6b99a6f47816f76d0b88846adf0ecc925ecc33b8d6a9",
+    "dotebench.compilation": "21615c5c708789e52a2f6f864b3a4f34375f7dfdf09613e5a6da4fb12798f9e6",
     "dotebench.compilers": "27f139bae2248c6b4499e7887ba97e1718e32f5ef22dc5009aec0f3795ab215c",
     "dotebench.compilers.base": "3b6f7be0de6d3656c33534d4fd14549dceb4330d4127d2025f2016320344cea6",
     "dotebench.compilers.one_take": "dd13dc436c87070a18cefe72ab2318540f3ee6dcc45c54933000273a95d6a0a1",
@@ -34,5 +33,5 @@
     "dotebench.models.requests": "1ee7511484483aec643ab5acad0d8b906cdeb969206c41fe406f59ae7b888185",
     "dotebench.text": "f1bbb7b010ffa91d2de40ecc1f0b972fcad6416128f355043500426d30ede7c6"
   },
-  "sha256": "b3f28783421fc51b67cd04e86388b5e3afeb4f576c3fd5990f0c5ef78013094e"
+  "sha256": "3db9cafd744b1dab58d39c3fa30909445dbca74bb1eb3f7c6e94841ebb2c8b98"
 }

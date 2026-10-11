@@ -2,7 +2,6 @@
   "entrypoint": "dotebench.candidates.identity.compilers.one_take:compile_request",
   "dependencies": {},
   "sources": {
-    "dotebench": "c062ad299cb3bcbcc398b516f284df36193ab73b1c1d6230e24b153c0c7c2fac",
     "dotebench.candidates": "8514b57d117ab51b3cf351651b8387117b3ab71f6297a3d8000d98d0043ae173",
     "dotebench.candidates.identity": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "dotebench.candidates.identity.compilers": "205f20a2e4d16d869b09ff30644ba7d1ad6dee86548fb615e3ac7264209f75c4",
@@ -12,5 +11,5 @@
     "dotebench.instructions.rendering": "0f83feb22ae73a0e9a432a1166afe63ffd1c7022111ba20ed04624040667a160",
     "dotebench.instructions.types": "b80a5f0687b22621729bc3a462f5bc4f7f6121918c409c7ed0250dbe6f332734"
   },
-  "sha256": "78eea2dd76807dd30ba301ae0c5cae840e650a1f705be44c1e7c8cbf37813efe"
+  "sha256": "c23e3e2be6c534338181edafd72f890f84abe78cacf8cf21e48c1f2a723a9ef4"
 }
