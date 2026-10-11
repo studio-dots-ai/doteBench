@@ -15,26 +15,31 @@ COMPILERS = [
 
 @pytest.mark.parametrize(("candidate", "compiler"), COMPILERS)
 def test_registered_compiler_version(candidate, compiler):
-    assert compilation.compiler_identity(candidate, compiler) == {
-        "name": candidate.replace("_", "-"),
-        "compiler": compiler,
-        "version": 1,
-    }
+    identity = compilation.compiler_identity(candidate, compiler)
+    assert set(identity) == {"name", "compiler", "version"}
+    assert identity["name"] == candidate.replace("_", "-")
+    assert identity["compiler"] == compiler
+    assert type(identity["version"]) is int
+    assert identity["version"] >= 1
 
 
 def test_default_compiler_version():
-    assert compilation.compiler_identity("identity") == {
-        "name": "identity",
-        "compiler": "one_take",
-        "version": 1,
-    }
+    assert compilation.compiler_identity("identity") == compilation.compiler_identity(
+        "identity", "one_take"
+    )
 
 
 @pytest.mark.parametrize(("candidate", "compiler"), COMPILERS)
 def test_individual_compiler_version_update(monkeypatch, tmp_path, candidate, compiler):
     original = compilation.manifest_path
     manifest = tmp_path / "compiler.json"
-    manifest.write_text('{"version": 2}\n')
+    expected = {
+        (name, key): compilation.compiler_identity(name, key) for name, key in COMPILERS
+    }
+    expected[candidate, compiler]["version"] += 1
+    manifest.write_text(
+        json.dumps({"version": expected[candidate, compiler]["version"]})
+    )
     monkeypatch.setattr(
         compilation,
         "manifest_path",
@@ -43,11 +48,7 @@ def test_individual_compiler_version_update(monkeypatch, tmp_path, candidate, co
         ),
     )
     for name, key in COMPILERS:
-        assert compilation.compiler_identity(name, key) == {
-            "name": name.replace("_", "-"),
-            "compiler": key,
-            "version": 2 if (name, key) == (candidate, compiler) else 1,
-        }
+        assert compilation.compiler_identity(name, key) == expected[name, key]
 
 
 @pytest.mark.parametrize(

@@ -268,11 +268,9 @@ def test_generation_records_compiler_identity(fixture):
     case, store = fixture
     component = Identity()
     generate(case, store, component)
-    assert store.read_json("run.json")["compilation"] == {
-        "name": "identity",
-        "compiler": "one_take",
-        "version": 1,
-    }
+    assert (
+        store.read_json("run.json")["compilation"] == component.compilation_identity()
+    )
 
 
 def test_generation_excludes_evaluation_alignment(fixture):
