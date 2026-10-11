@@ -28,7 +28,7 @@ class CallCompiler(OneTakeCompiler):
         self.action = action
 
     def identity(self):
-        return {"sha256": "test-compiler"}
+        return {"name": "fake", "compiler": "one_take", "version": 1}
 
     def bind_request(self, request, resolved):
         return NativeRequest(
