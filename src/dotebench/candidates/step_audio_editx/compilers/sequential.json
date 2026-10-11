@@ -1,10 +1,10 @@
 {
   "entrypoint": "dotebench.candidates.step_audio_editx.compilers.sequential:SequentialCompiler",
   "dependencies": {
-    "one_take": "52bf2a2400aff2b2dbeaa35509a8eeaee0b92d830cf46a036b88b69740ac29f9"
+    "one_take": "0f214e82203ea4b1e843257d4170b6a3e610ee031a2112096ef651210c824e52"
   },
   "sources": {
-    "dotebench": "441b684bd185f2ed1b0002b42b8aefa0381773aafb67430c0a68f0f160a14de1",
+    "dotebench": "c062ad299cb3bcbcc398b516f284df36193ab73b1c1d6230e24b153c0c7c2fac",
     "dotebench.candidates": "8514b57d117ab51b3cf351651b8387117b3ab71f6297a3d8000d98d0043ae173",
     "dotebench.candidates.common": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "dotebench.candidates.common.selection": "c23c5a7ed14ab6a629aedb6b6184ab6561f945ddff987d94c5b8a0f74cde8210",
@@ -33,5 +33,5 @@
     "dotebench.models.native": "46b9f27367f8592dcaea9eeb6e01261b37145e5ef6754ff4ee607e4c6732d309",
     "dotebench.models.requests": "1ee7511484483aec643ab5acad0d8b906cdeb969206c41fe406f59ae7b888185"
   },
-  "sha256": "fd1ba2eb487648595f571c2bd13d982d05daf32e4b5a9f16e3a1e6ec95ffd084"
+  "sha256": "4022cbbef4431e6ad6b936f948ac850ddca1a4f1e5bb16ff66c6e5d1d8962fe6"
 }

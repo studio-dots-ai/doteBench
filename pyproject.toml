@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "dotebench"
-version = "1.0.0"
+version = "1.0.1"
 description = "A bilingual benchmark for precise speech editing"
 readme = "README.md"
 license = "Apache-2.0 AND MIT AND CC-BY-SA-3.0"

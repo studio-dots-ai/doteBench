@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use doteBench, please cite this software and the associated paper."
 type: software
 title: "doteBench: A bilingual benchmark for precise speech editing"
-version: 1.0.0
+version: 1.0.1
 license: Apache-2.0
 repository-code: "https://github.com/studio-dots-ai/doteBench"
 url: "https://github.com/studio-dots-ai/doteBench"
