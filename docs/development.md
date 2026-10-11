@@ -88,7 +88,9 @@ must record its own model and cache identity.
 Compiler manifests live beside each compiler entrypoint. They register static
 imports, transitive source hashes, dependencies, and the aggregate SHA-256.
 The fingerprint algorithm is defined in `compilation.py`. Generation checks
-the manifests before startup and after execution.
+the manifests before startup and after execution. Distribution metadata in the
+top-level `dotebench/__init__.py` is excluded, so a package version change alone
+preserves compiler identities.
 
 ~~~bash
 python -m dotebench.compilation check

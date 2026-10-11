@@ -1,10 +1,9 @@
 {
   "entrypoint": "dotebench.candidates.mimo_audio_instruct.compilers.sequential:SequentialCompiler",
   "dependencies": {
-    "one_take": "f37356c83e416ef889452d2b1ce2dd6c8070410b2cd01dbeeaad29fb7d472437"
+    "one_take": "62a4f187ec4455d0d321910eddb4711a0bb230b41593fd56bced40f65a745cb9"
   },
   "sources": {
-    "dotebench": "c062ad299cb3bcbcc398b516f284df36193ab73b1c1d6230e24b153c0c7c2fac",
     "dotebench.candidates": "8514b57d117ab51b3cf351651b8387117b3ab71f6297a3d8000d98d0043ae173",
     "dotebench.candidates.common": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "dotebench.candidates.common.selection": "c23c5a7ed14ab6a629aedb6b6184ab6561f945ddff987d94c5b8a0f74cde8210",
@@ -15,7 +14,7 @@
     "dotebench.candidates.mimo_audio_instruct.compilers.one_take": "5e99f136da925fa9f7c2ec7a2be2751ed4dbac8951528753777a9c30dbef1af5",
     "dotebench.candidates.mimo_audio_instruct.compilers.sequential": "b68f486b39713dafdf6fe5ab5d95385dcdd4e8fc580e6a9e4ea9203fc293c70c",
     "dotebench.candidates.registry": "ff86b942f5c44def0f48e579b0c43a1da92ce21c2bafc321c2d2406484cdfad1",
-    "dotebench.compilation": "037b0f8b752fe9d7ffeb6b99a6f47816f76d0b88846adf0ecc925ecc33b8d6a9",
+    "dotebench.compilation": "21615c5c708789e52a2f6f864b3a4f34375f7dfdf09613e5a6da4fb12798f9e6",
     "dotebench.compilers": "27f139bae2248c6b4499e7887ba97e1718e32f5ef22dc5009aec0f3795ab215c",
     "dotebench.compilers.base": "3b6f7be0de6d3656c33534d4fd14549dceb4330d4127d2025f2016320344cea6",
     "dotebench.compilers.one_take": "dd13dc436c87070a18cefe72ab2318540f3ee6dcc45c54933000273a95d6a0a1",
@@ -33,5 +32,5 @@
     "dotebench.models.native": "46b9f27367f8592dcaea9eeb6e01261b37145e5ef6754ff4ee607e4c6732d309",
     "dotebench.models.requests": "1ee7511484483aec643ab5acad0d8b906cdeb969206c41fe406f59ae7b888185"
   },
-  "sha256": "30c100fec1d70b38230153bc0d991e3615fa0d590d00d53d64b1369332b044d0"
+  "sha256": "4dd88493a1dd492534dea41f9dba1002d97928f7d29dc22d96bff58b5d486d47"
 }

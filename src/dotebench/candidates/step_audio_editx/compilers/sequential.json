@@ -1,10 +1,9 @@
 {
   "entrypoint": "dotebench.candidates.step_audio_editx.compilers.sequential:SequentialCompiler",
   "dependencies": {
-    "one_take": "0f214e82203ea4b1e843257d4170b6a3e610ee031a2112096ef651210c824e52"
+    "one_take": "52c52e1ca47181cd4e37c3ccd5e349e60dd9d2f201f3e3cc960e0cfb87979750"
   },
   "sources": {
-    "dotebench": "c062ad299cb3bcbcc398b516f284df36193ab73b1c1d6230e24b153c0c7c2fac",
     "dotebench.candidates": "8514b57d117ab51b3cf351651b8387117b3ab71f6297a3d8000d98d0043ae173",
     "dotebench.candidates.common": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "dotebench.candidates.common.selection": "c23c5a7ed14ab6a629aedb6b6184ab6561f945ddff987d94c5b8a0f74cde8210",
@@ -15,7 +14,7 @@
     "dotebench.candidates.step_audio_editx.compilers": "8eac17195f2d86c11ed5451b748b36cb9a485aa423fc71ef64b457bb98447f35",
     "dotebench.candidates.step_audio_editx.compilers.one_take": "30c8bec54884ad233e1bb5055d1182a4816a66bed26e67aabc5a09afcbbc17c7",
     "dotebench.candidates.step_audio_editx.compilers.sequential": "fc5050cc8a00d67a82121ac4037cd346d7213d0a8e8fad158405b477dd875168",
-    "dotebench.compilation": "037b0f8b752fe9d7ffeb6b99a6f47816f76d0b88846adf0ecc925ecc33b8d6a9",
+    "dotebench.compilation": "21615c5c708789e52a2f6f864b3a4f34375f7dfdf09613e5a6da4fb12798f9e6",
     "dotebench.compilers": "27f139bae2248c6b4499e7887ba97e1718e32f5ef22dc5009aec0f3795ab215c",
     "dotebench.compilers.base": "3b6f7be0de6d3656c33534d4fd14549dceb4330d4127d2025f2016320344cea6",
     "dotebench.compilers.one_take": "dd13dc436c87070a18cefe72ab2318540f3ee6dcc45c54933000273a95d6a0a1",
@@ -33,5 +32,5 @@
     "dotebench.models.native": "46b9f27367f8592dcaea9eeb6e01261b37145e5ef6754ff4ee607e4c6732d309",
     "dotebench.models.requests": "1ee7511484483aec643ab5acad0d8b906cdeb969206c41fe406f59ae7b888185"
   },
-  "sha256": "4022cbbef4431e6ad6b936f948ac850ddca1a4f1e5bb16ff66c6e5d1d8962fe6"
+  "sha256": "6223e69370525bdb0e272a184fe8bb635f3a7c180e0133e24564a77341b9de83"
 }
