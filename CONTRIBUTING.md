@@ -29,8 +29,9 @@ identifiers.
   a separate review of the scoring contract.
 - XML is the authoritative edit instruction. Do not add a second transcript or
   parsed-operation authority to the candidate request.
-- Candidate compiler identities are derived from source SHA-256. Refresh a
-  compiler manifest only after reviewing its effective model input.
+- Each candidate compiler has a version in its adjacent JSON manifest.
+  Increment affected versions when changing model input or shared compilation
+  behavior, and review them with the candidate request tests.
 - Candidate code must not read frozen evaluation alignments.
 - Preserve third-party notices and update provenance when adding or replacing
   any data or model source.

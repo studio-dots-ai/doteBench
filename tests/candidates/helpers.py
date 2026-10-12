@@ -132,7 +132,13 @@ def assert_cli_wiring(monkeypatch, tmp_path, candidate_name, *, has_aligner=Fals
         CANDIDATES[candidate_name].adapter,
     )
     monkeypatch.setattr(
-        candidate_class, "compilation_identity", lambda self: {"sha256": "test"}
+        candidate_class,
+        "compilation_identity",
+        lambda self: {
+            "name": candidate_name.replace("_", "-"),
+            "compiler": "one_take",
+            "version": 1,
+        },
     )
     start = Mock(side_effect=lambda **kwargs: nullcontext())
     monkeypatch.setattr(processes, "start_services", start)

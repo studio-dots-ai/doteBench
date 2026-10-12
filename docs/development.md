@@ -85,20 +85,22 @@ must record its own model and cache identity.
 
 ## Compiler and runtime identities
 
-Compiler manifests live beside each compiler entrypoint. They register static
-imports, transitive source hashes, dependencies, and the aggregate SHA-256.
-The fingerprint algorithm is defined in `compilation.py`. Generation checks
-the manifests before startup and after execution.
+Each compiler entrypoint has an adjacent JSON manifest containing a positive
+integer `version`. Generation records the candidate, compiler name, and version
+in `run.json`, and checks that this identity is consistent through execution.
 
 ~~~bash
 python -m dotebench.compilation check
-python -m dotebench.compilation refresh \
+python -m dotebench.compilation check \
   --candidate ming-uniaudio \
   --compiler sequential
 ~~~
 
-Refresh a manifest only after reviewing the effective model input and running
-request tests. Frozen runs retain the identity recorded at creation.
+Increment the version of every affected compiler when changing its model input,
+XML rendering, or shared compilation behavior. A change to logic shared by
+one-take and sequential compilation requires updating both versions. Review the
+version changes alongside the candidate request tests. Frozen runs retain the
+version recorded at creation.
 
 Native runtime identity is separate. It covers the official commit, patch,
 service adapter, common launcher, and environment lock. Startup verifies the
@@ -147,12 +149,12 @@ Review the public contract version whenever the scoring behavior changes.
 
 The dataset version is declared by <code>release/shards.json</code>; the evaluator
 protocol has its own version in <code>release/evaluation-protocol.json</code>. Python distribution
-metadata has an independent package version. Compiler and runtime identities
+metadata has an independent package version. Compiler versions identify reviewed compilation behavior. Runtime identities
 describe their source and dependency content.
 
 Changes to manifest semantics, XML grammar, evaluation formulas, failure
-penalties, or aggregation require a new public contract version. Source-only
-compiler changes require refreshed compiler identities. Dependency releases and
+penalties, or aggregation require a new public contract version. Changes to compilation behavior
+require incrementing the affected compiler versions. Dependency releases and
 upstream model revisions keep their upstream versions.
 
 ## Development checks

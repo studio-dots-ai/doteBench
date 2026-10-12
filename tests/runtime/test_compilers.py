@@ -55,7 +55,7 @@ class FakeCandidate(CompiledCandidate):
         self.inputs = []
 
     def compilation_identity(self):
-        return {"sha256": "test-compiler"}
+        return {"name": "fake", "compiler": self.compiler.name, "version": 1}
 
     def prepare(self):
         pass

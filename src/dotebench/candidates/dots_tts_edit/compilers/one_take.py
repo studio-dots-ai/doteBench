@@ -4,8 +4,6 @@ from dotebench.models.requests import NativeRequest
 
 from ..compile import compile_public_runtime_request
 
-DEPENDENCIES = ()
-
 
 class OneTakeCompiler(BaseOneTakeCompiler):
     candidate_name = "dots_tts_edit"
