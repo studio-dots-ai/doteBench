@@ -1,6 +1,6 @@
 # doteBench audio bundle notice
 
-This bundle contains 1,026 content-addressed WAV files used to materialize the
+This bundle contains 1,027 content-addressed WAV files used to materialize the
 doteBench data layer. Per-file source identifiers, license evidence, case
 membership, and transformation provenance are recorded in
 `audio-provenance.jsonl`.
