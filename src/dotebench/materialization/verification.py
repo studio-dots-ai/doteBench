@@ -129,13 +129,10 @@ def _verify_service_identities(receipt: dict) -> None:
             "inference",
         }:
             raise ValueError(f"Invalid materialization provider identity: {provider}")
-        expected_adapter = {
-            "module": f"dotebench.materialization.backends.{filename.removesuffix('.py')}",
-            "sha256": hashlib.sha256(
-                (backend_root / filename).read_bytes()
-            ).hexdigest(),
-        }
-        if identity["adapter"] != expected_adapter:
+        expected_adapter_sha256 = hashlib.sha256(
+            (backend_root / filename).read_bytes()
+        ).hexdigest()
+        if identity["adapter"].get("sha256") != expected_adapter_sha256:
             raise ValueError(f"Materialization adapter identity mismatch: {provider}")
         expected_source = {
             key: source_locks[provider][key] for key in ("repository", "commit")

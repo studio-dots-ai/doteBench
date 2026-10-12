@@ -29,6 +29,11 @@ with `source_audio.asset_id`. The entry is one of:
   named synthesis provider with its frozen seed and parameters, and optionally
   use another materialized asset as a reference prompt.
 
+Common Voice conversion profiles in `release/common-voice-conversions.json`
+specify each asset's output sample rate, channels, and WAV serialization. The
+materializer uses FFmpeg swresample and checks the SHA-256 of both the source
+MP3 and the resulting WAV against the release identities.
+
 The recipes are authoritative for construction. The resulting `source_audio.path`
 and `source_audio.sha256` are authoritative for all later benchmark stages.
 `asset_id` remains stable when a generated WAV has a different content hash.

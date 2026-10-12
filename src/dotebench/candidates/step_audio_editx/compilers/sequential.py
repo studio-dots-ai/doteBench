@@ -2,8 +2,6 @@ from dotebench.compilers.sequential import SequentialCompiler as BaseSequentialC
 
 from .one_take import OneTakeCompiler
 
-DEPENDENCIES = ("one_take",)
-
 
 class SequentialCompiler(BaseSequentialCompiler):
     candidate_name = "step_audio_editx"

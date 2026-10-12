@@ -8,11 +8,11 @@ import hashlib
 import io
 import json
 import os
+import struct
 import subprocess
 import tempfile
 from pathlib import Path
 
-import numpy as np
 import requests
 import soundfile as sf
 
@@ -51,19 +51,28 @@ def _validate_wav(data: bytes) -> None:
             raise ValueError("Expected a non-empty WAV file")
 
 
-def _decode_common_voice(source: Path) -> bytes:
-    """Reproduce the frozen ffmpeg MP3 decode and PCM16 WAV serialization."""
-    info = sf.info(source)
-    if info.channels < 1 or info.samplerate < 1:
-        raise ValueError(f"Invalid Common Voice audio: {source}")
+def _decode_common_voice(source: Path, profile: dict) -> bytes:
+    """Reproduce the released PCM16 waveform and WAV serialization."""
+    rate = profile["sample_rate"]
+    channels = profile["channels"]
+    layout = profile["wav_serialization"]
     raw = subprocess.check_output(
         [
             "ffmpeg",
+            "-nostdin",
             "-hide_banner",
             "-loglevel",
             "error",
             "-i",
             str(source),
+            "-map",
+            "0:a:0",
+            "-ac",
+            str(channels),
+            "-ar",
+            str(rate),
+            "-af",
+            "aresample=resampler=swr:filter_size=32:phase_shift=10:linear_interp=1:exact_rational=1:cutoff=0:dither_method=none",
             "-f",
             "s16le",
             "-acodec",
@@ -71,14 +80,20 @@ def _decode_common_voice(source: Path) -> bytes:
             "pipe:1",
         ]
     )
-    samples = np.frombuffer(raw, dtype="<i2")
-    if info.channels > 1:
-        if len(samples) % info.channels:
-            raise ValueError("Decoded Common Voice channel count mismatch")
-        samples = samples.reshape(-1, info.channels)
-    output = io.BytesIO()
-    sf.write(output, samples, info.samplerate, format="WAV", subtype="PCM_16")
-    return output.getvalue()
+    if not raw or len(raw) % (2 * channels):
+        raise ValueError("Invalid PCM16 data")
+    fmt = b"fmt " + struct.pack(
+        "<IHHIIHH", 16, 1, channels, rate, rate * channels * 2, channels * 2, 16
+    )
+    metadata = b""
+    if layout == "pcm16_lavf58_76_100":
+        # Preserve the software metadata stored in the frozen release WAVs.
+        software = b"Lavf58.76.100\x00"
+        software += b"\x00" * (len(software) % 2)
+        info = b"INFOISFT" + struct.pack("<I", len(software)) + software
+        metadata = b"LIST" + struct.pack("<I", len(info)) + info
+    body = b"WAVE" + fmt + metadata + b"data" + struct.pack("<I", len(raw)) + raw
+    return b"RIFF" + struct.pack("<I", len(body)) + body
 
 
 class Materializer:
@@ -123,6 +138,9 @@ class Materializer:
         return path
 
     def materialize_static(self) -> None:
+        conversions = dataset.read_json(
+            dataset.resources() / "release/common-voice-conversions.json"
+        )
         for spec in self.inventory.assets.values():
             if spec.kind == "bundle":
                 source = dataset.relative_path(
@@ -139,7 +157,7 @@ class Materializer:
                     raise ValueError(
                         f"Upstream audio checksum mismatch: {spec.asset_id}"
                     )
-                data = _decode_common_voice(source)
+                data = _decode_common_voice(source, conversions[spec.asset_id])
                 if hashlib.sha256(data).hexdigest() != spec.reference_sha256:
                     raise ValueError(
                         f"Common Voice conversion differs from the release reference: {spec.asset_id}"

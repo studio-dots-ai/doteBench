@@ -5,8 +5,6 @@ from dotebench.compilers.one_take import OneTakeCompiler as BaseOneTakeCompiler
 
 from ..compile import compile_request
 
-DEPENDENCIES = ()
-
 
 @dataclass(frozen=True)
 class AlignmentRequirement(Requirement):
