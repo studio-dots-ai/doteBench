@@ -507,10 +507,8 @@ class DoteBenchEvaluator(EvaluationProtocol):
                         if source_time
                         else None
                     )
-                    if source_gap is None or not pause_anchors_valid(
-                        source_segments, case.source_text, operation.source.start
-                    ):
-                        raise ValueError("Missing valid frozen source pause anchors")
+                    if source_gap is None:
+                        raise ValueError("Missing frozen source gap")
                     valid_target = pause_anchors_valid(
                         target_segments, case.target_text, operation.target.start
                     )
@@ -606,10 +604,6 @@ class DoteBenchEvaluator(EvaluationProtocol):
                     raise ValueError("Empty source rate span")
                 measurement["duration_l1_sec"] = (end - start) / float(params["factor"])
             if op.kind == "pause":
-                if not pause_anchors_valid(
-                    source_segments, case.source_text, op.source.start
-                ):
-                    raise ValueError("Missing valid frozen source pause anchors")
                 start, end = query_intervals(
                     source_segments,
                     case.source_text,

@@ -148,10 +148,15 @@ alignment rejection criterion.
 One generated audio produces one alignment shared by every metric consumer.
 Operation queries extract intervals from that same alignment. Source queries use
 the manifest alignment. Pause queries select the left word's end and right word's
-start and clamp negative gaps to zero. Required pause anchors must have positive
-duration. At utterance boundaries only the existing neighboring word is required;
-the other endpoint is the audio boundary. Positive-duration anchors may touch or
-overlap and legitimately yield a zero gap.
+start and clamp negative gaps to zero. Required target pause anchors must have
+positive duration. At utterance boundaries only the existing neighboring word is
+required; the other endpoint is the audio boundary. Positive-duration anchors may
+touch or overlap and legitimately yield a zero gap.
+
+The source gap is the authoritative reference from the frozen alignment and may
+be zero. The target anchor-duration check validates output realization. It does
+not change source-reference eligibility. Inserting a pause from a zero source gap
+is valid; reducing a zero source gap cannot satisfy the 160 ms reduction threshold.
 
 Rate success requires positive target duration for every source-positive-duration
 word in the XML region, as well as a positive region duration. The duration ratio
@@ -281,9 +286,9 @@ while retaining its observed duration error. Missing or zero-duration required
 pause anchors produce `measurement_status: missing_target`, raw
 `target_gap_sec: null`, and a scoring `pause_delta_sec: 0` (no edit). Both
 `success` and `direction_correct` are false, including in direction accuracy.
-With valid anchors, a genuine zero gap is scored normally. Invalid source pause
-anchors or a rate region without positive-duration source words raise a contract
-error. These source requirements also apply to candidate generation failures.
+With valid target anchors, a genuine zero gap is scored normally. A rate region
+without positive-duration source words raises a contract error. Source-reference
+requirements also apply to candidate generation failures.
 
 Explicit null F0 statistics represent unvoiced spans. Missing statistic fields,
 non-numeric/non-finite/non-positive statistics, and incomplete service responses

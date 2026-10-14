@@ -503,13 +503,57 @@ def test_boundary_pause_requires_only_existing_anchor(boundary, missing):
     assert row["measurement"]["target_gap_sec"] == (None if missing else 0)
 
 
-def test_pause_invalid_source_anchor_is_contract_error():
-    with pytest.raises(ValueError, match="source pause anchors"):
-        acoustic_components(
-            'one<pause act="ins"/>',
-            [WordSegment("one", 0, 0)],
-            [WordSegment("one", 0, 1)],
-        )
+@pytest.mark.parametrize(
+    "act,source_gap,target_gap,expected",
+    [
+        ("ins", 0.0, 0.2, True),
+        ("ins", 0.0, 0.0, False),
+        ("red", 0.0, 0.0, False),
+        ("red", 0.0, 0.2, False),
+        ("red", 0.4, 0.0, True),
+        ("ins", 0.4, 0.6, True),
+    ],
+)
+def test_pause_uses_frozen_source_gap_with_collapsed_source_neighbor(
+    act, source_gap, target_gap, expected
+):
+    row = acoustic_components(
+        f'one <pause act="{act}"/>two',
+        [WordSegment("one", 0, 0), WordSegment("two", source_gap, source_gap + 0.3)],
+        [
+            WordSegment("one", 0, 0.3),
+            WordSegment("two", 0.3 + target_gap, 0.6 + target_gap),
+        ],
+    )[0]
+    assert row["measurement"]["source_gap_sec"] == source_gap
+    assert row["measurement"]["target_gap_sec"] == pytest.approx(target_gap)
+    assert row["success"] is expected
+    assert row["measurement"]["direction_correct"] is expected
+
+
+def test_failed_candidate_keeps_frozen_pause_reference_with_collapsed_neighbor():
+    from dataclasses import replace
+    from dotebench.domain import AlignmentUnit
+
+    c = case('one <pause act="ins"/>two')
+    frozen = c.annotations.source_alignment
+    source = list(frozen.segments)
+    source[0] = AlignmentUnit(source[0].word, source[0].start, source[0].start)
+    c = replace(
+        c,
+        annotations=replace(
+            c.annotations, source_alignment=replace(frozen, segments=tuple(source))
+        ),
+    )
+    result = DoteBenchEvaluator(Abilities(c.target_text)).evaluate(
+        request(c, "candidate_error")
+    )
+    row = result.metrics["components"][0]
+    assert row["success"] is False
+    assert row["measurement"]["source_gap_sec"] == pytest.approx(
+        source[1].start - source[0].end
+    )
+    assert row["measurement"]["direction_correct"] is False
 
 
 @pytest.mark.parametrize(
