@@ -55,7 +55,12 @@ def test_wdtw_duration_and_empty_denominator(monkeypatch):
             (),
             {
                 "raise_for_status": lambda self: None,
-                "json": lambda self: {"spans": [{} for _ in json["spans"]]},
+                "json": lambda self: {
+                    "spans": [
+                        {"min_f0_hz": None, "max_f0_hz": None, "mean_f0_hz": None}
+                        for _ in json["spans"]
+                    ]
+                },
             },
         )()
 
@@ -216,7 +221,12 @@ def test_wdtw_preserves_raw_word_and_requires_complete_f0_response():
     payload = preservation_payload([segment], [segment])
     with pytest.raises(ValueError, match="every requested span"):
         wdtw.measure_spans(payload, lambda p: {"spans": []})
-    result = wdtw.measure_spans(payload, lambda p: {"spans": [{}]})
+    result = wdtw.measure_spans(
+        payload,
+        lambda p: {
+            "spans": [{"min_f0_hz": None, "max_f0_hz": None, "mean_f0_hz": None}]
+        },
+    )
     assert result["wdtw_f0"]["word_results"][0]["source_span"]["raw_word"] == "A"
     payload["f0_target"] = []
     with pytest.raises(ValueError, match="counts must match"):

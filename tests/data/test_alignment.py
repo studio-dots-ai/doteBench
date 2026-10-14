@@ -127,7 +127,7 @@ def test_many_operations_share_target_alignment():
     assert (emotion["start"], emotion["end"]) == (0.5, 0.7)
 
 
-def test_zero_target_rate_keeps_numeric_success_rule():
+def test_zero_target_rate_keeps_numeric_measurement_and_fails():
     from dotebench.evaluation.evaluator import DoteBenchEvaluator
     from tests.evaluation.test_protocol import Abilities, case, request
 
@@ -142,7 +142,7 @@ def test_zero_target_rate_keeps_numeric_success_rule():
     result = DoteBenchEvaluator(Zero(c.target_text)).evaluate(request(c))
     row = result.metrics["components"][0]
     assert row["measurement"]["target_span"] == {"start": 0.25, "end": 0.25}
-    assert row["success"] is True
+    assert row["success"] is False
 
 
 def test_query_service_live_http(tmp_path):

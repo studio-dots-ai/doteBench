@@ -1,7 +1,11 @@
 # Evaluation protocol
 
-The V1.0 scoring protocol is identified as `v1_0` in
-`release/evaluation-protocol.json` and in evaluation run records.
+The current scoring protocol is identified as `v1_1` in
+`release/evaluation-protocol.json` and in evaluation run records. It fixes scoring
+of missing target measurements. Historical `v1_0` records retain their original
+identity and must not be pooled with `v1_1`. Re-evaluation can reuse generated
+audio and valid raw alignment/F0 caches, but must write new evaluation artifacts.
+The dataset version is unchanged.
 
 See [Using doteBench](usage.md) for the complete generate, evaluate, and report
 workflow. This page defines evaluator preparation and formal scoring.
@@ -144,8 +148,17 @@ alignment rejection criterion.
 One generated audio produces one alignment shared by every metric consumer.
 Operation queries extract intervals from that same alignment. Source queries use
 the manifest alignment. Pause queries select the left word's end and right word's
-start and clamp negative gaps to zero. A zero target rate duration remains zero
-in duration error and directional success calculations.
+start and clamp negative gaps to zero. Required pause anchors must have positive
+duration. At utterance boundaries only the existing neighboring word is required;
+the other endpoint is the audio boundary. Positive-duration anchors may touch or
+overlap and legitimately yield a zero gap.
+
+Rate success requires positive target duration for every source-positive-duration
+word in the XML region, as well as a positive region duration. The duration ratio
+and error still use the observed region envelope, including a numeric zero for a
+collapsed target. This alignment condition detects missing acoustic support;
+recognition metrics separately assess content accuracy, since forced alignment
+does not establish that the requested words were actually spoken.
 
 The aligner service accepts `POST /measure` with `text`, `alignment`, `queries`
 and `audio_duration` for pure extraction; `alignment` is an ordered list of
@@ -188,18 +201,32 @@ requested spans. WDTW obtains its F0 measurements from the F0 service.
 Source words with zero duration are removed, together with their corresponding
 target words, from both preservation branches before F0 extraction. Target words
 with zero duration remain in duration preservation, but are never submitted to
-F0 extraction. WDTW F0 includes a word only when both sides provide finite positive
-minimum, maximum and mean F0; other words contribute neither error nor normalizer.
-Each measurable word contributes the mean of those three absolute semitone errors.
-An empty metric has null value and zero sufficient statistics.
+F0 extraction. WDTW F0 eligibility depends only on finite positive source
+minimum, maximum and mean F0. Each source-valid word contributes one unit to the
+normalizer. When its target statistics are available, its error is the mean of
+the three absolute semitone differences. When target duration or F0 is missing,
+its word error is 8 semitones, reusing the existing empty-output penalty at the
+same word-weighted granularity. This is a scoring convention, not an inferred
+pitch measurement or an upper bound on measured errors. The word and metric
+`status` record `penalized_missing_target_f0`; raw source/target F0 statistics
+remain in `word_results`, and no synthetic measured statistics are inserted.
+Source-unvoiced words do not contribute. An empty source-valid set has null
+metric value and zero sufficient statistics, independently of candidate output.
 
-Pitch effects pair words within each XML operation by position. Both word durations
-must be positive and both median F0 values finite and positive. The operation's
-signed shift is the arithmetic mean of `12 * log2(target/source)` across these
-pairs. Its error is the absolute difference from the requested shift. An operation
-with no comparable pairs is unmeasurable, including when source and target have
-F0 only at different word positions. Partial measurability retains the operation.
-Whole-sentence pitch participates in duration preservation.
+Pitch effects pair words within each XML operation by position. Eligibility
+requires positive source word duration and finite positive source median F0;
+naturally unvoiced source words are not required target measurements. For each
+eligible word, use `12 * log2(target/source)` when target duration and median F0
+are available, or a scoring shift of zero (no edit) otherwise. The operation's
+signed shift is the arithmetic mean over this source-defined set. Its error is
+the absolute difference between that mean and the requested shift. Thus complete
+target loss yields shift 0 and error `abs(requested shift)`; partial loss retains
+missing words in the mean. Any missing required target word makes the operation
+fail, even when the resulting mean reaches the directional threshold.
+`measurement_status: missing_target` distinguishes scoring fallback from a
+fully measured shift (`ok`). A pitch operation with no valid source reference
+raises a data/evaluation contract error. Whole-sentence pitch participates in
+duration preservation.
 
 ### Emotion classification
 
@@ -229,15 +256,18 @@ rounding belongs to presentation.
 
 Pitch and rate errors and component success rates weight XML operations equally.
 Speaker similarity, UTMOS and all-component success weight samples equally.
-An unmeasurable pitch operation contributes to neither pitch error nor component
-success. All-component success tests the remaining operations; a sample with no
-remaining operations has no contribution to that metric. Distance and normalizer retain the sufficient statistics for aggregation.
+Every instructed operation contributes a boolean success to Component, including
+output-side measurement failures. All tests every operation in a sample; missing
+output cannot reduce either denominator. Pitch fallback errors remain finite and
+contribute to the operation-weighted mean. Distance and normalizer retain the
+sufficient statistics for aggregation.
 
 ## Failure policy
 
 Candidate generation failures remain scored: recognition error is 100% for a
 nonempty reference, speaker similarity 0, UTMOS 1, WDTW-Dur 1, WDTW-F0 8 semitones,
-and pitch error 8 semitones. All instructed components fail. Preservation penalties
+and pitch shift 0 with error equal to the absolute requested shift. All instructed
+components fail. Preservation penalties
 apply only to XML-preserved source objects: duration uses preserved source seconds
 with zero target duration; F0 uses the number of measurable preserved source words.
 There is no preservation penalty when the metric has no reference objects. Local
@@ -246,9 +276,18 @@ Rate failure error is source duration divided by the requested factor for every
 category.
 
 For generated audio, an empty emotion region fails locally without invoking the
-classifier. A zero target rate duration remains zero, including in direction
-success. A zero pause gap is a valid gap measurement. Unmeasurable F0 follows the
-exclusions above and is distinct from a missing service response.
+classifier. A collapsed or partially missing required target rate region fails
+while retaining its observed duration error. Missing or zero-duration required
+pause anchors produce `measurement_status: missing_target`, raw
+`target_gap_sec: null`, and a scoring `pause_delta_sec: 0` (no edit). Both
+`success` and `direction_correct` are false, including in direction accuracy.
+With valid anchors, a genuine zero gap is scored normally. Invalid source pause
+anchors or a rate region without positive-duration source words raise a contract
+error. These source requirements also apply to candidate generation failures.
+
+Explicit null F0 statistics represent unvoiced spans. Missing statistic fields,
+non-numeric/non-finite/non-positive statistics, and incomplete service responses
+are infrastructure errors, not candidate missingness.
 
 Missing metric responses, unavailable services, invalid alignments, and corrupted
 stored audio are evaluation infrastructure errors. These leave the evaluation

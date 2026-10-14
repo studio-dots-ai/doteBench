@@ -173,7 +173,20 @@ class Abilities:
         if name == "emotion":
             return {"predicted_emotion": "happy"}
         if name == "f0":
-            return {"spans": [{"median_f0_hz": None} for _ in payload["spans"]]}
+            return {
+                "spans": [
+                    {
+                        key: None
+                        for key in (
+                            "median_f0_hz",
+                            "min_f0_hz",
+                            "max_f0_hz",
+                            "mean_f0_hz",
+                        )
+                    }
+                    for _ in payload["spans"]
+                ]
+            }
         raise AssertionError(name)
 
 
@@ -267,7 +280,7 @@ def test_local_emotion_uses_padded_crop():
     assert (payload["start"], payload["end"]) == (0.5, 1.0)
 
 
-def test_compositional_unvoiced_pitch_is_unmeasurable():
+def test_compositional_pitch_without_source_reference_raises():
     case = make_case(
         '<pitch semitones="3">hello</pitch> <emo type="happy" level="2">world</emo>',
         Annotations(
@@ -277,19 +290,17 @@ def test_compositional_unvoiced_pitch_is_unmeasurable():
         ),
     )
     segments = [WordSegment("hello", 0.1, 0.5), WordSegment("world", 0.7, 1.0)]
-    rows = DoteBenchEvaluator(
-        Abilities([[(0.1, 0.5), (0.7, 1.0)], [(0.1, 0.5)]])
-    )._components(
-        case,
-        wav(),
-        wav(),
-        hypothesis=None,
-        source_segments=segments,
-        target_segments=segments,
-    )
-    assert rows[0]["success"] is None
-    assert rows[0]["measurement"]["pitch_shift_semitones"] is None
-    assert rows[0]["measurement"]["pitch_l1_semitones"] is None
+    with pytest.raises(ValueError, match="no valid source F0"):
+        DoteBenchEvaluator(
+            Abilities([[(0.1, 0.5), (0.7, 1.0)], [(0.1, 0.5)]])
+        )._components(
+            case,
+            wav(),
+            wav(),
+            hypothesis=None,
+            source_segments=segments,
+            target_segments=segments,
+        )
 
 
 @pytest.mark.parametrize(
@@ -436,6 +447,7 @@ def test_global_wer_language_policy(category, language):
 def test_prosody_failure_uses_mixed_reference_units():
     case = make_case('<pitch semitones="3">你好 world</pitch>', language="zh")
     protocol = DoteBenchEvaluator(Abilities())
+    protocol._f0 = lambda audio, spans: [{"median_f0_hz": 100} for _ in spans]
     request = SimpleNamespace(
         generation=GenerationResult(case.id, "candidate_error", error="failed"),
         source_audio=Audio(wav()),

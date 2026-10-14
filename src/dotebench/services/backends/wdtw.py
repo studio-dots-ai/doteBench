@@ -15,6 +15,22 @@ from dotebench.alignment import WordSegment
 from dotebench.services.utils.http import json_endpoint, request_json, service_app
 
 
+MISSING_TARGET_F0_PENALTY_SEMITONES = 8.0
+
+
+def f0_statistics(span, keys):
+    """Read nullable F0 statistics; malformed service data is not unvoiced audio."""
+    if not isinstance(span, Mapping) or any(key not in span for key in keys):
+        raise ValueError("F0 service returned missing statistic fields")
+    values = [span[key] for key in keys]
+    for value in values:
+        if value is not None and (
+            type(value) not in (int, float) or not math.isfinite(value) or value <= 0
+        ):
+            raise ValueError("F0 service returned an invalid statistic")
+    return None if any(value is None for value in values) else values
+
+
 def _duration_local_cost(
     source: WordSegment, target: WordSegment, *, word_mismatch_penalty: float
 ) -> float:
@@ -115,31 +131,22 @@ def compute_f0_preservation(
         )
     word_results: list[dict[str, Any]] = []
     total_error = 0.0
-    valid_count = 0
+    source_valid_count = 0
     statistic_keys = ("min_f0_hz", "max_f0_hz", "mean_f0_hz")
     for index in range(eligible_count):
         source_f0 = source_f0_spans[index]
         target_f0 = target_f0_spans[index]
         errors: dict[str, float] = {}
-        valid = True
-        for key in statistic_keys:
-            try:
-                source_value = float(source_f0[key])
-                target_value = float(target_f0[key])
-            except (KeyError, TypeError, ValueError):
-                valid = False
-                break
-            if (
-                not math.isfinite(source_value)
-                or not math.isfinite(target_value)
-                or source_value <= 0.0
-                or target_value <= 0.0
-            ):
-                valid = False
-                break
-            errors[key.removesuffix("_f0_hz") + "_error_semitones"] = abs(
-                12.0 * math.log2(target_value / source_value)
-            )
+        source_values = (
+            f0_statistics(source_f0, statistic_keys)
+            if source_segments[index].duration > 0
+            else None
+        )
+        target_values = (
+            f0_statistics(target_f0, statistic_keys)
+            if target_segments[index].duration > 0
+            else None
+        )
         word_result: dict[str, Any] = {
             "index": index,
             "word": source_segments[index].word,
@@ -147,20 +154,38 @@ def compute_f0_preservation(
             "target_span": target_segments[index].to_dict(),
             "source_f0": dict(source_f0),
             "target_f0": dict(target_f0),
-            "status": "ok" if valid else "invalid_f0",
+            "status": "invalid_source_f0",
         }
-        if valid:
-            word_error = sum(errors.values()) / len(errors)
-            word_result.update(errors)
+        if source_values is not None:
+            if target_values is None:
+                # The empty-output scoring convention, applied per source-valid word.
+                word_error = MISSING_TARGET_F0_PENALTY_SEMITONES
+                word_result["status"] = "penalized_missing_target_f0"
+            else:
+                for key, source_value, target_value in zip(
+                    statistic_keys, source_values, target_values, strict=True
+                ):
+                    errors[key.removesuffix("_f0_hz") + "_error_semitones"] = abs(
+                        12.0 * math.log2(target_value / source_value)
+                    )
+                word_error = sum(errors.values()) / len(errors)
+                word_result.update(errors)
+                word_result["status"] = "ok"
             word_result["word_error_semitones"] = word_error
             total_error += word_error
-            valid_count += 1
+            source_valid_count += 1
         word_results.append(word_result)
     return F0PreservationResult(
-        wdtw_f0=total_error / valid_count if valid_count else None,
+        wdtw_f0=total_error / source_valid_count if source_valid_count else None,
         distance=total_error,
-        normalizer=float(valid_count),
-        status="ok" if valid_count else "no_valid_f0",
+        normalizer=float(source_valid_count),
+        status=(
+            "penalized_missing_target_f0"
+            if any(w["status"] == "penalized_missing_target_f0" for w in word_results)
+            else "ok"
+            if source_valid_count
+            else "no_valid_f0"
+        ),
         word_results=word_results,
     )
 
