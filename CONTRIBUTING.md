@@ -8,7 +8,7 @@ defines repository ownership, extension points, identities, and version rules.
 
 ## Development setup
 
-Use Python 3.10–3.12 and [uv](https://docs.astral.sh/uv/):
+Use [uv](https://docs.astral.sh/uv/) for setup:
 
 ```bash
 export UV_PROJECT_ENVIRONMENT=/path/to/envs/dotebench-development

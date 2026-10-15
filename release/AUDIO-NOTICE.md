@@ -20,7 +20,7 @@ Source and license evidence:
 - AISHELL-1: https://openslr.org/33/
 - Qwen3-TTS-12Hz-1.7B-VoiceDesign: https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign
 
-The bundle intentionally does not contain Common Voice 20.0 clips, outputs made
+The bundle intentionally does not contain Common Voice clips, outputs made
 from real-person voice-cloning prompts, or Qwen3-TTS preset-speaker outputs.
 Those assets are acquired or generated during materialization from recipes in
 the benchmark manifests.

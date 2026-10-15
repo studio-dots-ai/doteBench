@@ -58,7 +58,7 @@ check the terms supplied with the specific checkpoint before enabling it.
 
 | Component | Use | License / upstream terms |
 | --- | --- | --- |
-| [Praat 6.1.38](https://github.com/praat/praat.github.io/releases/tag/v6.1.38) | F0 analysis through a separate CLI process | [GPL-3.0-or-later](https://praat.org/manual/License.html) |
+| [Praat](https://github.com/praat/praat.github.io/releases/tag/v6.1.38) | F0 analysis through a separate CLI process | [GPL-3.0-or-later](https://praat.org/manual/License.html) |
 
 The [installer](scripts/install_praat.py) obtains Praat for the service environment;
 the Python distributions carry the worker script, with the installer also in the

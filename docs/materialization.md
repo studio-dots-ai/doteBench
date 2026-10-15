@@ -23,7 +23,7 @@ with `source_audio.asset_id`. The entry is one of:
 
 - `bundle`: copy a checksum-verified WAV from the redistributable doteBench audio
   bundle;
-- `upstream`: verify a Common Voice 20.0 source MP3 and reproduce the frozen PCM16
+- `upstream`: verify a locked Common Voice source MP3 and reproduce the frozen PCM16
   WAV conversion;
 - `generate`: derive the source transcript from `instruction_xml`, invoke the
   named synthesis provider with its frozen seed and parameters, and optionally
@@ -92,7 +92,7 @@ identity remains owned by `release/evaluation-models.json`.
 ## Build and run
 
 Verify the audio bundle archive as described in [Using doteBench](usage.md).
-Obtain Common Voice 20.0 from its
+Obtain the locked Common Voice sources from their
 upstream distribution and preserve the paths recorded by each
 <code>upstream</code> recipe. Then run:
 
@@ -104,15 +104,14 @@ export DOTEBENCH_ENV_ROOT=/path/to/envs
 dotebench materialize-data \
   --data-root . \
   --bundle-root /path/to/audio-bundle \
-  --common-voice-root /path/to/common-voice-20.0 \
+  --common-voice-root /path/to/common-voice \
   --output-root /path/to/materialized-data
 ```
 
 doteBench starts one provider at a time, records the effective official source
 and prepared model identities, and stops it before loading the next provider.
 Each provider rehashes every file in its prepared model snapshot before loading
-weights. MiMo-Audio uses its isolated Python 3.10 environment and the
-locked FlashAttention 2.7.4.post1 CUDA 12/Torch 2.6 wheel.
+weights. MiMo-Audio uses its isolated environment and locked FlashAttention wheel.
 The output receipt records every actual WAV SHA-256 and size, one canonical audio
 digest, generated manifest hashes, alignment counts, and service identities.
 

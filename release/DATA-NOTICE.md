@@ -19,7 +19,7 @@ PYTHONPATH=src python scripts/build_text_provenance.py --check
 | Source | Cases | Terms | Evidence |
 |---|---:|---|---|
 | LibriTTS-R | 819 | CC BY 4.0 | https://www.openslr.org/141/ |
-| Common Voice 20.0 | 354 | CC0 1.0 | https://commonvoice.mozilla.org/en/datasets |
+| Common Voice | 354 | CC0 1.0 | https://commonvoice.mozilla.org/en/datasets |
 | doteBench-authored/generated source text | 303 | Apache 2.0 | `../LICENSE` |
 | WenetSpeech | 234 | CC BY 4.0; official site limits downloads to non-commercial purposes | https://wenet-e2e.github.io/WenetSpeech/ |
 | AISHELL-3 | 222 | Apache 2.0 | https://www.openslr.org/93/ |

@@ -8,8 +8,7 @@ implementation and is linked from the root README.
 
 ## Install
 
-doteBench supports Python 3.10 through 3.12 and uses
-[uv](https://docs.astral.sh/uv/) for locked environments.
+doteBench uses [uv](https://docs.astral.sh/uv/) for locked Python environments.
 
 ~~~bash
 git clone --recurse-submodules https://github.com/studio-dots-ai/doteBench.git
@@ -36,7 +35,7 @@ BUNDLE_FILE=$(basename "$BUNDLE_ARCHIVE")
 tar -xzf "$BUNDLE_ARCHIVE"
 ~~~
 
-A complete data root also requires Common Voice 20.0 and the prepared
+A complete data root also requires the locked Common Voice sources and the prepared
 materialization models. Follow [Data materialization](materialization.md), then
 run:
 
@@ -47,7 +46,7 @@ export DOTEBENCH_ENV_ROOT=/path/to/envs
 
 uv run --frozen dotebench materialize-data \
   --bundle-root /path/to/audio-bundle \
-  --common-voice-root /path/to/common-voice-20.0 \
+  --common-voice-root /path/to/common-voice \
   --output-root /path/to/materialized-data
 ~~~
 

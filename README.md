@@ -3,7 +3,6 @@
   <p><strong>An XML-first bilingual benchmark for precise speech editing.</strong></p>
   <p>
     <a href="https://arxiv.org/abs/2608.02673"><img alt="Paper" src="https://img.shields.io/badge/arXiv-2608.02673-b31b1b?logo=arxiv&amp;logoColor=white"></a>
-    <img alt="Python 3.10–3.12" src="https://img.shields.io/badge/python-3.10%E2%80%933.12-3776AB?logo=python&amp;logoColor=white">
     <a href="LICENSE"><img alt="Apache 2.0" src="https://img.shields.io/badge/code-Apache--2.0-6b57ff"></a>
     <img alt="Cases 2,081" src="https://img.shields.io/badge/cases-2%2C081-17213d">
   </p>
@@ -13,7 +12,7 @@ Precise speech editing must control both **what** an edit changes and **where**
 it applies. doteBench is an XML-first bilingual evaluation suite that makes this
 contract explicit, then evaluates systems along three complementary dimensions:
 precise instruction following, local preservation outside the target region,
-and overall audio quality. Dataset V1.0 (`v1_0`) contains **2,081 English and Chinese cases** across
+and overall audio quality. The dataset contains **2,081 English and Chinese cases** across
 Text, Emotion, Prosody, Pause, and Compositional editing, with deterministic data
 materialization, candidate adapters, and the complete evaluator.
 
@@ -81,8 +80,7 @@ XML instruction ──┬── render source/target text ── evaluation
 
 ## Quick start
 
-doteBench supports Python 3.10–3.12 and uses
-[uv](https://docs.astral.sh/uv/) for reproducible environments.
+doteBench uses [uv](https://docs.astral.sh/uv/) for reproducible Python environments.
 
 ~~~bash
 git clone --recurse-submodules https://github.com/studio-dots-ai/doteBench.git
@@ -135,7 +133,7 @@ deployment parameters, and capability boundary beside the implementation:
 
 ## Reference results
 
-All values below use evaluation protocol `v1_1` and cover the same 2,081 cases.
+These results use the current evaluation protocol across 2,081 cases.
 Operation success averages all requested operations; all-operations success
 requires every operation in a case to succeed. Missing target measurements count
 as failed operations.
@@ -155,7 +153,7 @@ reported in the table but omitted from the radar charts.
 
 See the [evaluation protocol](docs/evaluation.md) for metric definitions and
 failure handling. The radar charts and table summarize frozen, audited runs
-re-evaluated with protocol `v1_1`.
+scored with the current protocol.
 
 ## Documentation
 

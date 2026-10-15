@@ -1,20 +1,16 @@
 # Evaluation protocol
 
-The current scoring protocol is identified as `v1_1` in
-`release/evaluation-protocol.json` and in evaluation run records. It fixes scoring
-of missing target measurements. Historical `v1_0` records retain their original
-identity and must not be pooled with `v1_1`. Re-evaluation can reuse generated
-audio and valid raw alignment/F0 caches, but must write new evaluation artifacts.
-The dataset version is unchanged.
+Precise editing requires evidence that the requested change occurred while
+preserving speech outside its scope. doteBench scores instruction following,
+local preservation, and overall audio quality against frozen cases. XML defines
+what should change; the source recording and annotations define the reference.
 
-See [Using doteBench](usage.md) for the complete generate, evaluate, and report
-workflow. This page defines evaluator preparation and formal scoring.
+The scoring identity is declared in `release/evaluation-protocol.json` and
+recorded in each evaluation summary. Compare runs under the same scoring
+contract. Re-evaluation may reuse generated audio and valid raw measurement
+caches, but writes new evaluation artifacts.
 
-The evaluator scores frozen cases using a shared set of metric abilities.
-`release/evaluation-protocol.json` declares the scoring contract identity used
-for scoring, failure penalties and emotion classification. The evaluation
-runner records it in each summary. Manifests determine category and shard
-grouping; generated results contain candidate outputs only.
+See [Using doteBench](usage.md) for the generate, evaluate, and report workflow.
 
 ## Prepare the evaluator
 
@@ -43,7 +39,7 @@ UV_PROJECT_ENVIRONMENT="$DOTEBENCH_ENV_ROOT/dotebench-quality-speaker" \
   uv sync --project envs/quality-speaker --frozen
 ~~~
 
-Install Praat 6.1.38 into the CPU service environment (Linux x86_64):
+Install the pinned Praat build into the CPU service environment (Linux x86_64):
 
 ~~~bash
 "$DOTEBENCH_ENV_ROOT/dotebench-metrics-cpu/bin/python" scripts/install_praat.py
@@ -69,15 +65,10 @@ dotebench prepare-evaluation-models \
 
 ### Model identities
 
-`evaluation/models.py` owns the model registry and expected lock identities.
-`services/utils/model_assets.py` prepares the supplied files against those locks
-and records their inventory and identity in local receipts. Preparation verifies
-existing model files; obtain the snapshots and checkpoints before running it.
-Each backend owns its checkpoint filenames and loader requirements.
-
-Service startup verifies its model ID, receipt, file inventory, sizes, and
-timestamps. The evaluator validates the returned lock hash against its pinned
-policy. `prepare-evaluation-models --check` also rehashes file contents.
+Prepare the registered model files before evaluation. Preparation verifies the
+supplied snapshots and checkpoints and records their identity in local receipts.
+Service startup verifies those receipts and the evaluator checks the pinned
+model identity. `prepare-evaluation-models --check` also rehashes file contents.
 
 ### Service configuration
 
@@ -115,193 +106,102 @@ completion or failure.
 | Pause | Correct direction of gap change |
 | Compositional | Per-family and all-component success |
 
-Content preservation uses Qwen3-ASR recognition error. Local acoustic preservation
-uses word-level duration DTW and voiced F0 statistics. Speaker similarity uses
-WavLM with ECAPA-TDNN; whole-utterance quality uses UTMOS22. Emotion classification
-uses Qwen3-Omni with a deterministic candidate-label order and a fixed prompt governed by the evaluator protocol.
+Qwen3-ASR measures content accuracy, WDTW measures local duration and F0
+preservation, WavLM with ECAPA-TDNN measures speaker similarity, and UTMOS22
+measures whole-utterance quality. Qwen3-Omni classifies emotion using a fixed
+prompt and deterministic label order.
 
-### Recognition error
+### Reference eligibility and edit scope
 
-`services/backends/wer.py` owns text normalization, WER/CER kernels, and the
-HTTP entrypoint. `evaluation/wer.py` attributes errors to XML regions and pools
-counts across samples.
+Eligibility follows the instruction and source evidence. Unmodified words
+participate in duration and F0 preservation. Pitch edits remain eligible for
+duration preservation, and rate edits for F0 preservation; each edited attribute
+is assessed against its requested change. Emotion and text-edit regions are
+excluded from acoustic preservation. Pause edits leave neighboring words
+eligible for preservation.
 
-Qwen3-ASR runs through its Transformers backend in bfloat16, with one utterance
-per inference call and a 512-token output limit. Service configuration records
-these inference parameters alongside the pinned model revision.
+F0 comparisons require measurable source voicing, and duration references require
+positive source duration. Naturally unvoiced source words do not contribute to
+F0 scores. Preservation with no eligible reference is undefined. A pitch or rate
+operation without its required source reference is a data contract error.
+Candidate output cannot change these source requirements.
 
-Local WER uses XML text-edit regions with three reference tokens of context on
-each side. A deletion contributes its zero-width target boundary and the adjacent
-context. Inserted hypothesis tokens belong to the following reference token, or
-the final reference token at utterance end; edit and non-edit error counts form a
-partition of global counts. Recognition alignment uses the standard jiwer
-edit-distance computation.
+### Output realization and measurement evidence
 
-### Alignment and interval queries
+Local acoustic measurements share one output alignment against the frozen
+target transcript; source intervals use frozen alignments. Alignment locates requested
+regions but does not establish that their words were spoken. Recognition error
+provides that separate content evidence.
 
-Forced alignment uses Qwen3 with explicit benchmark word units. Source alignments
-are frozen per sample in the manifest. Evaluation aligns each generated audio
-exactly once against the frozen target text, even when the
-generated speech differs from that text. Low transcription accuracy is not an
-alignment rejection criterion.
+Success requires the acoustic support needed to measure the requested edit.
+Pitch requires target voicing for every source-eligible word. Rate requires
+positive target duration for every source-supported word and for the region.
+Pause requires realized neighboring words to anchor its gap, using the audio
+boundary at utterance ends. A genuine zero gap is valid; a missing anchor is not
+evidence of a reduced pause. A zero source gap remains a valid reference.
 
-One generated audio produces one alignment shared by every metric consumer.
-Operation queries extract intervals from that same alignment. Source queries use
-the manifest alignment. Pause queries select the left word's end and right word's
-start and clamp negative gaps to zero. Required target pause anchors must have
-positive duration. At utterance boundaries only the existing neighboring word is
-required; the other endpoint is the audio boundary. Positive-duration anchors may
-touch or overlap and legitimately yield a zero gap.
+Missing required target evidence fails the operation and remains represented in
+its score. Pitch averages word shifts over the source-eligible set, treating
+missing target evidence as no demonstrated shift. Missing target F0 incurs the
+protocol's word-level preservation penalty. Rate retains the observed duration
+error even when required words collapse. Evaluation records distinguish measured
+evidence from scoring conventions so a penalty is not mistaken for an acoustic
+measurement.
 
-The source gap is the authoritative reference from the frozen alignment and may
-be zero. The target anchor-duration check validates output realization. It does
-not change source-reference eligibility. Inserting a pause from a zero source gap
-is valid; reducing a zero source gap cannot satisfy the 160 ms reduction threshold.
+### Metric definitions
 
-Rate success requires positive target duration for every source-positive-duration
-word in the XML region, as well as a positive region duration. The duration ratio
-and error still use the observed region envelope, including a numeric zero for a
-collapsed target. This alignment condition detects missing acoustic support;
-recognition metrics separately assess content accuracy, since forced alignment
-does not establish that the requested words were actually spoken.
+Recognition error counts substitutions, deletions, and insertions relative to
+reference words or characters. Local text error uses XML edit regions with
+adjacent reference context, including deletion boundaries.
+Edit and non-edit counts partition the global counts.
 
-The aligner service accepts `POST /measure` with `text`, `alignment`, `queries`
-and `audio_duration` for pure extraction; `alignment` is an ordered list of
-`word`, `start`, `end` records and each query is the full transcript with one
-`<q>...</q>` region. This request uses no audio or neural inference and returns
-`answers`, each containing `start` and `end`. The evaluator calls the same pure
-function locally. Audio alignment requests retain `audio`, `text`, and `language`.
+WDTW duration compares preserved word durations using dynamic time warping,
+normalized by their combined source and target duration. F0 preservation averages
+absolute semitone differences in word minimum, maximum, and mean F0, with equal
+weight for each source-eligible word. F0 is extracted from the complete recording
+before assigning measurements to spans.
 
-### Acoustic preservation
+Pitch error is the absolute difference between the requested shift and the mean
+word shift computed from source and target median F0. Rate error is the absolute
+difference between observed region duration and source duration divided by the
+requested rate factor. Whole-sentence emotion uses the full output; local
+emotion uses an aligned crop with surrounding context. Raw classifier responses
+remain available with the scores.
 
-`evaluation/preservation.py` selects XML scopes and orchestrates WDTW.
-`services/backends/wdtw.py` owns duration and F0 preservation kernels and their
-HTTP entrypoint. WDTW declares F0 as a service dependency and calls its API;
-`services/backends/f0.py` owns the Praat worker pool.
+Text component success requires zero local recognition error; emotion requires
+the requested label. Pitch, rate, and pause require a change in the requested
+direction that meets the protocol's minimum effect threshold. Standalone and
+compositional operations share these criteria and realization requirements.
 
-Instruction spans define the evaluated and preserved regions. Unmodified words
-participate in both duration and F0 preservation. Pitch regions remain eligible
-for duration preservation, while rate regions remain eligible for F0
-preservation. Pitch regions instead use the requested-shift metric for F0, and
-rate regions use the requested-ratio metric for duration. Emotion and text-edit
-regions are excluded from both preservation branches. Pause instructions are
-zero-width, so their neighboring unmodified words remain eligible.
+## Fair aggregation
 
-The evaluator selects preservation word pairs from XML node identity and the
-complete source/target alignments. Repeated words do not require subsequence
-matching. `evaluation.preservation.evaluate_preservation` sends the complete
-recordings as `source_audio` and `target_audio`, plus four selected segment lists:
-`duration_source`, `duration_target`, `f0_source`, and `f0_target`. Each segment
-contains `word`, `start`, `end`, and optional `raw_word`; paired F0 lists must have
-equal length. WDTW computes and returns `wdtw_dur` and `wdtw_f0`. The evaluator
-adds `selection` to the audit record. XML scope selection belongs to the evaluator;
-the service accepts explicit segments. Deploy the evaluator and WDTW backend
-from the same source revision when updating this request contract.
+Every requested operation contributes to operation success, and every case to
+all-operations success. A case succeeds only when all its operations succeed.
+Missing output cannot improve success rates by reducing their denominators.
+Pitch and rate errors also weight operations equally; speaker similarity and
+UTMOS weight cases equally.
 
-F0 is measured over the complete recording before results are assigned to
-requested spans. WDTW obtains its F0 measurements from the F0 service.
+Recognition error pools total error counts over total reference units. Empty
+references retain insertion errors; a pool with no reference units is undefined.
+WDTW pools distances and normalizers, including Compositional cases. F0 retains
+all source-eligible words, including those with missing target measurements.
+Category summaries pool underlying records across shards. Rounding is reserved
+for presentation.
 
-### F0 measurability
+## Failure handling and reproducibility
 
-Source words with zero duration are removed, together with their corresponding
-target words, from both preservation branches before F0 extraction. Target words
-with zero duration remain in duration preservation, but are never submitted to
-F0 extraction. WDTW F0 eligibility depends only on finite positive source
-minimum, maximum and mean F0. Each source-valid word contributes one unit to the
-normalizer. When its target statistics are available, its error is the mean of
-the three absolute semitone differences. When target duration or F0 is missing,
-its word error is 8 semitones, reusing the existing empty-output penalty at the
-same word-weighted granularity. This is a scoring convention, not an inferred
-pitch measurement or an upper bound on measured errors. The word and metric
-`status` record `penalized_missing_target_f0`; raw source/target F0 statistics
-remain in `word_results`, and no synthetic measured statistics are inserted.
-Source-unvoiced words do not contribute. An empty source-valid set has null
-metric value and zero sufficient statistics, independently of candidate output.
+Candidate generation failures remain scored with the protocol's failure
+penalties, and every requested operation fails. Preservation penalties apply only
+to eligible source objects within XML-preserved regions. The same reference
+requirements apply to successful and failed generations.
 
-Pitch effects pair words within each XML operation by position. Eligibility
-requires positive source word duration and finite positive source median F0;
-naturally unvoiced source words are not required target measurements. For each
-eligible word, use `12 * log2(target/source)` when target duration and median F0
-are available, or a scoring shift of zero (no edit) otherwise. The operation's
-signed shift is the arithmetic mean over this source-defined set. Its error is
-the absolute difference between that mean and the requested shift. Thus complete
-target loss yields shift 0 and error `abs(requested shift)`; partial loss retains
-missing words in the mean. Any missing required target word makes the operation
-fail, even when the resulting mean reaches the directional threshold.
-`measurement_status: missing_target` distinguishes scoring fallback from a
-fully measured shift (`ok`). A pitch operation with no valid source reference
-raises a data/evaluation contract error. Whole-sentence pitch participates in
-duration preservation.
+Unavailable services, malformed metric responses, invalid alignments, and
+corrupted stored audio are evaluation errors. They leave the run incomplete and
+prevent a formal report. An explicit unvoiced measurement is a valid outcome;
+an incomplete or invalid service response is not acoustic evidence. Frozen
+source checksums and alignment contracts are verified for every case.
 
-### Emotion classification
-
-Whole-sentence emotion uses the complete output audio; local emotion uses an
-aligned crop with 250 ms padding.
-
-The emotion response parser accepts `neutral` as an alias of `calm` before
-checking for a unique label. Raw classifier responses remain in evaluation records.
-
-### Component success
-
-Compositional Text success requires zero local recognition error; Emotion requires
-the requested label. Pitch and rate components require at least 1 semitone and
-10% duration change respectively, in the requested direction. Pause direction
-success requires a gap change of at least 160 ms in the requested direction for
-both standalone and compositional operations.
-
-## Aggregation
-
-All categories and shards pool sufficient statistics directly. Global and local
-ER equal total substitutions, deletions and insertions divided by total reference
-units (corpus ER). Empty references retain insertion errors; an aggregate with
-zero reference units is null. WDTW equals total distance divided by total
-normalizer, including Compositional. Category summaries pool the underlying
-records rather than averaging shard summaries. Computation retains full precision;
-rounding belongs to presentation.
-
-Pitch and rate errors and component success rates weight XML operations equally.
-Speaker similarity, UTMOS and all-component success weight samples equally.
-Every instructed operation contributes a boolean success to Component, including
-output-side measurement failures. All tests every operation in a sample; missing
-output cannot reduce either denominator. Pitch fallback errors remain finite and
-contribute to the operation-weighted mean. Distance and normalizer retain the
-sufficient statistics for aggregation.
-
-## Failure policy
-
-Candidate generation failures remain scored: recognition error is 100% for a
-nonempty reference, speaker similarity 0, UTMOS 1, WDTW-Dur 1, WDTW-F0 8 semitones,
-and pitch shift 0 with error equal to the absolute requested shift. All instructed
-components fail. Preservation penalties
-apply only to XML-preserved source objects: duration uses preserved source seconds
-with zero target duration; F0 uses the number of measurable preserved source words.
-There is no preservation penalty when the metric has no reference objects. Local
-ER failure counts use the same XML target-region partition as ordinary evaluation.
-Rate failure error is source duration divided by the requested factor for every
-category.
-
-For generated audio, an empty emotion region fails locally without invoking the
-classifier. A collapsed or partially missing required target rate region fails
-while retaining its observed duration error. Missing or zero-duration required
-pause anchors produce `measurement_status: missing_target`, raw
-`target_gap_sec: null`, and a scoring `pause_delta_sec: 0` (no edit). Both
-`success` and `direction_correct` are false, including in direction accuracy.
-With valid target anchors, a genuine zero gap is scored normally. A rate region
-without positive-duration source words raises a contract error. Source-reference
-requirements also apply to candidate generation failures.
-
-Explicit null F0 statistics represent unvoiced spans. Missing statistic fields,
-non-numeric/non-finite/non-positive statistics, and incomplete service responses
-are infrastructure errors, not candidate missingness.
-
-Missing metric responses, unavailable services, invalid alignments, and corrupted
-stored audio are evaluation infrastructure errors. These leave the evaluation
-incomplete and prevent a formal report. Frozen source checksums and alignment
-contracts are verified for both successful and failed generation records.
-
-## Verification
-
-The test suite includes frozen reference outcomes for metric kernels, preservation
-masks, aggregation weights, failure penalties, emotion input scope, and silence
-boundaries. CPU metric services have live HTTP lifecycle tests. Neural service
-inference requires the corresponding prepared checkpoints and service environments.
+Tests cover metric definitions, preservation scope, aggregation weights, missing
+target evidence, failure penalties, emotion scope, and pause boundaries. CPU
+services have live HTTP lifecycle tests. Neural inference requires prepared
+checkpoints and the corresponding service environments.
