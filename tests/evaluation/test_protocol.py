@@ -237,8 +237,8 @@ def test_acoustic_kernels_frozen_numeric_examples():
         source_f0_spans=src,
         target_f0_spans=tgt,
     )
-    assert result.wdtw_f0 == 12
-    assert result.normalizer == 1
+    assert result.wdtw_f0 == 10
+    assert result.normalizer == 2
     assert "skipped_word_count" not in result.to_dict()
 
 

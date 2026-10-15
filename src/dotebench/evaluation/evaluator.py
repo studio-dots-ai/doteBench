@@ -15,11 +15,16 @@ from ..alignment import (
     WordSegment,
     alignment_to_segments,
     operation_pairs,
+    pause_anchors_valid,
     query_intervals,
     validate_alignment,
 )
 from ..dataset import read_json, resources, safe_identifier
-from ..services.backends.wdtw import compute_f0_preservation
+from ..services.backends.wdtw import (
+    MISSING_TARGET_F0_PENALTY_SEMITONES,
+    compute_f0_preservation,
+    f0_statistics,
+)
 from ..services.backends.wer import compute_error_rate
 from .abilities import HTTPMetricAbilities, encoded
 from .base import EvaluationProtocol, EvaluationResult
@@ -69,6 +74,8 @@ def _pause_success(operation: str, source_gap: float, target_gap: float) -> bool
 def _component_success(
     component: Mapping[str, Any], measurement: Mapping[str, Any]
 ) -> bool:
+    if measurement.get("measurement_status") == "missing_target":
+        return False
     family = component["family"]
     operation = component["operation"]
     if family == "text":
@@ -96,7 +103,7 @@ def _component_success(
             return False
         actual = measurement.get("duration_ratio")
         expected = float(component["params"]["factor"])
-        if actual is None:
+        if actual is None or actual <= 0:
             return False
         actual = float(actual)
         if expected > 1.0:
@@ -149,28 +156,42 @@ def _pitch_l1_semitones(
 
 
 def _measure_pitch_pairs(pairs, source_audio, target_audio, measure_f0, requested):
-    pairs = [(s, t) for s, t in pairs if s.duration > 0 and t.duration > 0]
-    shifts = []
+    pairs = [(s, t) for s, t in pairs if s.duration > 0]
+    eligible = []
     if pairs:
         source = measure_f0(
             source_audio, [{"start": s.start, "end": s.end} for s, _ in pairs]
         )
-        target = measure_f0(
-            target_audio, [{"start": t.start, "end": t.end} for _, t in pairs]
-        )
-        if len(source) != len(pairs) or len(target) != len(pairs):
+        if len(source) != len(pairs):
             raise ValueError("F0 service did not return every requested word")
-        for a, b in zip(source, target, strict=True):
-            shift = _actual_pitch_shift_semitones(
-                a.get("median_f0_hz"), b.get("median_f0_hz")
-            )
-            if shift is not None:
-                shifts.append(shift)
-    shift = sum(shifts) / len(shifts) if shifts else None
+        for (_, target_segment), stats in zip(pairs, source, strict=True):
+            values = f0_statistics(stats, ("median_f0_hz",))
+            if values is not None:
+                eligible.append((values[0], target_segment))
+    if not eligible:
+        raise ValueError("Pitch operation has no valid source F0 reference")
+
+    measurable = [(i, t) for i, (_, t) in enumerate(eligible) if t.duration > 0]
+    shifts = [0.0] * len(eligible)
+    measured_count = 0
+    if measurable:
+        target = measure_f0(
+            target_audio, [{"start": t.start, "end": t.end} for _, t in measurable]
+        )
+        if len(target) != len(measurable):
+            raise ValueError("F0 service did not return every requested word")
+        for (i, _), stats in zip(measurable, target, strict=True):
+            values = f0_statistics(stats, ("median_f0_hz",))
+            if values is not None:
+                shifts[i] = _actual_pitch_shift_semitones(eligible[i][0], values[0])
+                measured_count += 1
+    shift = sum(shifts) / len(shifts)
     return {
-        "measurement_status": "ok" if shifts else "unmeasurable",
+        "measurement_status": "ok"
+        if measured_count == len(eligible)
+        else "missing_target",
         "pitch_shift_semitones": shift,
-        "pitch_l1_semitones": abs(shift - requested) if shift is not None else None,
+        "pitch_l1_semitones": abs(shift - requested),
     }
 
 
@@ -464,10 +485,17 @@ class DoteBenchEvaluator(EvaluationProtocol):
                         )
                     )
                 elif operation.kind == "rate":
-                    if source_duration <= 0:
+                    pairs = operation_pairs(
+                        case.instruction, operation, source_segments, target_segments
+                    )
+                    required = [t for s, t in pairs if s.duration > 0]
+                    if source_duration <= 0 or not required:
                         raise ValueError("Empty source rate span")
                     factor = float(params["factor"])
                     measurement.update(
+                        measurement_status="ok"
+                        if target_duration > 0 and all(t.duration > 0 for t in required)
+                        else "missing_target",
                         duration_ratio=target_duration / source_duration,
                         duration_l1_sec=_duration_l1(
                             source_duration, target_duration, factor
@@ -481,10 +509,16 @@ class DoteBenchEvaluator(EvaluationProtocol):
                     )
                     if source_gap is None:
                         raise ValueError("Missing frozen source gap")
-                    target_gap = target_duration
-                    delta = target_gap - source_gap
-                    direction = _pause_success(params["act"], source_gap, target_gap)
+                    valid_target = pause_anchors_valid(
+                        target_segments, case.target_text, operation.target.start
+                    )
+                    target_gap = target_duration if valid_target else None
+                    delta = target_gap - source_gap if valid_target else 0.0
+                    direction = valid_target and _pause_success(
+                        params["act"], source_gap, target_gap
+                    )
                     measurement.update(
+                        measurement_status="ok" if valid_target else "missing_target",
                         source_gap_sec=source_gap,
                         target_gap_sec=target_gap,
                         pause_delta_sec=delta,
@@ -495,9 +529,7 @@ class DoteBenchEvaluator(EvaluationProtocol):
                     "operation_index": index,
                     **component,
                     "measurement": measurement,
-                    "success": None
-                    if measurement.get("measurement_status") == "unmeasurable"
-                    else _component_success(component, measurement),
+                    "success": _component_success(component, measurement),
                 }
             )
         return rows
@@ -544,7 +576,17 @@ class DoteBenchEvaluator(EvaluationProtocol):
             params = dict(op.params)
             measurement = {"penalty_applied": True}
             if op.kind == "pitch":
-                measurement["pitch_l1_semitones"] = 8.0
+                measurement.update(
+                    _measure_pitch_pairs(
+                        operation_pairs(
+                            case.instruction, op, source_segments, target_segments
+                        ),
+                        source,
+                        None,
+                        self._f0,
+                        float(params["semitones"]),
+                    )
+                )
             if op.kind == "rate":
                 start, end = query_intervals(
                     source_segments,
@@ -553,11 +595,29 @@ class DoteBenchEvaluator(EvaluationProtocol):
                     side="source",
                     audio_duration=_duration(source),
                 )[index]
-                if end <= start:
+                if end <= start or not any(
+                    s.duration > 0
+                    for s, _ in operation_pairs(
+                        case.instruction, op, source_segments, target_segments
+                    )
+                ):
                     raise ValueError("Empty source rate span")
                 measurement["duration_l1_sec"] = (end - start) / float(params["factor"])
             if op.kind == "pause":
-                measurement.update(direction_correct=False)
+                start, end = query_intervals(
+                    source_segments,
+                    case.source_text,
+                    [(index, op)],
+                    side="source",
+                    audio_duration=_duration(source),
+                )[index]
+                measurement.update(
+                    measurement_status="missing_target",
+                    source_gap_sec=max(0.0, end - start),
+                    target_gap_sec=None,
+                    pause_delta_sec=0.0,
+                    direction_correct=False,
+                )
             components.append(
                 {
                     "operation_index": index,
@@ -588,8 +648,10 @@ class DoteBenchEvaluator(EvaluationProtocol):
                 "status": "penalized_empty_audio" if dur_normalizer else "no_segments",
             },
             "wdtw_f0": {
-                "wdtw_f0": 8.0 if f0_normalizer else None,
-                "distance": 8.0 * f0_normalizer,
+                "wdtw_f0": MISSING_TARGET_F0_PENALTY_SEMITONES
+                if f0_normalizer
+                else None,
+                "distance": MISSING_TARGET_F0_PENALTY_SEMITONES * f0_normalizer,
                 "normalizer": f0_normalizer,
                 "status": "penalized_empty_audio" if f0_normalizer else "no_valid_f0",
             },
@@ -633,13 +695,11 @@ class DoteBenchEvaluator(EvaluationProtocol):
 def _scored_components(row):
     components = []
     for component in row["components"]:
-        if component["measurement"].get("measurement_status") == "unmeasurable":
-            if component["operation"] != "pitch" or component["success"] is not None:
-                raise ValueError("Only unmeasurable pitch operations may be excluded")
-            continue
         if not isinstance(component["success"], bool):
-            raise ValueError("Measured component requires boolean success")
+            raise ValueError("Every instructed component requires boolean success")
         components.append(component)
+    if not components:
+        raise ValueError("Evaluation requires instructed components")
     return components
 
 
@@ -682,7 +742,7 @@ def summarize_group(rows, category):
     }
     result["component_success_rate"] = _mean([float(c["success"]) for c in components])
     result["all_component_success_rate"] = _mean(
-        [float(all(c["success"] for c in cs)) for cs in per_case if cs]
+        [float(all(c["success"] for c in cs)) for cs in per_case]
     )
     if category == "text":
         for name in ("edit_region_wer", "non_edit_region_wer"):

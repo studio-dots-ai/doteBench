@@ -13,7 +13,7 @@ Precise speech editing must control both **what** an edit changes and **where**
 it applies. doteBench is an XML-first bilingual evaluation suite that makes this
 contract explicit, then evaluates systems along three complementary dimensions:
 precise instruction following, local preservation outside the target region,
-and overall audio quality. Dataset V1.0 (`v1_0`) contains **2,081 English and Chinese cases** across
+and overall audio quality. The dataset contains **2,081 English and Chinese cases** across
 Text, Emotion, Prosody, Pause, and Compositional editing, with deterministic data
 materialization, candidate adapters, and the complete evaluator.
 
@@ -135,25 +135,27 @@ deployment parameters, and capability boundary beside the implementation:
 
 ## Reference results
 
-All values below cover the same 2,081 cases. Operation success averages the
-measurable requested operations; all-operations success requires every
-measurable operation in a case to succeed.
+These results use the current evaluation protocol across 2,081 cases.
+Operation success averages all requested operations; all-operations success
+requires every operation in a case to succeed. Missing target measurements count
+as failed operations.
 
 | Candidate | One-take operation success | Sequential operation success | One-take all operations | Sequential all operations |
 |---|---:|---:|---:|---:|
-| dots.tts.edit | **63.9%** | **64.4%** | **49.0%** | **49.5%** |
-| MiMo-Audio-Instruct | 42.5% | 44.5% | 28.0% | 29.5% |
-| Step-Audio-EditX | 40.6% | 36.1% | 26.9% | 22.9% |
-| Ming-UniAudio | 23.5% | 27.9% | 10.8% | 16.1% |
-| FireRedTTS3-Instruct | 19.7% | 26.7% | 9.1% | 15.8% |
-| AuK + Qwen3-ForcedAligner* | 17.1% | 30.7% | 7.4% | 17.3% |
+| dots.tts.edit | **63.0%** | **63.0%** | **47.9%** | **47.9%** |
+| MiMo-Audio-Instruct | 41.1% | 43.0% | 27.3% | 28.4% |
+| Step-Audio-EditX | 38.4% | 33.6% | 25.4% | 21.0% |
+| Ming-UniAudio | 21.6% | 22.3% | 9.6% | 12.1% |
+| FireRedTTS3-Instruct | 18.9% | 25.2% | 8.8% | 14.2% |
+| AuK + Qwen3-ForcedAligner* | 15.1% | 26.2% | 6.5% | 13.5% |
 
 \* AuK is a non-autoregressive (NAR) model without native local editing.
 The external forced aligner enables local span edits; this configuration is
 reported in the table but omitted from the radar charts.
 
 See the [evaluation protocol](docs/evaluation.md) for metric definitions and
-failure handling. These figures summarize frozen, audited runs.
+failure handling. The radar charts and table summarize frozen, audited runs
+scored with the current protocol.
 
 ## Documentation
 

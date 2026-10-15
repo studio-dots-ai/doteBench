@@ -4,7 +4,7 @@ This page defines the stable manifest and XML interfaces. See
 [Using doteBench](usage.md) for the runnable workflow and
 [Data materialization](materialization.md) for constructing the audio root.
 
-`release/shards.json` declares the V1.0 dataset version (`v1_0`) once and lists category/shard
+`release/shards.json` declares the dataset identity and lists category/shard
 pairs in release order. The loader derives each `data/<category>/<shard>/manifest.json`
 path and case count from this index. Audio paths and checksums come from cases.
 
