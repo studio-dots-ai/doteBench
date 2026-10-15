@@ -3,6 +3,7 @@
   <p><strong>An XML-first bilingual benchmark for precise speech editing.</strong></p>
   <p>
     <a href="https://arxiv.org/abs/2608.02673"><img alt="Paper" src="https://img.shields.io/badge/arXiv-2608.02673-b31b1b?logo=arxiv&amp;logoColor=white"></a>
+    <img alt="Python 3.10–3.12" src="https://img.shields.io/badge/python-3.10%E2%80%933.12-3776AB?logo=python&amp;logoColor=white">
     <a href="LICENSE"><img alt="Apache 2.0" src="https://img.shields.io/badge/code-Apache--2.0-6b57ff"></a>
     <img alt="Cases 2,081" src="https://img.shields.io/badge/cases-2%2C081-17213d">
   </p>
@@ -80,7 +81,8 @@ XML instruction ──┬── render source/target text ── evaluation
 
 ## Quick start
 
-doteBench uses [uv](https://docs.astral.sh/uv/) for reproducible Python environments.
+doteBench supports Python 3.10–3.12 and uses
+[uv](https://docs.astral.sh/uv/) for reproducible environments.
 
 ~~~bash
 git clone --recurse-submodules https://github.com/studio-dots-ai/doteBench.git

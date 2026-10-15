@@ -39,7 +39,7 @@ UV_PROJECT_ENVIRONMENT="$DOTEBENCH_ENV_ROOT/dotebench-quality-speaker" \
   uv sync --project envs/quality-speaker --frozen
 ~~~
 
-Install the pinned Praat build into the CPU service environment (Linux x86_64):
+Install Praat 6.1.38 into the CPU service environment (Linux x86_64):
 
 ~~~bash
 "$DOTEBENCH_ENV_ROOT/dotebench-metrics-cpu/bin/python" scripts/install_praat.py
