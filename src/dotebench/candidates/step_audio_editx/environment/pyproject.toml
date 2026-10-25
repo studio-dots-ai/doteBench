@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Step-Audio-EditX"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "dotebench==1.0.0",
+    "dotebench",
     "ffmpeg-python>=0.2.0",
     "funasr>=1.3.0",
     "gradio>=6.3.0",

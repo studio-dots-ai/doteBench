@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Ming-UniAudio-16B-A3B-Edit inference service environment"
 requires-python = ">=3.10,<3.11"
 dependencies = [
-    "dotebench==1.0.0",
+    "dotebench",
     "torch==2.6.0",
     "torchaudio==2.6.0",
     "torchvision==0.21.0",

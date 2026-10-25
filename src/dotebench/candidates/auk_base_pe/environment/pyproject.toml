@@ -2,7 +2,7 @@
 name = "dotebench-auk-base-pe"
 version = "0.1.0"
 requires-python = ">=3.10,<3.11"
-dependencies = ["dotebench==1.0.1", "torch==2.7.1", "torchaudio==2.7.1", "torchvision==0.22.1", "transformers==4.57.6", "qwen-omni-utils>=0.0.9", "omegaconf>=2.3.0", "torchdiffeq", "x-transformers>=1.31.14", "safetensors", "fastapi", "uvicorn", "librosa", "accelerate", "httpx", "pytest>=8,<9", "openai", "tencentcloud-sdk-python-asr", "gradio>=5,<6", "silero-vad", "pyloudnorm", "WeTextProcessing"]
+dependencies = ["dotebench", "torch==2.7.1", "torchaudio==2.7.1", "torchvision==0.22.1", "transformers==4.57.6", "qwen-omni-utils>=0.0.9", "omegaconf>=2.3.0", "torchdiffeq", "x-transformers>=1.31.14", "safetensors", "fastapi", "uvicorn", "librosa", "accelerate", "httpx", "pytest>=8,<9", "openai", "tencentcloud-sdk-python-asr", "gradio>=5,<6", "silero-vad", "pyloudnorm", "WeTextProcessing"]
 
 [tool.uv.sources]
 dotebench = { path = "../../../../..", editable = true }

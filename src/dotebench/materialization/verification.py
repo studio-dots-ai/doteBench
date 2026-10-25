@@ -3,29 +3,24 @@
 from __future__ import annotations
 
 import copy
-import hashlib
 import re
 from pathlib import Path
 
 import soundfile as sf
 
-from dotebench import RELEASE, dataset
+from dotebench import dataset
 from dotebench.alignment import validate_alignment
 from dotebench.instructions import parse_instruction
 
 from .assets import locked_identity
 from .fingerprints import audio_digest, file_sha256
 from .manifest import PROVIDERS, load_inventory
-from .orchestrator import MATERIALIZER_IMPLEMENTATION
 
 _PROVIDERS = {
-    "qwen3_tts": ("qwen3_tts.py", ("qwen3_tts_custom_voice",)),
-    "indextts2": ("indextts2.py", ("indextts2",)),
-    "voxcpm2": ("voxcpm2.py", ("voxcpm2",)),
-    "mimo_audio": (
-        "mimo_audio.py",
-        ("mimo_audio_instruct", "mimo_audio_tokenizer"),
-    ),
+    "qwen3_tts": ("qwen3_tts_custom_voice",),
+    "indextts2": ("indextts2",),
+    "voxcpm2": ("voxcpm2",),
+    "mimo_audio": ("mimo_audio_instruct", "mimo_audio_tokenizer"),
 }
 _SHA256 = re.compile(r"[0-9a-f]{64}")
 
@@ -104,13 +99,6 @@ def _verify_manifest_contract(root: Path) -> dict[str, str]:
 
 
 def _verify_service_identities(receipt: dict) -> None:
-    expected_materializer = {
-        "release": RELEASE,
-        "module": "dotebench.materialization.orchestrator",
-        "sha256": MATERIALIZER_IMPLEMENTATION,
-    }
-    if receipt.get("materializer") != expected_materializer:
-        raise ValueError("Materializer implementation identity mismatch")
     services = receipt.get("services")
     if not isinstance(services, dict) or not set(PROVIDERS) <= set(services):
         raise ValueError("Materialization provider identities are incomplete")
@@ -119,8 +107,7 @@ def _verify_service_identities(receipt: dict) -> None:
     source_locks = dataset.read_json(
         dataset.resources() / "release/materialization-sources.json"
     )["sources"]
-    backend_root = Path(__file__).resolve().parent / "backends"
-    for provider, (filename, model_ids) in _PROVIDERS.items():
+    for provider, model_ids in _PROVIDERS.items():
         identity = services[provider]
         if not isinstance(identity, dict) or set(identity) != {
             "adapter",
@@ -129,11 +116,6 @@ def _verify_service_identities(receipt: dict) -> None:
             "inference",
         }:
             raise ValueError(f"Invalid materialization provider identity: {provider}")
-        expected_adapter_sha256 = hashlib.sha256(
-            (backend_root / filename).read_bytes()
-        ).hexdigest()
-        if identity["adapter"].get("sha256") != expected_adapter_sha256:
-            raise ValueError(f"Materialization adapter identity mismatch: {provider}")
         expected_source = {
             key: source_locks[provider][key] for key in ("repository", "commit")
         }

@@ -5,7 +5,7 @@ description = "MiMo-Audio environment — torch 2.6.0, transformers 4.49.0, flas
 requires-python = ">=3.10,<3.11"
 
 dependencies = [
-    "dotebench==1.0.0",
+    "dotebench",
     # ── PyTorch (CUDA 12.4) ────────────────────────────────────────
     "torch==2.6.0",
     "torchaudio==2.6.0",
