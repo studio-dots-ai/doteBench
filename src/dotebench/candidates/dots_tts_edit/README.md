@@ -13,6 +13,7 @@ model:
 ~~~xml
 <pitch semitones="4">higher</pitch>
 <rate factor="1.20">faster</rate>
+<emo type="happy">happy</emo>
 <pause act="ins"/>
 ~~~
 
@@ -21,6 +22,7 @@ becomes:
 ~~~xml
 <pitch, semitones=4>higher</pitch>
 <rate, factor=1.20>faster</rate>
+<emo type="happy" level="2">happy</emo>
 <pause act="ins" level="2"/>
 ~~~
 

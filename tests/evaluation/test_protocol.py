@@ -194,7 +194,7 @@ def test_infrastructure_failure_never_becomes_candidate_penalty(ability):
 
 
 def test_emotion_metric_failure_propagates():
-    c = case('one <emo type="happy" level="1">two</emo> three')
+    c = case('one <emo type="happy">two</emo> three')
     with pytest.raises(RuntimeError):
         DoteBenchEvaluator(Abilities(c.target_text, fail="emotion")).evaluate(
             request(c)
@@ -237,13 +237,13 @@ def test_acoustic_kernels_frozen_numeric_examples():
         source_f0_spans=src,
         target_f0_spans=tgt,
     )
-    assert result.wdtw_f0 == 12
-    assert result.normalizer == 1
+    assert result.wdtw_f0 == 10
+    assert result.normalizer == 2
     assert "skipped_word_count" not in result.to_dict()
 
 
 def test_whole_sentence_emotion_uses_whole_audio():
-    c = case('<emo type="happy" level="1">one two three</emo>')
+    c = case('<emo type="happy">one two three</emo>')
     abilities = Abilities(c.target_text)
     DoteBenchEvaluator(abilities).evaluate(request(c))
     emotion = next(p for a, p in abilities.calls if a == "emotion")

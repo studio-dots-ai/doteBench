@@ -13,7 +13,7 @@ Precise speech editing must control both **what** an edit changes and **where**
 it applies. doteBench is an XML-first bilingual evaluation suite that makes this
 contract explicit, then evaluates systems along three complementary dimensions:
 precise instruction following, local preservation outside the target region,
-and overall audio quality. Dataset V1.0 (`v1_0`) contains **2,081 English and Chinese cases** across
+and overall audio quality. The dataset contains **2,081 English and Chinese cases** across
 Text, Emotion, Prosody, Pause, and Compositional editing, with deterministic data
 materialization, candidate adapters, and the complete evaluator.
 
@@ -48,13 +48,13 @@ or the [GitHub Repo](https://github.com/studio-dots-ai/dots.tts).
 <p align="center">
   <img src="assets/results-one-take.svg" width="900" alt="One-take doteBench results across five editing categories">
   <br>
-  <em>One-take results: each case is compiled into a single model call; the radar compares instruction following, local preservation, and audio quality across 5 single-model candidate systems.</em>
+  <em>One-take results: each case is compiled into a single model call; the radar compares instruction following, local preservation, and audio quality across 6 candidate systems.</em>
 </p>
 
 <p align="center">
   <img src="assets/results-sequential.svg" width="900" alt="Sequential doteBench results across five editing categories">
   <br>
-  <em>Sequential results: each XML operation is applied in a separate model call, and each output becomes the input to the next; the radar compares instruction following, local preservation, and audio quality across 5 single-model candidate systems.</em>
+  <em>Sequential results: each XML operation is applied in a separate model call, and each output becomes the input to the next; the radar compares instruction following, local preservation, and audio quality across 6 candidate systems.</em>
 </p>
 
 ### XML instruction is the operation authority
@@ -127,7 +127,7 @@ Each built-in integration documents its own model input, compiler behavior,
 deployment parameters, and capability boundary beside the implementation:
 
 - [dots.tts.edit](src/dotebench/candidates/dots_tts_edit/README.md)
-- [AuK Base](src/dotebench/candidates/auk_base/README.md)
+- [AuK](src/dotebench/candidates/auk_base_pe/README.md)
 - [Ming-UniAudio](src/dotebench/candidates/ming_uniaudio/README.md)
 - [Step-Audio-EditX](src/dotebench/candidates/step_audio_editx/README.md)
 - [MiMo-Audio-Instruct](src/dotebench/candidates/mimo_audio_instruct/README.md)
@@ -135,25 +135,21 @@ deployment parameters, and capability boundary beside the implementation:
 
 ## Reference results
 
-All values below cover the same 2,081 cases. Operation success averages the
-measurable requested operations; all-operations success requires every
-measurable operation in a case to succeed.
+These reference runs cover 2,081 cases. Operation success averages requested
+operations; all-operations success requires every requested operation in a case
+to succeed. AuK uses the official Prompt Enhancer.
 
 | Candidate | One-take operation success | Sequential operation success | One-take all operations | Sequential all operations |
 |---|---:|---:|---:|---:|
-| dots.tts.edit | **63.9%** | **64.4%** | **49.0%** | **49.5%** |
-| MiMo-Audio-Instruct | 42.5% | 44.5% | 28.0% | 29.5% |
-| Step-Audio-EditX | 40.6% | 36.1% | 26.9% | 22.9% |
-| Ming-UniAudio | 23.5% | 27.9% | 10.8% | 16.1% |
-| FireRedTTS3-Instruct | 19.7% | 26.7% | 9.1% | 15.8% |
-| AuK + Qwen3-ForcedAligner* | 17.1% | 30.7% | 7.4% | 17.3% |
+| dots.tts.edit | **63.9%** | **62.7%** | **48.8%** | **48.2%** |
+| MiMo-Audio-Instruct | 37.3% | 39.1% | 25.6% | 26.8% |
+| Step-Audio-EditX | 36.0% | 31.1% | 24.9% | 20.6% |
+| Ming-UniAudio | 18.7% | 18.8% | 8.7% | 10.5% |
+| FireRedTTS3-Instruct | 16.0% | 20.5% | 8.3% | 11.6% |
+| AuK | 23.6% | 33.3% | 12.3% | 21.9% |
 
-\* AuK is a non-autoregressive (NAR) model without native local editing.
-The external forced aligner enables local span edits; this configuration is
-reported in the table but omitted from the radar charts.
-
-See the [evaluation protocol](docs/evaluation.md) for metric definitions and
-failure handling. These figures summarize frozen, audited runs.
+The radars show instruction following, preservation, and quality. Compositional axes report
+Component and All Success ([evaluation protocol](docs/evaluation.md)).
 
 ## Documentation
 

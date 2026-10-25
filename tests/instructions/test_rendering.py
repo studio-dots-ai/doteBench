@@ -18,7 +18,7 @@ from dotebench.instructions import (
         ("<ins>Hello</ins><del>old</del> world!", "old world!", "Hello world!"),
         ("<del>all</del>", "all", ""),
         ('你<sub targ="朋友">同学</sub>好。', "你同学好。", "你朋友好。"),
-        ('  <emo type="happy" level="2">a  b</emo>\n', "  a  b\n", "  a  b\n"),
+        ('  <emo type="happy">a  b</emo>\n', "  a  b\n", "  a  b\n"),
         ('a<pause act="ins"/>  b', "a  b", "a  b"),
         ("Tom<ins>'s</ins> book", "Tom book", "Tom's book"),
         ("a<ins>-</ins>word", "aword", "a-word"),
@@ -39,7 +39,7 @@ def test_public_xml_renderers(xml, source, target):
         "<!DOCTYPE x>text",
         "<ins>x",
         "<unknown>x</unknown>",
-        '<emo type="happy" level="2"><sub targ="new">old</sub></emo>',
+        '<emo type="happy"><sub targ="new">old</sub></emo>',
     ],
 )
 def test_renderers_validate_complete_instruction(render, xml):

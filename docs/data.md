@@ -4,7 +4,7 @@ This page defines the stable manifest and XML interfaces. See
 [Using doteBench](usage.md) for the runnable workflow and
 [Data materialization](materialization.md) for constructing the audio root.
 
-`release/shards.json` declares the V1.0 dataset version (`v1_0`) once and lists category/shard
+`release/shards.json` declares the dataset identity and lists category/shard
 pairs in release order. The loader derives each `data/<category>/<shard>/manifest.json`
 path and case count from this index. Audio paths and checksums come from cases.
 
@@ -60,7 +60,7 @@ not change sample weights. Candidate requests do not contain annotations.
 <ins>inserted text</ins>
 <del>deleted text</del>
 <sub targ="replacement">original</sub>
-<emo type="happy" level="2">affected text</emo>
+<emo type="happy">affected text</emo>
 <pitch semitones="3">affected text</pitch>
 <rate factor="1.2">affected text</rate>
 <pause act="ins"/>
@@ -68,8 +68,8 @@ not change sample weights. Candidate requests do not contain annotations.
 
 Fragments may combine several operations in source order. Literal XML characters
 use entity escaping. Operations cannot nest or cross. Pause supports `ins` and
-`red`, specifying a direction at a text boundary. Emotion levels are 1–3. Acoustic numeric parameters must
-be finite and rate factors positive.
+`red`, specifying a direction at a text boundary. Emotion tags specify the target
+emotion type. Acoustic numeric parameters must be finite and rate factors positive.
 
 `parse_instruction()` returns operations with half-open Unicode character spans
 on source and target text. Insertions have zero-width source spans, deletions have

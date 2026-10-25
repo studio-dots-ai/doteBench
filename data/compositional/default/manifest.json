@@ -1196,7 +1196,7 @@
         "sha256": "ed9f12715229d6eded4d63e6a0c15b7c357bee71aa842d6063ea7bb9e2442ab3",
         "asset_id": "ed9f12715229d6eded4d63e6a0c15b7c357bee71aa842d6063ea7bb9e2442ab3"
       },
-      "instruction_xml": "He was <emo type=\"afraid\" level=\"2\">tall and lean, and dressed throughout in black</emo>; his shirt collar was low and wide, and the triangle of linen, a little crumpled, <pause act=\"red\"/>exhibited by the opening of his waistcoat, was adorned by a pin containing a small red stone.",
+      "instruction_xml": "He was <emo type=\"afraid\">tall and lean, and dressed throughout in black</emo>; his shirt collar was low and wide, and the triangle of linen, a little crumpled, <pause act=\"red\"/>exhibited by the opening of his waistcoat, was adorned by a pin containing a small red stone.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ed9f12715229d6eded4d63e6a0c15b7c357bee71aa842d6063ea7bb9e2442ab3",
@@ -1424,7 +1424,7 @@
         "sha256": "721eb09ef70a0760bfa70ca7fe5b00272232c50a42f192cb670656dd62bc9de2",
         "asset_id": "721eb09ef70a0760bfa70ca7fe5b00272232c50a42f192cb670656dd62bc9de2"
       },
-      "instruction_xml": "President Pierce, in his special message of january twenty fourth, <pause act=\"ins\"/>declared what had been done by <emo type=\"disgusted\" level=\"2\">the Topeka movement to be &quot;of a revolutionary character</emo>&quot; which would &quot;become treasonable insurrection if it reach the length of organized resistance.&quot;",
+      "instruction_xml": "President Pierce, in his special message of january twenty fourth, <pause act=\"ins\"/>declared what had been done by <emo type=\"disgusted\">the Topeka movement to be &quot;of a revolutionary character</emo>&quot; which would &quot;become treasonable insurrection if it reach the length of organized resistance.&quot;",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "721eb09ef70a0760bfa70ca7fe5b00272232c50a42f192cb670656dd62bc9de2",
@@ -1632,7 +1632,7 @@
         "sha256": "13b8c940504d8b87be5102b53f0cc03456b8ac41eae7f1cd02f56b35aa059297",
         "asset_id": "13b8c940504d8b87be5102b53f0cc03456b8ac41eae7f1cd02f56b35aa059297"
       },
-      "instruction_xml": "Emil took a step nearer and stood frowning down at her bent head. <emo type=\"disgusted\" level=\"2\">He stood in an attitude of self defense</emo>, his feet well apart, his hands clenched and drawn up at his sides, <pause act=\"ins\"/>so that the cords stood out on his bare arms.",
+      "instruction_xml": "Emil took a step nearer and stood frowning down at her bent head. <emo type=\"disgusted\">He stood in an attitude of self defense</emo>, his feet well apart, his hands clenched and drawn up at his sides, <pause act=\"ins\"/>so that the cords stood out on his bare arms.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "13b8c940504d8b87be5102b53f0cc03456b8ac41eae7f1cd02f56b35aa059297",
@@ -1870,7 +1870,7 @@
         "sha256": "b8b536341bd1d6c425995bc3b49ab67c9818cf5aa88a57544129378929c55a65",
         "asset_id": "b8b536341bd1d6c425995bc3b49ab67c9818cf5aa88a57544129378929c55a65"
       },
-      "instruction_xml": "So great was the cry of the wounded, that the prior of the abbey with all his monks came forth, <pause act=\"red\"/>who, when they <emo type=\"melancholic\" level=\"2\">saw these poor wretches so slain amongst the vines</emo>, and wounded to death, confessed some of them.",
+      "instruction_xml": "So great was the cry of the wounded, that the prior of the abbey with all his monks came forth, <pause act=\"red\"/>who, when they <emo type=\"melancholic\">saw these poor wretches so slain amongst the vines</emo>, and wounded to death, confessed some of them.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "b8b536341bd1d6c425995bc3b49ab67c9818cf5aa88a57544129378929c55a65",
@@ -2088,7 +2088,7 @@
         "sha256": "56db21a9e8c7ff9642408be0645fed8177016ed2674ad06615a9c3dc53867e1f",
         "asset_id": "56db21a9e8c7ff9642408be0645fed8177016ed2674ad06615a9c3dc53867e1f"
       },
-      "instruction_xml": "Reverting to the original recipe: <pause act=\"ins\"/>Take the remainder of the crawfish and <emo type=\"happy\" level=\"2\">add thereto three anchovies, washed for the purpose</emo>, and also the crusts of French rolls, fried to a light brown color in butter.",
+      "instruction_xml": "Reverting to the original recipe: <pause act=\"ins\"/>Take the remainder of the crawfish and <emo type=\"happy\">add thereto three anchovies, washed for the purpose</emo>, and also the crusts of French rolls, fried to a light brown color in butter.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "56db21a9e8c7ff9642408be0645fed8177016ed2674ad06615a9c3dc53867e1f",
@@ -2281,7 +2281,7 @@
         "sha256": "e7b09f29692bf1c5607bdf15e1769cf93b9a0eae9128a4ef793c3f89131e5c46",
         "asset_id": "e7b09f29692bf1c5607bdf15e1769cf93b9a0eae9128a4ef793c3f89131e5c46"
       },
-      "instruction_xml": "Annie&#x27;s eyes were very bright, her cheeks were no longer pale, <pause act=\"red\"/>and there was a brilliant color in them. <emo type=\"angry\" level=\"2\">She did not take the least notice of Leslie</emo>; but, going into the room, shut the door.",
+      "instruction_xml": "Annie&#x27;s eyes were very bright, her cheeks were no longer pale, <pause act=\"red\"/>and there was a brilliant color in them. <emo type=\"angry\">She did not take the least notice of Leslie</emo>; but, going into the room, shut the door.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "e7b09f29692bf1c5607bdf15e1769cf93b9a0eae9128a4ef793c3f89131e5c46",
@@ -2484,7 +2484,7 @@
         "sha256": "022a811429c43527aa3feb9d9ac2d656ee14042519245b3bf8851687a4f4dcb4",
         "asset_id": "022a811429c43527aa3feb9d9ac2d656ee14042519245b3bf8851687a4f4dcb4"
       },
-      "instruction_xml": "Jack would become Eva&#x27;s happy husband, and would remain amidst the hurried duties of the eager world. <pause act=\"ins\"/>Crasweller, <emo type=\"sad\" level=\"2\">the triumphant, would live, and at last die</emo>, amidst the flocks and herds of Little Christchurch.",
+      "instruction_xml": "Jack would become Eva&#x27;s happy husband, and would remain amidst the hurried duties of the eager world. <pause act=\"ins\"/>Crasweller, <emo type=\"sad\">the triumphant, would live, and at last die</emo>, amidst the flocks and herds of Little Christchurch.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "022a811429c43527aa3feb9d9ac2d656ee14042519245b3bf8851687a4f4dcb4",
@@ -2677,7 +2677,7 @@
         "sha256": "f222709eee5fa8006f97e1df6a6e95de3541e2e5771dd48ed51ae45fd29c40ef",
         "asset_id": "f222709eee5fa8006f97e1df6a6e95de3541e2e5771dd48ed51ae45fd29c40ef"
       },
-      "instruction_xml": "One word resembles <emo type=\"afraid\" level=\"2\">a claw, another an extinguished and bleeding eye</emo>, such and such a phrase <pause act=\"red\"/>seems to move like the claw of a crab.",
+      "instruction_xml": "One word resembles <emo type=\"afraid\">a claw, another an extinguished and bleeding eye</emo>, such and such a phrase <pause act=\"red\"/>seems to move like the claw of a crab.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f222709eee5fa8006f97e1df6a6e95de3541e2e5771dd48ed51ae45fd29c40ef",
@@ -2820,7 +2820,7 @@
         "sha256": "dc2d59e94c2f36e60e9e2f3e4433b1383c24069b43b98cd1071aad0f6486853b",
         "asset_id": "dc2d59e94c2f36e60e9e2f3e4433b1383c24069b43b98cd1071aad0f6486853b"
       },
-      "instruction_xml": "He then went on to describe what else was to follow-the covering of the ship with leaves to make it blend with its surroundings. <pause act=\"red\"/>Camouflage was not a word <emo type=\"calm\" level=\"2\">the Captain, or anyone else of his time</emo>, yet understood.",
+      "instruction_xml": "He then went on to describe what else was to follow-the covering of the ship with leaves to make it blend with its surroundings. <pause act=\"red\"/>Camouflage was not a word <emo type=\"calm\">the Captain, or anyone else of his time</emo>, yet understood.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "dc2d59e94c2f36e60e9e2f3e4433b1383c24069b43b98cd1071aad0f6486853b",
@@ -3038,7 +3038,7 @@
         "sha256": "5dac577ae2aa0cae758d1f08ce914ae224bf48fb0c705285469972877d4f492f",
         "asset_id": "5dac577ae2aa0cae758d1f08ce914ae224bf48fb0c705285469972877d4f492f"
       },
-      "instruction_xml": "The murder of mrs Darcy had, some time ago, been shifted off the front page, <pause act=\"red\"/>though it would get back there when the young jeweler was tried. <emo type=\"melancholic\" level=\"2\">As for the killing of Shere Ali</emo>, that occasioned only passing interest, the murdered man not being well known.",
+      "instruction_xml": "The murder of mrs Darcy had, some time ago, been shifted off the front page, <pause act=\"red\"/>though it would get back there when the young jeweler was tried. <emo type=\"melancholic\">As for the killing of Shere Ali</emo>, that occasioned only passing interest, the murdered man not being well known.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "5dac577ae2aa0cae758d1f08ce914ae224bf48fb0c705285469972877d4f492f",
@@ -3286,7 +3286,7 @@
         "sha256": "d62200bbccc1589b63b60ed552d79fc9308d7313db4131e73577ffba171d330e",
         "asset_id": "d62200bbccc1589b63b60ed552d79fc9308d7313db4131e73577ffba171d330e"
       },
-      "instruction_xml": "She consulted with her husband, and the result was a warm invitation to the Dalys to spend the winter at Viamede, where they would have <emo type=\"happy\" level=\"2\">all the benefit of the mild climate</emo>, congenial society, use of the library, <pause act=\"ins\"/>horses, etc, and be at no expense.",
+      "instruction_xml": "She consulted with her husband, and the result was a warm invitation to the Dalys to spend the winter at Viamede, where they would have <emo type=\"happy\">all the benefit of the mild climate</emo>, congenial society, use of the library, <pause act=\"ins\"/>horses, etc, and be at no expense.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "d62200bbccc1589b63b60ed552d79fc9308d7313db4131e73577ffba171d330e",
@@ -3529,7 +3529,7 @@
         "sha256": "5f2f6077c36d24df14a3bc55126cb7bd6f0be7e3457e8cbd7f6aa80ffaebc59f",
         "asset_id": "5f2f6077c36d24df14a3bc55126cb7bd6f0be7e3457e8cbd7f6aa80ffaebc59f"
       },
-      "instruction_xml": "Nevertheless, these men, if seen alive, would undoubtedly appear very distinct, <pause act=\"ins\"/>so that we are clearly much influenced in our judgment by <emo type=\"sad\" level=\"2\">the mere colour of the skin and hair</emo>, by slight differences in the features, and by expression.",
+      "instruction_xml": "Nevertheless, these men, if seen alive, would undoubtedly appear very distinct, <pause act=\"ins\"/>so that we are clearly much influenced in our judgment by <emo type=\"sad\">the mere colour of the skin and hair</emo>, by slight differences in the features, and by expression.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "5f2f6077c36d24df14a3bc55126cb7bd6f0be7e3457e8cbd7f6aa80ffaebc59f",
@@ -3742,7 +3742,7 @@
         "sha256": "a4e2b326d33ce1d7d92b027ece8ec9225f9baf99af652a54bd2583f6fcc54116",
         "asset_id": "a4e2b326d33ce1d7d92b027ece8ec9225f9baf99af652a54bd2583f6fcc54116"
       },
-      "instruction_xml": "What he saw was a fresh cheeked lad tall for thirteen, <pause act=\"ins\"/>sturdy, with <emo type=\"surprised\" level=\"2\">sincerity and good humor in his face</emo>, and something sensitive and appealing about his eyes.",
+      "instruction_xml": "What he saw was a fresh cheeked lad tall for thirteen, <pause act=\"ins\"/>sturdy, with <emo type=\"surprised\">sincerity and good humor in his face</emo>, and something sensitive and appealing about his eyes.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "a4e2b326d33ce1d7d92b027ece8ec9225f9baf99af652a54bd2583f6fcc54116",
@@ -3900,7 +3900,7 @@
         "sha256": "2e9be00b83e101e0f4db389bc1ed26c17aa6c74c8db76c13e907909bb39a5372",
         "asset_id": "2e9be00b83e101e0f4db389bc1ed26c17aa6c74c8db76c13e907909bb39a5372"
       },
-      "instruction_xml": "If we are to know as it is supposed we do-that images are &quot;copies,&quot; accurate or inaccurate, of past events, <pause act=\"red\"/>something <emo type=\"angry\" level=\"2\">more than the mere occurrence of images</emo> must go to constitute this knowledge.",
+      "instruction_xml": "If we are to know as it is supposed we do-that images are &quot;copies,&quot; accurate or inaccurate, of past events, <pause act=\"red\"/>something <emo type=\"angry\">more than the mere occurrence of images</emo> must go to constitute this knowledge.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "2e9be00b83e101e0f4db389bc1ed26c17aa6c74c8db76c13e907909bb39a5372",
@@ -4093,7 +4093,7 @@
         "sha256": "6f86673283201301a9ec257f7371bc4a993693f5d2aa60524e961f61328f5836",
         "asset_id": "6f86673283201301a9ec257f7371bc4a993693f5d2aa60524e961f61328f5836"
       },
-      "instruction_xml": "Now in this of <emo type=\"surprised\" level=\"2\">Burne Jones, the landscape is clearly full of light everywhere</emo>, color or glass light: that is, the outline is prepared <pause act=\"ins\"/>for modification of color only.",
+      "instruction_xml": "Now in this of <emo type=\"surprised\">Burne Jones, the landscape is clearly full of light everywhere</emo>, color or glass light: that is, the outline is prepared <pause act=\"ins\"/>for modification of color only.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6f86673283201301a9ec257f7371bc4a993693f5d2aa60524e961f61328f5836",
@@ -4256,7 +4256,7 @@
         "sha256": "0593d4eaf5825735514f967705b6eaa7902e00959656c0311492df4a935c64e8",
         "asset_id": "0593d4eaf5825735514f967705b6eaa7902e00959656c0311492df4a935c64e8"
       },
-      "instruction_xml": "When one listens, by the side of <emo type=\"melancholic\" level=\"2\">honest men, at the portals of society</emo>, one overhears the dialogues of those <pitch semitones=\"4\">who are on the outside</pitch>. One distinguishes questions and replies.",
+      "instruction_xml": "When one listens, by the side of <emo type=\"melancholic\">honest men, at the portals of society</emo>, one overhears the dialogues of those <pitch semitones=\"4\">who are on the outside</pitch>. One distinguishes questions and replies.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "0593d4eaf5825735514f967705b6eaa7902e00959656c0311492df4a935c64e8",
@@ -4424,7 +4424,7 @@
         "sha256": "47090b41f2f34982f872a600556b7ae9bc6b3dc10df88ccd5dc38ac52c16f5b3",
         "asset_id": "47090b41f2f34982f872a600556b7ae9bc6b3dc10df88ccd5dc38ac52c16f5b3"
       },
-      "instruction_xml": "&quot;In peace <pitch semitones=\"4\">thou shalt NOT die</pitch>,&quot; repeated the voice; &quot;even in death shalt thou think on <emo type=\"melancholic\" level=\"2\">the groans which this castle has echoed</emo>, on the blood that is engrained in its floors.&quot;",
+      "instruction_xml": "&quot;In peace <pitch semitones=\"4\">thou shalt NOT die</pitch>,&quot; repeated the voice; &quot;even in death shalt thou think on <emo type=\"melancholic\">the groans which this castle has echoed</emo>, on the blood that is engrained in its floors.&quot;",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "47090b41f2f34982f872a600556b7ae9bc6b3dc10df88ccd5dc38ac52c16f5b3",
@@ -4602,7 +4602,7 @@
         "sha256": "64964139e0163a0fbec1f7ff517a4f98b7b5745855f207f628132cbb2f5bac28",
         "asset_id": "64964139e0163a0fbec1f7ff517a4f98b7b5745855f207f628132cbb2f5bac28"
       },
-      "instruction_xml": "Her look had said to him: &quot;<emo type=\"angry\" level=\"2\">Since they are jealous of you, divide their suspicions</emo>, for the man who distrusts two rivals does not object to either in particular.&quot; So that <pitch semitones=\"4\">Madame, by this clever diversion</pitch>, decided him.",
+      "instruction_xml": "Her look had said to him: &quot;<emo type=\"angry\">Since they are jealous of you, divide their suspicions</emo>, for the man who distrusts two rivals does not object to either in particular.&quot; So that <pitch semitones=\"4\">Madame, by this clever diversion</pitch>, decided him.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "64964139e0163a0fbec1f7ff517a4f98b7b5745855f207f628132cbb2f5bac28",
@@ -4810,7 +4810,7 @@
         "sha256": "a1879ac589d1239170d0761e53147c2f093d28eb0bcd5eff6f2cab078a5ec9eb",
         "asset_id": "a1879ac589d1239170d0761e53147c2f093d28eb0bcd5eff6f2cab078a5ec9eb"
       },
-      "instruction_xml": "Dickie left the shop without his moonflowers, indeed, but with <rate factor=\"0.8\">his Tinkler now whitely shining</rate>, and declared to be &quot;<emo type=\"happy\" level=\"2\">real silver, and mind you take care of it</emo>, my lad,&quot; his white cornelian seal carefully packed in a strong little cardboard box with metal corners.",
+      "instruction_xml": "Dickie left the shop without his moonflowers, indeed, but with <rate factor=\"0.8\">his Tinkler now whitely shining</rate>, and declared to be &quot;<emo type=\"happy\">real silver, and mind you take care of it</emo>, my lad,&quot; his white cornelian seal carefully packed in a strong little cardboard box with metal corners.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "a1879ac589d1239170d0761e53147c2f093d28eb0bcd5eff6f2cab078a5ec9eb",
@@ -5053,7 +5053,7 @@
         "sha256": "5f906dde5d34362b3b96d445d893ed3f9f1a980399b92628fc685567d7df4b5e",
         "asset_id": "5f906dde5d34362b3b96d445d893ed3f9f1a980399b92628fc685567d7df4b5e"
       },
-      "instruction_xml": "Among the women <emo type=\"calm\" level=\"2\">who lost their lives was Miss Josephine Anderson</emo>, whose cruel death simply <pitch semitones=\"-4\">blighted her brother&#x27;s life</pitch> and so filled him with determination to revenge that he afterward became the most desperate of desperate men.",
+      "instruction_xml": "Among the women <emo type=\"calm\">who lost their lives was Miss Josephine Anderson</emo>, whose cruel death simply <pitch semitones=\"-4\">blighted her brother&#x27;s life</pitch> and so filled him with determination to revenge that he afterward became the most desperate of desperate men.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "5f906dde5d34362b3b96d445d893ed3f9f1a980399b92628fc685567d7df4b5e",
@@ -5261,7 +5261,7 @@
         "sha256": "2e0223ed230e975bf0a7e9a9cfabb613592799c31d80baa84c90541dbc176b34",
         "asset_id": "2e0223ed230e975bf0a7e9a9cfabb613592799c31d80baa84c90541dbc176b34"
       },
-      "instruction_xml": "It was this observation that drew from Douglas-not immediately, but later in the evening-a reply that had <emo type=\"sad\" level=\"2\">the interesting consequence to which I call attention</emo>. Someone else told <rate factor=\"1.25\">a story not particularly effective</rate>, which I saw he was not following.",
+      "instruction_xml": "It was this observation that drew from Douglas-not immediately, but later in the evening-a reply that had <emo type=\"sad\">the interesting consequence to which I call attention</emo>. Someone else told <rate factor=\"1.25\">a story not particularly effective</rate>, which I saw he was not following.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "2e0223ed230e975bf0a7e9a9cfabb613592799c31d80baa84c90541dbc176b34",
@@ -5489,7 +5489,7 @@
         "sha256": "b9b35cb603ab8c347be8e1f13d3c7e383d896e24a748703b40aa4a45de287603",
         "asset_id": "b9b35cb603ab8c347be8e1f13d3c7e383d896e24a748703b40aa4a45de287603"
       },
-      "instruction_xml": "The artist was <emo type=\"afraid\" level=\"2\">surprised to find this man in such a circle</emo>, but he learned from Althea that the young member of the Museum <pitch semitones=\"-4\">was a relative of Proclus</pitch>, and a suitor of the beautiful Nico, one of the Queen&#x27;s ladies in waiting, who was among the guests.",
+      "instruction_xml": "The artist was <emo type=\"afraid\">surprised to find this man in such a circle</emo>, but he learned from Althea that the young member of the Museum <pitch semitones=\"-4\">was a relative of Proclus</pitch>, and a suitor of the beautiful Nico, one of the Queen&#x27;s ladies in waiting, who was among the guests.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "b9b35cb603ab8c347be8e1f13d3c7e383d896e24a748703b40aa4a45de287603",
@@ -5752,7 +5752,7 @@
         "sha256": "8c0ca454f8531e120d4a8068b054f7313c340cffddad16505eae98321d22938b",
         "asset_id": "8c0ca454f8531e120d4a8068b054f7313c340cffddad16505eae98321d22938b"
       },
-      "instruction_xml": "But though <emo type=\"sad\" level=\"2\">she received caresses and fond words back again</emo>, in such profusion <rate factor=\"1.25\">as would have gladdened her formerly</rate>, yet she felt that there was a secret withheld from her, and she believed it bore serious reference to her mother&#x27;s health.",
+      "instruction_xml": "But though <emo type=\"sad\">she received caresses and fond words back again</emo>, in such profusion <rate factor=\"1.25\">as would have gladdened her formerly</rate>, yet she felt that there was a secret withheld from her, and she believed it bore serious reference to her mother&#x27;s health.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "8c0ca454f8531e120d4a8068b054f7313c340cffddad16505eae98321d22938b",
@@ -5980,7 +5980,7 @@
         "sha256": "c3ec6ee8bded8904ce7032589818320a2fc51d80ed23e8d9d3b8de9ea4bdf695",
         "asset_id": "c3ec6ee8bded8904ce7032589818320a2fc51d80ed23e8d9d3b8de9ea4bdf695"
       },
-      "instruction_xml": "Basil Ransom had got up just as mrs Luna <pitch semitones=\"-4\">made this last declaration</pitch>; for a <emo type=\"afraid\" level=\"2\">young lady had glided into the room</emo>, who stopped short as it fell upon her ears.",
+      "instruction_xml": "Basil Ransom had got up just as mrs Luna <pitch semitones=\"-4\">made this last declaration</pitch>; for a <emo type=\"afraid\">young lady had glided into the room</emo>, who stopped short as it fell upon her ears.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "c3ec6ee8bded8904ce7032589818320a2fc51d80ed23e8d9d3b8de9ea4bdf695",
@@ -6153,7 +6153,7 @@
         "sha256": "b92ea0d81e8d869f87d84edd3f77b2b6db18214232d12d5159452b55e85309da",
         "asset_id": "b92ea0d81e8d869f87d84edd3f77b2b6db18214232d12d5159452b55e85309da"
       },
-      "instruction_xml": "Julius&#x27; color <rate factor=\"1.25\">was nearly jet black</rate>, and his speech was very good <emo type=\"surprised\" level=\"2\">considering his lack of book learning</emo>; his bearing was entirely self possessed and commendable.",
+      "instruction_xml": "Julius&#x27; color <rate factor=\"1.25\">was nearly jet black</rate>, and his speech was very good <emo type=\"surprised\">considering his lack of book learning</emo>; his bearing was entirely self possessed and commendable.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "b92ea0d81e8d869f87d84edd3f77b2b6db18214232d12d5159452b55e85309da",
@@ -6301,7 +6301,7 @@
         "sha256": "4f3101388f0a1e68e180021a9e14cf81c61eff007ae83a8125b854c00c4b7481",
         "asset_id": "4f3101388f0a1e68e180021a9e14cf81c61eff007ae83a8125b854c00c4b7481"
       },
-      "instruction_xml": "One of the numerous books purporting to be a history of my life <rate factor=\"0.8\">states with the utmost soberness</rate> that, as a boy, I was cruel to dumb animals and to my schoolmates, and, as for my <emo type=\"disgusted\" level=\"2\">teachers, to them I was a continual trouble</emo> and annoyance.",
+      "instruction_xml": "One of the numerous books purporting to be a history of my life <rate factor=\"0.8\">states with the utmost soberness</rate> that, as a boy, I was cruel to dumb animals and to my schoolmates, and, as for my <emo type=\"disgusted\">teachers, to them I was a continual trouble</emo> and annoyance.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "4f3101388f0a1e68e180021a9e14cf81c61eff007ae83a8125b854c00c4b7481",
@@ -6549,7 +6549,7 @@
         "sha256": "eeeea927bb14bb51ac639ad0b85b2749f94cc5712157eb80b63226caf735ffd1",
         "asset_id": "eeeea927bb14bb51ac639ad0b85b2749f94cc5712157eb80b63226caf735ffd1"
       },
-      "instruction_xml": "His face and <emo type=\"disgusted\" level=\"2\">his whole figure in his uniform with the crosses</emo>, and white trousers striped with braid, <rate factor=\"0.8\">as he moved hurriedly along</rate>, reminded Levin of some hunted beast who sees that he is in evil case.",
+      "instruction_xml": "His face and <emo type=\"disgusted\">his whole figure in his uniform with the crosses</emo>, and white trousers striped with braid, <rate factor=\"0.8\">as he moved hurriedly along</rate>, reminded Levin of some hunted beast who sees that he is in evil case.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "eeeea927bb14bb51ac639ad0b85b2749f94cc5712157eb80b63226caf735ffd1",
@@ -6752,7 +6752,7 @@
         "sha256": "ae889e9ea90842640573e988b4a5f3d0a2fbfb486819540cfd00ee5ce3c551a2",
         "asset_id": "ae889e9ea90842640573e988b4a5f3d0a2fbfb486819540cfd00ee5ce3c551a2"
       },
-      "instruction_xml": "The ether <rate factor=\"0.8\">floats on the surface</rate>, holding the alkaloids, except morphine, in solution. (five) A <emo type=\"happy\" level=\"2\">part of this ethereal solution is poured</emo> into a watch glass and allowed to evaporate.",
+      "instruction_xml": "The ether <rate factor=\"0.8\">floats on the surface</rate>, holding the alkaloids, except morphine, in solution. (five) A <emo type=\"happy\">part of this ethereal solution is poured</emo> into a watch glass and allowed to evaporate.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ae889e9ea90842640573e988b4a5f3d0a2fbfb486819540cfd00ee5ce3c551a2",
@@ -6920,7 +6920,7 @@
         "sha256": "fdc43672992e7c10baec8410ed94229ea6f25a76bc0a8502cc2bf750e529b105",
         "asset_id": "fdc43672992e7c10baec8410ed94229ea6f25a76bc0a8502cc2bf750e529b105"
       },
-      "instruction_xml": "The old <pitch semitones=\"4\">Executive Committee had withdrawn</pitch>, and was holding a rump convention of its own in another room of the same building, <emo type=\"angry\" level=\"2\">made up of bolting delegates and representatives</emo> of the Army Committees.",
+      "instruction_xml": "The old <pitch semitones=\"4\">Executive Committee had withdrawn</pitch>, and was holding a rump convention of its own in another room of the same building, <emo type=\"angry\">made up of bolting delegates and representatives</emo> of the Army Committees.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "fdc43672992e7c10baec8410ed94229ea6f25a76bc0a8502cc2bf750e529b105",
@@ -7103,7 +7103,7 @@
         "sha256": "2f807140c1a0908d0c0fe0392c4e39f24ac2c48e0223572bf15a13e790bed5d5",
         "asset_id": "2f807140c1a0908d0c0fe0392c4e39f24ac2c48e0223572bf15a13e790bed5d5"
       },
-      "instruction_xml": "For state processions a throne is set for him upon <pitch semitones=\"-4\">a huge elephant, eleven cubits high</pitch>: and upon this he sitteth having his great <emo type=\"calm\" level=\"2\">lords and officers and guests standing in two ranks</emo>, on his right hand and on his left.",
+      "instruction_xml": "For state processions a throne is set for him upon <pitch semitones=\"-4\">a huge elephant, eleven cubits high</pitch>: and upon this he sitteth having his great <emo type=\"calm\">lords and officers and guests standing in two ranks</emo>, on his right hand and on his left.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "2f807140c1a0908d0c0fe0392c4e39f24ac2c48e0223572bf15a13e790bed5d5",
@@ -7326,7 +7326,7 @@
         "sha256": "72de842922bcf27179566dd11bb48b8cb2dcad5405d51f4967287f378b6531da",
         "asset_id": "72de842922bcf27179566dd11bb48b8cb2dcad5405d51f4967287f378b6531da"
       },
-      "instruction_xml": "It is therefore desired that you should endeavour to <pitch semitones=\"-4\">obtain information as to his intentions</pitch>; and that, if the Fixed Period be not abandoned altogether, <pause act=\"ins\"/>with a clear conviction as to <emo type=\"disgusted\" level=\"2\">its cruelty on the part of the inhabitants generally</emo>, you should cause him to be carried away and brought to England.",
+      "instruction_xml": "It is therefore desired that you should endeavour to <pitch semitones=\"-4\">obtain information as to his intentions</pitch>; and that, if the Fixed Period be not abandoned altogether, <pause act=\"ins\"/>with a clear conviction as to <emo type=\"disgusted\">its cruelty on the part of the inhabitants generally</emo>, you should cause him to be carried away and brought to England.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "72de842922bcf27179566dd11bb48b8cb2dcad5405d51f4967287f378b6531da",
@@ -7604,7 +7604,7 @@
         "sha256": "6ef77badd78d7e3a93d5580af72cdb5ea84b33c1b3e8b7945965a5b4a831884e",
         "asset_id": "6ef77badd78d7e3a93d5580af72cdb5ea84b33c1b3e8b7945965a5b4a831884e"
       },
-      "instruction_xml": "Then he said: &quot;<rate factor=\"0.8\">Oh yes; when I dine out</rate> I usually <emo type=\"angry\" level=\"2\">carry a six shooter and a bowie knife</emo>.&quot; And he took up his hat vaguely-a soft black hat with a low crown and an immense straight brim. <pause act=\"red\"/>mrs Luna wanted to know what he was doing.",
+      "instruction_xml": "Then he said: &quot;<rate factor=\"0.8\">Oh yes; when I dine out</rate> I usually <emo type=\"angry\">carry a six shooter and a bowie knife</emo>.&quot; And he took up his hat vaguely-a soft black hat with a low crown and an immense straight brim. <pause act=\"red\"/>mrs Luna wanted to know what he was doing.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6ef77badd78d7e3a93d5580af72cdb5ea84b33c1b3e8b7945965a5b4a831884e",
@@ -7862,7 +7862,7 @@
         "sha256": "f81e1ac4416a30d85f1a7ad5e3643e1cd87db3c2faa046f3d5127c66d8c7d93e",
         "asset_id": "f81e1ac4416a30d85f1a7ad5e3643e1cd87db3c2faa046f3d5127c66d8c7d93e"
       },
-      "instruction_xml": "At Helstone unpunctuality at meal times was a great fault in her mother&#x27;s eyes; <pause act=\"red\"/>but now <emo type=\"melancholic\" level=\"2\">this, as well as many other little irregularities</emo>, seemed to <rate factor=\"0.8\">have lost their power of irritation</rate>, and Margaret almost longed for the old complainings.",
+      "instruction_xml": "At Helstone unpunctuality at meal times was a great fault in her mother&#x27;s eyes; <pause act=\"red\"/>but now <emo type=\"melancholic\">this, as well as many other little irregularities</emo>, seemed to <rate factor=\"0.8\">have lost their power of irritation</rate>, and Margaret almost longed for the old complainings.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f81e1ac4416a30d85f1a7ad5e3643e1cd87db3c2faa046f3d5127c66d8c7d93e",
@@ -8085,7 +8085,7 @@
         "sha256": "0e4e943f57c656ea947c82fbe53fdad9ffd649d0dec685b3764c7a45473b649a",
         "asset_id": "0e4e943f57c656ea947c82fbe53fdad9ffd649d0dec685b3764c7a45473b649a"
       },
-      "instruction_xml": "But he is unable to invent such a narrative himself; <pause act=\"red\"/>and he <emo type=\"calm\" level=\"2\">is afraid that the poets are equally incapable</emo>; for, although he pretends to have nothing to say against them, he remarks that they are <rate factor=\"1.25\">a tribe of imitators</rate>, who can only describe what they have seen.",
+      "instruction_xml": "But he is unable to invent such a narrative himself; <pause act=\"red\"/>and he <emo type=\"calm\">is afraid that the poets are equally incapable</emo>; for, although he pretends to have nothing to say against them, he remarks that they are <rate factor=\"1.25\">a tribe of imitators</rate>, who can only describe what they have seen.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "0e4e943f57c656ea947c82fbe53fdad9ffd649d0dec685b3764c7a45473b649a",
@@ -8343,7 +8343,7 @@
         "sha256": "72ad1164c64066c2e54070ddd2acae80eaae51d14bbc4108e9d1f0d6838ae3df",
         "asset_id": "72ad1164c64066c2e54070ddd2acae80eaae51d14bbc4108e9d1f0d6838ae3df"
       },
-      "instruction_xml": "It is <emo type=\"happy\" level=\"2\">partly because I think it so admirable</emo>, and partly because <pitch semitones=\"-4\">it tends to bring out her character</pitch>, as shown in the following reply, <pause act=\"ins\"/>that I have taken the liberty of inserting the foregoing extracts from it.",
+      "instruction_xml": "It is <emo type=\"happy\">partly because I think it so admirable</emo>, and partly because <pitch semitones=\"-4\">it tends to bring out her character</pitch>, as shown in the following reply, <pause act=\"ins\"/>that I have taken the liberty of inserting the foregoing extracts from it.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "72ad1164c64066c2e54070ddd2acae80eaae51d14bbc4108e9d1f0d6838ae3df",
@@ -8551,7 +8551,7 @@
         "sha256": "d20bf6074fe1a3f3945c4d4912f9754c4d13f8acbd7dcc48598d162821a1544f",
         "asset_id": "d20bf6074fe1a3f3945c4d4912f9754c4d13f8acbd7dcc48598d162821a1544f"
       },
-      "instruction_xml": "Any of the fruits that have been preserved in syrup may be converted into dry preserves, by first <pitch semitones=\"4\">draining them from the syrup</pitch>, and then drying them in a stove or very moderate oven, <pause act=\"ins\"/>adding to them a quantity of powdered <emo type=\"surprised\" level=\"2\">loaf sugar, which will gradually penetrate the fruit</emo>, while the fluid parts of the syrup gently evaporate.",
+      "instruction_xml": "Any of the fruits that have been preserved in syrup may be converted into dry preserves, by first <pitch semitones=\"4\">draining them from the syrup</pitch>, and then drying them in a stove or very moderate oven, <pause act=\"ins\"/>adding to them a quantity of powdered <emo type=\"surprised\">loaf sugar, which will gradually penetrate the fruit</emo>, while the fluid parts of the syrup gently evaporate.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "d20bf6074fe1a3f3945c4d4912f9754c4d13f8acbd7dcc48598d162821a1544f",
@@ -11864,7 +11864,7 @@
         "sha256": "ebc14a6476d9b050f599a810ab8b320f9a4d0d71c448d0a02fbb2fdbc904c3ca",
         "asset_id": "ebc14a6476d9b050f599a810ab8b320f9a4d0d71c448d0a02fbb2fdbc904c3ca"
       },
-      "instruction_xml": "Your mistake is, that you didn&#x27;t bring a man with you; <ins>a very big one</ins>that&#x27;s one mistake, and the other is <emo type=\"angry\" level=\"2\">that you didn&#x27;t come in the dark</emo> and fetch your masks.",
+      "instruction_xml": "Your mistake is, that you didn&#x27;t bring a man with you; <ins>a very big one</ins>that&#x27;s one mistake, and the other is <emo type=\"angry\">that you didn&#x27;t come in the dark</emo> and fetch your masks.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ebc14a6476d9b050f599a810ab8b320f9a4d0d71c448d0a02fbb2fdbc904c3ca",
@@ -12042,7 +12042,7 @@
         "sha256": "ab98d0d4212b0a074e43ee29e1fc5d08f36074f31b167e029f8d3465e115140d",
         "asset_id": "ab98d0d4212b0a074e43ee29e1fc5d08f36074f31b167e029f8d3465e115140d"
       },
-      "instruction_xml": "Let us say, moreover, parenthetically, that from a few <sub targ=\"the preceding text\">words of what precedes</sub> a marked <emo type=\"disgusted\" level=\"2\">separation might be inferred between the two classes</emo> of historians which does not exist in our mind.",
+      "instruction_xml": "Let us say, moreover, parenthetically, that from a few <sub targ=\"the preceding text\">words of what precedes</sub> a marked <emo type=\"disgusted\">separation might be inferred between the two classes</emo> of historians which does not exist in our mind.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ab98d0d4212b0a074e43ee29e1fc5d08f36074f31b167e029f8d3465e115140d",
@@ -12220,7 +12220,7 @@
         "sha256": "70ef6b021364919c76d65121df877ea9ae7f1f13676605874bd3bc35afeb1777",
         "asset_id": "70ef6b021364919c76d65121df877ea9ae7f1f13676605874bd3bc35afeb1777"
       },
-      "instruction_xml": "So Mark waited to <del>put the lady into the carriage</del>, and he meditated walking a little way by the window and making his peace, and there <emo type=\"sad\" level=\"2\">was perhaps some vague vision of jumping in afterwards</emo>; I know not.",
+      "instruction_xml": "So Mark waited to <del>put the lady into the carriage</del>, and he meditated walking a little way by the window and making his peace, and there <emo type=\"sad\">was perhaps some vague vision of jumping in afterwards</emo>; I know not.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "70ef6b021364919c76d65121df877ea9ae7f1f13676605874bd3bc35afeb1777",
@@ -12428,7 +12428,7 @@
         "sha256": "baf1150def3c17389a2bec810d5e9f055bbd5de49e318c2af973ab9a4d742da7",
         "asset_id": "baf1150def3c17389a2bec810d5e9f055bbd5de49e318c2af973ab9a4d742da7"
       },
-      "instruction_xml": "Whoever thou art,&quot; She exclaimed, suddenly seizing Rodolfo&#x27;s hand, &quot;<emo type=\"angry\" level=\"2\">if thy soul is capable of pity</emo>, grant me one prayer: <sub targ=\"since you took my honor\">having deprived me of honour</sub>, now deprive me of life.",
+      "instruction_xml": "Whoever thou art,&quot; She exclaimed, suddenly seizing Rodolfo&#x27;s hand, &quot;<emo type=\"angry\">if thy soul is capable of pity</emo>, grant me one prayer: <sub targ=\"since you took my honor\">having deprived me of honour</sub>, now deprive me of life.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "baf1150def3c17389a2bec810d5e9f055bbd5de49e318c2af973ab9a4d742da7",
@@ -12601,7 +12601,7 @@
         "sha256": "4e2782b6c02efb934b6f7509dbe5f07c80980c63dc9aa509e24efa7586399fae",
         "asset_id": "4e2782b6c02efb934b6f7509dbe5f07c80980c63dc9aa509e24efa7586399fae"
       },
-      "instruction_xml": "Indeed, I like him extremely, and he is <emo type=\"happy\" level=\"2\">commended to me, by people that know him</emo> very well and are able to judge, for <del>a most excellent servant</del>, and faithful as possible.",
+      "instruction_xml": "Indeed, I like him extremely, and he is <emo type=\"happy\">commended to me, by people that know him</emo> very well and are able to judge, for <del>a most excellent servant</del>, and faithful as possible.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "4e2782b6c02efb934b6f7509dbe5f07c80980c63dc9aa509e24efa7586399fae",
@@ -12779,7 +12779,7 @@
         "sha256": "9196660957a769a560d19b64c53c63c848238deea5fda3179b0ce5becd48bfc4",
         "asset_id": "9196660957a769a560d19b64c53c63c848238deea5fda3179b0ce5becd48bfc4"
       },
-      "instruction_xml": "The piled up <sub targ=\"clouds form\">vapours condense into water</sub>; and the air, <emo type=\"afraid\" level=\"2\">put into violent action to supply the vacuum</emo> left by the condensation of the mists, rouses itself into a whirlwind.",
+      "instruction_xml": "The piled up <sub targ=\"clouds form\">vapours condense into water</sub>; and the air, <emo type=\"afraid\">put into violent action to supply the vacuum</emo> left by the condensation of the mists, rouses itself into a whirlwind.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "9196660957a769a560d19b64c53c63c848238deea5fda3179b0ce5becd48bfc4",
@@ -12947,7 +12947,7 @@
         "sha256": "f63c079f003807ce7f06eaace95d519acc160c6b713dc610c853a26aa8fb5a64",
         "asset_id": "f63c079f003807ce7f06eaace95d519acc160c6b713dc610c853a26aa8fb5a64"
       },
-      "instruction_xml": "The local <ins>because of this</ins>Trade Unionists took offence at the fact of Cabinet <emo type=\"surprised\" level=\"2\">Ministers having personally acted as strike breakers</emo>, and even the release of Platterbaff failed to pacify them.",
+      "instruction_xml": "The local <ins>because of this</ins>Trade Unionists took offence at the fact of Cabinet <emo type=\"surprised\">Ministers having personally acted as strike breakers</emo>, and even the release of Platterbaff failed to pacify them.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f63c079f003807ce7f06eaace95d519acc160c6b713dc610c853a26aa8fb5a64",
@@ -13105,7 +13105,7 @@
         "sha256": "988da50c30e478fdb6fa370e1f4f9e043c2d0409b98fc05094cd4971921e7602",
         "asset_id": "988da50c30e478fdb6fa370e1f4f9e043c2d0409b98fc05094cd4971921e7602"
       },
-      "instruction_xml": "If thou fear no one, I <emo type=\"afraid\" level=\"2\">fear for thee and for my life</emo>, so Allah upon thee! recite <del>nothing more of verses</del> till thou come to thine own land.",
+      "instruction_xml": "If thou fear no one, I <emo type=\"afraid\">fear for thee and for my life</emo>, so Allah upon thee! recite <del>nothing more of verses</del> till thou come to thine own land.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "988da50c30e478fdb6fa370e1f4f9e043c2d0409b98fc05094cd4971921e7602",
@@ -13268,7 +13268,7 @@
         "sha256": "448fcc42c148a5aefe002f64ffed07f3b84b9791b1cc6385689de80c9f360b31",
         "asset_id": "448fcc42c148a5aefe002f64ffed07f3b84b9791b1cc6385689de80c9f360b31"
       },
-      "instruction_xml": "The members of a family, of <del>a tribe</del>, of a nation, <emo type=\"melancholic\" level=\"2\">who increase the happiness of the family</emo>, of the tribe or of the nation, are considered good members.",
+      "instruction_xml": "The members of a family, of <del>a tribe</del>, of a nation, <emo type=\"melancholic\">who increase the happiness of the family</emo>, of the tribe or of the nation, are considered good members.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "448fcc42c148a5aefe002f64ffed07f3b84b9791b1cc6385689de80c9f360b31",
@@ -13431,7 +13431,7 @@
         "sha256": "2c28b9831dad1d51bae2187aab9de81e5f340663897f18ccff663a3667c020f6",
         "asset_id": "2c28b9831dad1d51bae2187aab9de81e5f340663897f18ccff663a3667c020f6"
       },
-      "instruction_xml": "I think <emo type=\"surprised\" level=\"2\">Lady Chelford and her son begin to think</emo> there is more in this oddly timed journey of mr Wylder&#x27;s than first appeared. When I came <sub targ=\"downstairs for breakfast\">into the parlour this morning</sub> I knew they were speaking of it.",
+      "instruction_xml": "I think <emo type=\"surprised\">Lady Chelford and her son begin to think</emo> there is more in this oddly timed journey of mr Wylder&#x27;s than first appeared. When I came <sub targ=\"downstairs for breakfast\">into the parlour this morning</sub> I knew they were speaking of it.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "2c28b9831dad1d51bae2187aab9de81e5f340663897f18ccff663a3667c020f6",
@@ -13649,7 +13649,7 @@
         "sha256": "fd2e1765ccb85cdaa4c1f1b12a03ae9601e6ac4d92ffe14c889e9ad569fc35bd",
         "asset_id": "fd2e1765ccb85cdaa4c1f1b12a03ae9601e6ac4d92ffe14c889e9ad569fc35bd"
       },
-      "instruction_xml": "Then there was <ins>you see</ins>a little pause in the conversation, and I felt myself bound to say <emo type=\"disgusted\" level=\"2\">something as to the violent interruption</emo> to which I had this morning been subjected.",
+      "instruction_xml": "Then there was <ins>you see</ins>a little pause in the conversation, and I felt myself bound to say <emo type=\"disgusted\">something as to the violent interruption</emo> to which I had this morning been subjected.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "fd2e1765ccb85cdaa4c1f1b12a03ae9601e6ac4d92ffe14c889e9ad569fc35bd",
@@ -13817,7 +13817,7 @@
         "sha256": "b866dc03c2c616f56cf89604b022d80c0efd10ad114e82ab3cee04ef1abacb2a",
         "asset_id": "b866dc03c2c616f56cf89604b022d80c0efd10ad114e82ab3cee04ef1abacb2a"
       },
-      "instruction_xml": "Shrubs and <ins>entirely</ins>creeping plants covered the windows, and hid from the garden and court these two apartments, the only rooms into which, <emo type=\"calm\" level=\"2\">as they were on the ground floor</emo>, the prying eyes of the curious could penetrate.",
+      "instruction_xml": "Shrubs and <ins>entirely</ins>creeping plants covered the windows, and hid from the garden and court these two apartments, the only rooms into which, <emo type=\"calm\">as they were on the ground floor</emo>, the prying eyes of the curious could penetrate.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "b866dc03c2c616f56cf89604b022d80c0efd10ad114e82ab3cee04ef1abacb2a",
@@ -14020,7 +14020,7 @@
         "sha256": "ac75a98bcfd7d238f9ce97622c4dba00ad74cdee9dfd9083998d4f3d2eec14f3",
         "asset_id": "ac75a98bcfd7d238f9ce97622c4dba00ad74cdee9dfd9083998d4f3d2eec14f3"
       },
-      "instruction_xml": "To be <emo type=\"calm\" level=\"2\">loved by a pure young girl</emo>, to be the first to reveal to her the strange mystery of love, is indeed <del>a great happiness</del>, but it is the simplest thing in the world.",
+      "instruction_xml": "To be <emo type=\"calm\">loved by a pure young girl</emo>, to be the first to reveal to her the strange mystery of love, is indeed <del>a great happiness</del>, but it is the simplest thing in the world.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ac75a98bcfd7d238f9ce97622c4dba00ad74cdee9dfd9083998d4f3d2eec14f3",
@@ -14213,7 +14213,7 @@
         "sha256": "375107a0abb94447af7f262fec388f01dbee50d1ed101d091aefe4b9861867cc",
         "asset_id": "375107a0abb94447af7f262fec388f01dbee50d1ed101d091aefe4b9861867cc"
       },
-      "instruction_xml": "&quot;And with what he made he&#x27;d increase his stock, or <sub targ=\"purchase a small property\">buy some land for a trifle</sub>, and let it <emo type=\"happy\" level=\"2\">out in lots to the peasants,&quot; Levin added, smiling</emo>. He had evidently more than once come across those commercial calculations.",
+      "instruction_xml": "&quot;And with what he made he&#x27;d increase his stock, or <sub targ=\"purchase a small property\">buy some land for a trifle</sub>, and let it <emo type=\"happy\">out in lots to the peasants,&quot; Levin added, smiling</emo>. He had evidently more than once come across those commercial calculations.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "375107a0abb94447af7f262fec388f01dbee50d1ed101d091aefe4b9861867cc",
@@ -14431,7 +14431,7 @@
         "sha256": "a223e6a3b65d4f752d323a3876871e6c54ffe72bebb9644390e6e424d279b5e1",
         "asset_id": "a223e6a3b65d4f752d323a3876871e6c54ffe72bebb9644390e6e424d279b5e1"
       },
-      "instruction_xml": "Leslie stood and thought about her for a <ins>just</ins>moment or two; but then her own <emo type=\"sad\" level=\"2\">correspondence absorbed her, and she did not notice</emo> when eleven and even twelve struck.",
+      "instruction_xml": "Leslie stood and thought about her for a <ins>just</ins>moment or two; but then her own <emo type=\"sad\">correspondence absorbed her, and she did not notice</emo> when eleven and even twelve struck.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "a223e6a3b65d4f752d323a3876871e6c54ffe72bebb9644390e6e424d279b5e1",
@@ -14594,7 +14594,7 @@
         "sha256": "a36f8ea0d48304ca53c7db540064d4dc6dbf97eed49a6c4dc3608809caf2bc89",
         "asset_id": "a36f8ea0d48304ca53c7db540064d4dc6dbf97eed49a6c4dc3608809caf2bc89"
       },
-      "instruction_xml": "The result was not very satisfactory, but sufficiently so to make <emo type=\"afraid\" level=\"2\">him essay the bar of the window once more</emo>, producing a grating, ear assailing sound<pause act=\"red\"/>, as he found that now he <del>did make a little impression</del>,--so little though, that the probability was, if he kept on working well for twenty four hours, he would not get through.",
+      "instruction_xml": "The result was not very satisfactory, but sufficiently so to make <emo type=\"afraid\">him essay the bar of the window once more</emo>, producing a grating, ear assailing sound<pause act=\"red\"/>, as he found that now he <del>did make a little impression</del>,--so little though, that the probability was, if he kept on working well for twenty four hours, he would not get through.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "a36f8ea0d48304ca53c7db540064d4dc6dbf97eed49a6c4dc3608809caf2bc89",
@@ -14907,7 +14907,7 @@
         "sha256": "d547d841a92feeb71588b47207184bf98759888b9a3e76a639f5d107b61d9123",
         "asset_id": "d547d841a92feeb71588b47207184bf98759888b9a3e76a639f5d107b61d9123"
       },
-      "instruction_xml": "Instead the vital wave had carried <emo type=\"surprised\" level=\"2\">him on its bosom out of himself</emo> and back <del>again when it receded</del>: and no <pause act=\"ins\"/>part of body or soul had been maimed but a dark peace had been established between them.",
+      "instruction_xml": "Instead the vital wave had carried <emo type=\"surprised\">him on its bosom out of himself</emo> and back <del>again when it receded</del>: and no <pause act=\"ins\"/>part of body or soul had been maimed but a dark peace had been established between them.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "d547d841a92feeb71588b47207184bf98759888b9a3e76a639f5d107b61d9123",
@@ -15115,7 +15115,7 @@
         "sha256": "d317fcc5fd2a25480eb8b8510e21862bcf154d917f1db9b85ad5bec3eda94990",
         "asset_id": "d317fcc5fd2a25480eb8b8510e21862bcf154d917f1db9b85ad5bec3eda94990"
       },
-      "instruction_xml": "Poor Douglas, <pause act=\"ins\"/>before <emo type=\"sad\" level=\"2\">his death-when it was in sight</emo>-committed to me the manuscript that reached him on the third of these days and that, on <ins>right on the same spot</ins>the same spot, with immense effect, he began to read to our hushed little circle on the night of the fourth.",
+      "instruction_xml": "Poor Douglas, <pause act=\"ins\"/>before <emo type=\"sad\">his death-when it was in sight</emo>-committed to me the manuscript that reached him on the third of these days and that, on <ins>right on the same spot</ins>the same spot, with immense effect, he began to read to our hushed little circle on the night of the fourth.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "d317fcc5fd2a25480eb8b8510e21862bcf154d917f1db9b85ad5bec3eda94990",
@@ -15373,7 +15373,7 @@
         "sha256": "48da189f3a82afae17e95b0f24d25f43f956c79be87ca86fccd5e5741617e8e9",
         "asset_id": "48da189f3a82afae17e95b0f24d25f43f956c79be87ca86fccd5e5741617e8e9"
       },
-      "instruction_xml": "Hilda seemed <sub targ=\"quite taken with the charming pair\">particularly fond of this quaint couple</sub>, and Bartley himself was so pleased with their mild and thoughtful converse <pause act=\"red\"/>that he took his leave when they did, and <emo type=\"calm\" level=\"2\">walked with them over to Oxford Street</emo>, where they waited for their &#x27;bus.",
+      "instruction_xml": "Hilda seemed <sub targ=\"quite taken with the charming pair\">particularly fond of this quaint couple</sub>, and Bartley himself was so pleased with their mild and thoughtful converse <pause act=\"red\"/>that he took his leave when they did, and <emo type=\"calm\">walked with them over to Oxford Street</emo>, where they waited for their &#x27;bus.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "48da189f3a82afae17e95b0f24d25f43f956c79be87ca86fccd5e5741617e8e9",
@@ -15601,7 +15601,7 @@
         "sha256": "c693017354637d9df6b2b2817b3904bd236b2945a90886f87535aee928409799",
         "asset_id": "c693017354637d9df6b2b2817b3904bd236b2945a90886f87535aee928409799"
       },
-      "instruction_xml": "In fact, <emo type=\"disgusted\" level=\"2\">he did not know anything about the station</emo>, anyway. So I got the directors to permit me to hire <sub targ=\"someone to manage it\">a man to run the station</sub>. This was mr Chinnock, <pause act=\"ins\"/>who was then superintendent of the Metropolitan Telephone Company of New York.",
+      "instruction_xml": "In fact, <emo type=\"disgusted\">he did not know anything about the station</emo>, anyway. So I got the directors to permit me to hire <sub targ=\"someone to manage it\">a man to run the station</sub>. This was mr Chinnock, <pause act=\"ins\"/>who was then superintendent of the Metropolitan Telephone Company of New York.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "c693017354637d9df6b2b2817b3904bd236b2945a90886f87535aee928409799",
@@ -15834,7 +15834,7 @@
         "sha256": "bd430aaf3544de51085bf5ec78e7b67762f5a5c6ed57e1a20f43fb9077f1d0d0",
         "asset_id": "bd430aaf3544de51085bf5ec78e7b67762f5a5c6ed57e1a20f43fb9077f1d0d0"
       },
-      "instruction_xml": "&quot;I&#x27;ve known him from a boy,&quot; said mr Kettridge, &quot;<pause act=\"red\"/>and, <ins>you know</ins>though he has his faults, a crime such as this would be almost <emo type=\"melancholic\" level=\"2\">impossible to him, no matter what motive</emo>, such as the dispute over money or his sweetheart. He may be guilty, but I doubt it.&quot;",
+      "instruction_xml": "&quot;I&#x27;ve known him from a boy,&quot; said mr Kettridge, &quot;<pause act=\"red\"/>and, <ins>you know</ins>though he has his faults, a crime such as this would be almost <emo type=\"melancholic\">impossible to him, no matter what motive</emo>, such as the dispute over money or his sweetheart. He may be guilty, but I doubt it.&quot;",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "bd430aaf3544de51085bf5ec78e7b67762f5a5c6ed57e1a20f43fb9077f1d0d0",
@@ -16092,7 +16092,7 @@
         "sha256": "48030adb9ad881dabbca775df32976361ec642a0ffd076b40867c9a78103f1c3",
         "asset_id": "48030adb9ad881dabbca775df32976361ec642a0ffd076b40867c9a78103f1c3"
       },
-      "instruction_xml": "But Hermon was not in <emo type=\"happy\" level=\"2\">the mood to share a joyous revel</emo>, and he frankly said so, although immediately after his return he had accepted the invitation to the festival which <ins>as a group</ins>the whole fellowship of artists would give the following day in honour of the seventieth <pitch semitones=\"4\">birthday of the old</pitch> sculptor Euphranor.",
+      "instruction_xml": "But Hermon was not in <emo type=\"happy\">the mood to share a joyous revel</emo>, and he frankly said so, although immediately after his return he had accepted the invitation to the festival which <ins>as a group</ins>the whole fellowship of artists would give the following day in honour of the seventieth <pitch semitones=\"4\">birthday of the old</pitch> sculptor Euphranor.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "48030adb9ad881dabbca775df32976361ec642a0ffd076b40867c9a78103f1c3",
@@ -16370,7 +16370,7 @@
         "sha256": "a6f7c87971b48669bee61ff80d7faa8059adcf16187a2782910ee831c89a4a74",
         "asset_id": "a6f7c87971b48669bee61ff80d7faa8059adcf16187a2782910ee831c89a4a74"
       },
-      "instruction_xml": "So Ahaz <emo type=\"sad\" level=\"2\">sent messengers to Tiglath pileser king of Assyria</emo>, saying, I am <pitch semitones=\"-4\">thy servant and thy son</pitch>: come up and save me out of the hand of Syria and out of the hand of <sub targ=\"the Israeli monarch\">the king of Israel</sub>, which rise up against me.",
+      "instruction_xml": "So Ahaz <emo type=\"sad\">sent messengers to Tiglath pileser king of Assyria</emo>, saying, I am <pitch semitones=\"-4\">thy servant and thy son</pitch>: come up and save me out of the hand of Syria and out of the hand of <sub targ=\"the Israeli monarch\">the king of Israel</sub>, which rise up against me.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "a6f7c87971b48669bee61ff80d7faa8059adcf16187a2782910ee831c89a4a74",
@@ -16608,7 +16608,7 @@
         "sha256": "9a2e9459a6e73ae3fbfccc7a6b6874650f3ccf6569d4aa53b0331ed1d1ce8691",
         "asset_id": "9a2e9459a6e73ae3fbfccc7a6b6874650f3ccf6569d4aa53b0331ed1d1ce8691"
       },
-      "instruction_xml": "The end <rate factor=\"0.8\">he had been born to serve</rate> yet did not see had led him to escape by an unseen <emo type=\"afraid\" level=\"2\">path and now it beckoned to him</emo> once more and a new adventure <ins>for him</ins>was about to be opened to him.",
+      "instruction_xml": "The end <rate factor=\"0.8\">he had been born to serve</rate> yet did not see had led him to escape by an unseen <emo type=\"afraid\">path and now it beckoned to him</emo> once more and a new adventure <ins>for him</ins>was about to be opened to him.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "9a2e9459a6e73ae3fbfccc7a6b6874650f3ccf6569d4aa53b0331ed1d1ce8691",
@@ -16826,7 +16826,7 @@
         "sha256": "38995bb6ef28b3f0bf8bf1c54014e1b9bcbdf4feb5304f4903ac7c0171fe5edd",
         "asset_id": "38995bb6ef28b3f0bf8bf1c54014e1b9bcbdf4feb5304f4903ac7c0171fe5edd"
       },
-      "instruction_xml": "One of <rate factor=\"1.25\">the fellows in the outer line</rate>, not brave enough himself to join the volunteers <emo type=\"angry\" level=\"2\">who had come in to beat us out</emo>, was not disposed to believe in the surrender, and had his gun levelled on Bob in spite of the handkerchief which <del>was waving as a flag</del> of truce.",
+      "instruction_xml": "One of <rate factor=\"1.25\">the fellows in the outer line</rate>, not brave enough himself to join the volunteers <emo type=\"angry\">who had come in to beat us out</emo>, was not disposed to believe in the surrender, and had his gun levelled on Bob in spite of the handkerchief which <del>was waving as a flag</del> of truce.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "38995bb6ef28b3f0bf8bf1c54014e1b9bcbdf4feb5304f4903ac7c0171fe5edd",
@@ -17104,7 +17104,7 @@
         "sha256": "432b6e3ce91018758b920bbdbc15b5ac01069a5a9266b3cf5b99c34bba328b6a",
         "asset_id": "432b6e3ce91018758b920bbdbc15b5ac01069a5a9266b3cf5b99c34bba328b6a"
       },
-      "instruction_xml": "All the rubbish <del>was piled in the square</del> before the palace and <pitch semitones=\"4\">a bonfire made of it</pitch>, while the Blue people clustered around and danced and sang with joy as the blue flames devoured the <emo type=\"disgusted\" level=\"2\">dreadful instrument that had once caused them</emo> so much unhappiness.",
+      "instruction_xml": "All the rubbish <del>was piled in the square</del> before the palace and <pitch semitones=\"4\">a bonfire made of it</pitch>, while the Blue people clustered around and danced and sang with joy as the blue flames devoured the <emo type=\"disgusted\">dreadful instrument that had once caused them</emo> so much unhappiness.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "432b6e3ce91018758b920bbdbc15b5ac01069a5a9266b3cf5b99c34bba328b6a",
@@ -17347,7 +17347,7 @@
         "sha256": "2660b2868c9d4d8f6b9aa52955ea3609e9292185511405e89cf4804729b32703",
         "asset_id": "2660b2868c9d4d8f6b9aa52955ea3609e9292185511405e89cf4804729b32703"
       },
-      "instruction_xml": "Here she would stay, comforted and <emo type=\"melancholic\" level=\"2\">soothed among the lovely plants and rich exotics</emo>, rejoicing the heart of <sub targ=\"the old groundskeeper\">Old Turner the gardener</sub>, who since <rate factor=\"1.25\">Polly&#x27;s first rapturous entrance</rate>, had taken her into his good graces for all time.",
+      "instruction_xml": "Here she would stay, comforted and <emo type=\"melancholic\">soothed among the lovely plants and rich exotics</emo>, rejoicing the heart of <sub targ=\"the old groundskeeper\">Old Turner the gardener</sub>, who since <rate factor=\"1.25\">Polly&#x27;s first rapturous entrance</rate>, had taken her into his good graces for all time.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "2660b2868c9d4d8f6b9aa52955ea3609e9292185511405e89cf4804729b32703",
@@ -17560,7 +17560,7 @@
         "sha256": "0b4312bb0e7bef5afae4ee2bc9ac96bc5beb66268d1fa85e4b84b92f27799076",
         "asset_id": "0b4312bb0e7bef5afae4ee2bc9ac96bc5beb66268d1fa85e4b84b92f27799076"
       },
-      "instruction_xml": "With this remark, <pause act=\"red\"/>accompanied by one of those deep sighs <rate factor=\"1.25\">which affect the remotest fibers</rate> of one&#x27;s being, his <emo type=\"afraid\" level=\"2\">heart burdened with sorrow and throbbing fast</emo>, his head on fire, and his <ins>and then</ins>gaze wandering, he bowed breathlessly, and withdrew behind the thicket.",
+      "instruction_xml": "With this remark, <pause act=\"red\"/>accompanied by one of those deep sighs <rate factor=\"1.25\">which affect the remotest fibers</rate> of one&#x27;s being, his <emo type=\"afraid\">heart burdened with sorrow and throbbing fast</emo>, his head on fire, and his <ins>and then</ins>gaze wandering, he bowed breathlessly, and withdrew behind the thicket.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "0b4312bb0e7bef5afae4ee2bc9ac96bc5beb66268d1fa85e4b84b92f27799076",
@@ -17793,7 +17793,7 @@
         "sha256": "65f4f04f34dffef49b62a2d0785bf755d54e7c390e7adae5e7eb47958a9d3c41",
         "asset_id": "65f4f04f34dffef49b62a2d0785bf755d54e7c390e7adae5e7eb47958a9d3c41"
       },
-      "instruction_xml": "Few of <emo type=\"sad\" level=\"2\">these data were ever actually used, however</emo>; and it was all more or less <pitch semitones=\"4\">a matter of guesswork</pitch>, although the central station manager, <sub targ=\"to provide quality service\">aiming to give good service</sub>, would naturally <pause act=\"ins\"/>see that the dynamos were so operated as to maintain as steadily as possible the normal potential and current.",
+      "instruction_xml": "Few of <emo type=\"sad\">these data were ever actually used, however</emo>; and it was all more or less <pitch semitones=\"4\">a matter of guesswork</pitch>, although the central station manager, <sub targ=\"to provide quality service\">aiming to give good service</sub>, would naturally <pause act=\"ins\"/>see that the dynamos were so operated as to maintain as steadily as possible the normal potential and current.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "65f4f04f34dffef49b62a2d0785bf755d54e7c390e7adae5e7eb47958a9d3c41",
@@ -18066,7 +18066,7 @@
         "sha256": "6aeac521091187b34ebe62c91f93b0f4696afa35dfbe1a20e19c761c733d10a9",
         "asset_id": "6aeac521091187b34ebe62c91f93b0f4696afa35dfbe1a20e19c761c733d10a9"
       },
-      "instruction_xml": "Our naturalist would then perhaps turn to geographical <pitch semitones=\"-4\">distribution, and he would probably</pitch> declare <pause act=\"ins\"/>that those forms must be distinct species, which <ins>significantly</ins>differ not only in appearance, but are fitted for <emo type=\"happy\" level=\"2\">hot, as well as damp or dry countries</emo>, and for the Arctic regions.",
+      "instruction_xml": "Our naturalist would then perhaps turn to geographical <pitch semitones=\"-4\">distribution, and he would probably</pitch> declare <pause act=\"ins\"/>that those forms must be distinct species, which <ins>significantly</ins>differ not only in appearance, but are fitted for <emo type=\"happy\">hot, as well as damp or dry countries</emo>, and for the Arctic regions.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6aeac521091187b34ebe62c91f93b0f4696afa35dfbe1a20e19c761c733d10a9",
@@ -18304,7 +18304,7 @@
         "sha256": "8c7eeb4b709d372a653e18d572a99f68041dc989b1dbbe907039fb113bf2158f",
         "asset_id": "8c7eeb4b709d372a653e18d572a99f68041dc989b1dbbe907039fb113bf2158f"
       },
-      "instruction_xml": "In the likeness of what animal was the world made?--<sub targ=\"which is the third query\">that is the third question</sub>...The form of the perfect animal <emo type=\"melancholic\" level=\"2\">was a whole, and contained all intelligible beings</emo>, and the visible animal, <rate factor=\"0.8\">made after the pattern</rate> of this, <pause act=\"red\"/>included all visible creatures.",
+      "instruction_xml": "In the likeness of what animal was the world made?--<sub targ=\"which is the third query\">that is the third question</sub>...The form of the perfect animal <emo type=\"melancholic\">was a whole, and contained all intelligible beings</emo>, and the visible animal, <rate factor=\"0.8\">made after the pattern</rate> of this, <pause act=\"red\"/>included all visible creatures.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "8c7eeb4b709d372a653e18d572a99f68041dc989b1dbbe907039fb113bf2158f",
@@ -18537,7 +18537,7 @@
         "sha256": "11ba076ac608bff17ab69360f17e8c6132718eb7fe124dcf581e7bea44e24ae1",
         "asset_id": "11ba076ac608bff17ab69360f17e8c6132718eb7fe124dcf581e7bea44e24ae1"
       },
-      "instruction_xml": "Now, then, Franz, when, for services <del>so promptly and unhesitatingly rendered</del>, he but asks <emo type=\"angry\" level=\"2\">me in return to do for him</emo> what is done <rate factor=\"0.8\">daily for any Russian prince</rate> or Italian nobleman who may pass through Paris<pause act=\"red\"/>-merely to introduce him into society-would you have me refuse?",
+      "instruction_xml": "Now, then, Franz, when, for services <del>so promptly and unhesitatingly rendered</del>, he but asks <emo type=\"angry\">me in return to do for him</emo> what is done <rate factor=\"0.8\">daily for any Russian prince</rate> or Italian nobleman who may pass through Paris<pause act=\"red\"/>-merely to introduce him into society-would you have me refuse?",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "11ba076ac608bff17ab69360f17e8c6132718eb7fe124dcf581e7bea44e24ae1",
@@ -18795,7 +18795,7 @@
         "sha256": "fd6ecffb70ad97092db0b2fe7f001a451a9bf54e3b88068d32e241c527e0156d",
         "asset_id": "fd6ecffb70ad97092db0b2fe7f001a451a9bf54e3b88068d32e241c527e0156d"
       },
-      "instruction_xml": "These were specimens of the inner workings of the peculiar institution. john, <pause act=\"ins\"/>however, had not only <emo type=\"disgusted\" level=\"2\">observed Slavery from a domestic stand point</emo>, he had also watched master and mistress abroad as visitors and <del>guests in other people&#x27;s houses</del>, noticed not only <pitch semitones=\"-4\">how they treated white people</pitch>, but also how they treated black people.",
+      "instruction_xml": "These were specimens of the inner workings of the peculiar institution. john, <pause act=\"ins\"/>however, had not only <emo type=\"disgusted\">observed Slavery from a domestic stand point</emo>, he had also watched master and mistress abroad as visitors and <del>guests in other people&#x27;s houses</del>, noticed not only <pitch semitones=\"-4\">how they treated white people</pitch>, but also how they treated black people.",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "fd6ecffb70ad97092db0b2fe7f001a451a9bf54e3b88068d32e241c527e0156d",
@@ -25551,7 +25551,7 @@
         "sha256": "ed1725ca40e52ea82b8eb61fa9ac15c35c7a8f8f3a22b69d55292016a907a6e9",
         "asset_id": "ed1725ca40e52ea82b8eb61fa9ac15c35c7a8f8f3a22b69d55292016a907a6e9"
       },
-      "instruction_xml": "李超和妻子<emo type=\"afraid\" level=\"2\">一起做生意赔了本</emo>欠债达到五十多万元<pause act=\"red\"/>这让李超和妻子感到了极大的压力",
+      "instruction_xml": "李超和妻子<emo type=\"afraid\">一起做生意赔了本</emo>欠债达到五十多万元<pause act=\"red\"/>这让李超和妻子感到了极大的压力",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ed1725ca40e52ea82b8eb61fa9ac15c35c7a8f8f3a22b69d55292016a907a6e9",
@@ -25754,7 +25754,7 @@
         "sha256": "c9886b4f042baf6577eaf23a497b9ded39ce782ffe65835a87987608d190c653",
         "asset_id": "c9886b4f042baf6577eaf23a497b9ded39ce782ffe65835a87987608d190c653"
       },
-      "instruction_xml": "旗下的当红艺人<emo type=\"disgusted\" level=\"2\">相继爆出解约风波和负面新闻</emo>人心动荡线下演出停摆线上节目<pause act=\"ins\"/>遭遇瓶颈",
+      "instruction_xml": "旗下的当红艺人<emo type=\"disgusted\">相继爆出解约风波和负面新闻</emo>人心动荡线下演出停摆线上节目<pause act=\"ins\"/>遭遇瓶颈",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "c9886b4f042baf6577eaf23a497b9ded39ce782ffe65835a87987608d190c653",
@@ -25962,7 +25962,7 @@
         "sha256": "f61b91fb4ab4e5c2046a0361168a9c4eba75ebb7ad031bc817f2985e3282143f",
         "asset_id": "f61b91fb4ab4e5c2046a0361168a9c4eba75ebb7ad031bc817f2985e3282143f"
       },
-      "instruction_xml": "中华民国<pause act=\"red\"/>与拉脱维亚关系是指<emo type=\"angry\" level=\"2\">中华民国与拉脱维亚共和国</emo>之间的关系。",
+      "instruction_xml": "中华民国<pause act=\"red\"/>与拉脱维亚关系是指<emo type=\"angry\">中华民国与拉脱维亚共和国</emo>之间的关系。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f61b91fb4ab4e5c2046a0361168a9c4eba75ebb7ad031bc817f2985e3282143f",
@@ -26130,7 +26130,7 @@
         "sha256": "4884617a31ebd15528bc30d335dc941977762dfb8553dae77f38a211c3b838c0",
         "asset_id": "4884617a31ebd15528bc30d335dc941977762dfb8553dae77f38a211c3b838c0"
       },
-      "instruction_xml": "同时<pause act=\"ins\"/>因为可以各取所需<emo type=\"surprised\" level=\"2\">所以也更容易可以获得更合适的价格</emo>找到最贴合自己需求的产品而不用去花多余的钱去买一些不需要的功能",
+      "instruction_xml": "同时<pause act=\"ins\"/>因为可以各取所需<emo type=\"surprised\">所以也更容易可以获得更合适的价格</emo>找到最贴合自己需求的产品而不用去花多余的钱去买一些不需要的功能",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "4884617a31ebd15528bc30d335dc941977762dfb8553dae77f38a211c3b838c0",
@@ -26433,7 +26433,7 @@
         "sha256": "77e1ba124041b6d7aaa50ff098955e60626f87ca184b3b214bfcf1f7e6f96b5e",
         "asset_id": "77e1ba124041b6d7aaa50ff098955e60626f87ca184b3b214bfcf1f7e6f96b5e"
       },
-      "instruction_xml": "斯洛维尼亚运动员<pause act=\"ins\"/>曾在<emo type=\"sad\" level=\"2\">夏季奥会的七种运动</emo>及冬季奥运的五种运动获得奖牌。",
+      "instruction_xml": "斯洛维尼亚运动员<pause act=\"ins\"/>曾在<emo type=\"sad\">夏季奥会的七种运动</emo>及冬季奥运的五种运动获得奖牌。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "77e1ba124041b6d7aaa50ff098955e60626f87ca184b3b214bfcf1f7e6f96b5e",
@@ -26616,7 +26616,7 @@
         "sha256": "3de1e135d6c014a68608ff33a66eff0ea3a6226073a98fb8c77ac7d48ed3c393",
         "asset_id": "3de1e135d6c014a68608ff33a66eff0ea3a6226073a98fb8c77ac7d48ed3c393"
       },
-      "instruction_xml": "就是总拿这一小小点儿事儿说事<pause act=\"red\"/>你<emo type=\"calm\" level=\"2\">一打架了她就说她过去事儿嗯</emo>我让你们嗯开小卖铺儿你不开让你",
+      "instruction_xml": "就是总拿这一小小点儿事儿说事<pause act=\"red\"/>你<emo type=\"calm\">一打架了她就说她过去事儿嗯</emo>我让你们嗯开小卖铺儿你不开让你",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "3de1e135d6c014a68608ff33a66eff0ea3a6226073a98fb8c77ac7d48ed3c393",
@@ -26849,7 +26849,7 @@
         "sha256": "2492b811b58f337d4b6a42fef53cf228f2d3fa9cb167319e3bc0ea54dc7c51d5",
         "asset_id": "2492b811b58f337d4b6a42fef53cf228f2d3fa9cb167319e3bc0ea54dc7c51d5"
       },
-      "instruction_xml": "北宋首都东京开封府<pause act=\"red\"/>更是当时<emo type=\"melancholic\" level=\"2\">继唐朝首都长安</emo>后的世界第一大城市。",
+      "instruction_xml": "北宋首都东京开封府<pause act=\"red\"/>更是当时<emo type=\"melancholic\">继唐朝首都长安</emo>后的世界第一大城市。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "2492b811b58f337d4b6a42fef53cf228f2d3fa9cb167319e3bc0ea54dc7c51d5",
@@ -27012,7 +27012,7 @@
         "sha256": "c7fa42a75db5f04f36c71c672856ba0f9f01ce89583750456907bba5667f4d43",
         "asset_id": "c7fa42a75db5f04f36c71c672856ba0f9f01ce89583750456907bba5667f4d43"
       },
-      "instruction_xml": "二十世纪博物馆是<pause act=\"ins\"/>位于义大利米兰的一座<emo type=\"happy\" level=\"2\">现代艺术和当代艺术</emo>的美术馆。",
+      "instruction_xml": "二十世纪博物馆是<pause act=\"ins\"/>位于义大利米兰的一座<emo type=\"happy\">现代艺术和当代艺术</emo>的美术馆。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "c7fa42a75db5f04f36c71c672856ba0f9f01ce89583750456907bba5667f4d43",
@@ -27185,7 +27185,7 @@
         "sha256": "25e6b6aae579cbd03874c30954420d5baf5ce23180f038449ef280083097826b",
         "asset_id": "25e6b6aae579cbd03874c30954420d5baf5ce23180f038449ef280083097826b"
       },
-      "instruction_xml": "就是为了证明他们二号就在罗统三号下午退房的时候他们<emo type=\"surprised\" level=\"2\">其实刚刚赶到罗统</emo>为了给服务生留下印象他们还<pause act=\"ins\"/>故意制造了争吵毁掉酒店监控之后在电影院和商场留下身影",
+      "instruction_xml": "就是为了证明他们二号就在罗统三号下午退房的时候他们<emo type=\"surprised\">其实刚刚赶到罗统</emo>为了给服务生留下印象他们还<pause act=\"ins\"/>故意制造了争吵毁掉酒店监控之后在电影院和商场留下身影",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "25e6b6aae579cbd03874c30954420d5baf5ce23180f038449ef280083097826b",
@@ -27563,7 +27563,7 @@
         "sha256": "6b7730e4316c01376d8aab8f8fff905e7dfb700abf3aac9f2ebeb648d2739229",
         "asset_id": "6b7730e4316c01376d8aab8f8fff905e7dfb700abf3aac9f2ebeb648d2739229"
       },
-      "instruction_xml": "师父给了意见之后<pause act=\"red\"/>从那开始<emo type=\"melancholic\" level=\"2\">我就唱的两口子落平川</emo>因为我想把更好的探清水河唱给大家",
+      "instruction_xml": "师父给了意见之后<pause act=\"red\"/>从那开始<emo type=\"melancholic\">我就唱的两口子落平川</emo>因为我想把更好的探清水河唱给大家",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6b7730e4316c01376d8aab8f8fff905e7dfb700abf3aac9f2ebeb648d2739229",
@@ -27771,7 +27771,7 @@
         "sha256": "3a8383463bc37bc0af662eabffa3443e703aa5ca79d5c99492863f3d8f37639f",
         "asset_id": "3a8383463bc37bc0af662eabffa3443e703aa5ca79d5c99492863f3d8f37639f"
       },
-      "instruction_xml": "主要吃的就是里头的香味儿但是<emo type=\"calm\" level=\"2\">呢它会有一点点些许的腥味儿</emo>有的人可能吃不惯<pause act=\"red\"/>但我觉得还OK配这个拌面啊特别爽",
+      "instruction_xml": "主要吃的就是里头的香味儿但是<emo type=\"calm\">呢它会有一点点些许的腥味儿</emo>有的人可能吃不惯<pause act=\"red\"/>但我觉得还OK配这个拌面啊特别爽",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "3a8383463bc37bc0af662eabffa3443e703aa5ca79d5c99492863f3d8f37639f",
@@ -28039,7 +28039,7 @@
         "sha256": "bcf102b69cf6fbff553108bdbe82eea761859d40249a57bfd6b30b96491e0b52",
         "asset_id": "bcf102b69cf6fbff553108bdbe82eea761859d40249a57bfd6b30b96491e0b52"
       },
-      "instruction_xml": "嫁给了<emo type=\"angry\" level=\"2\">一个优秀的导演</emo>但是在他们之间的拍戏合作呀<pause act=\"red\"/>绝对不存在任何潜规则",
+      "instruction_xml": "嫁给了<emo type=\"angry\">一个优秀的导演</emo>但是在他们之间的拍戏合作呀<pause act=\"red\"/>绝对不存在任何潜规则",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "bcf102b69cf6fbff553108bdbe82eea761859d40249a57bfd6b30b96491e0b52",
@@ -28222,7 +28222,7 @@
         "sha256": "822d233cb81097e06e9e3bef7995789d7097cf8a48fddb5b4643089e2692f26b",
         "asset_id": "822d233cb81097e06e9e3bef7995789d7097cf8a48fddb5b4643089e2692f26b"
       },
-      "instruction_xml": "尽管<pause act=\"ins\"/>许多人<emo type=\"sad\" level=\"2\">在夏威夷担任糖厂的劳工</emo>，但他们专注于为子女提供教育。",
+      "instruction_xml": "尽管<pause act=\"ins\"/>许多人<emo type=\"sad\">在夏威夷担任糖厂的劳工</emo>，但他们专注于为子女提供教育。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "822d233cb81097e06e9e3bef7995789d7097cf8a48fddb5b4643089e2692f26b",
@@ -28385,7 +28385,7 @@
         "sha256": "7b94923e32704ebde778020ecb3d98b730d07fa2156dd4f2fe0cbba36de24ca2",
         "asset_id": "7b94923e32704ebde778020ecb3d98b730d07fa2156dd4f2fe0cbba36de24ca2"
       },
-      "instruction_xml": "英国殖民者在北美洲<pause act=\"ins\"/>建造的第一艘海船<emo type=\"happy\" level=\"2\">是在肯尼贝克河上</emo>下水的。",
+      "instruction_xml": "英国殖民者在北美洲<pause act=\"ins\"/>建造的第一艘海船<emo type=\"happy\">是在肯尼贝克河上</emo>下水的。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "7b94923e32704ebde778020ecb3d98b730d07fa2156dd4f2fe0cbba36de24ca2",
@@ -28543,7 +28543,7 @@
         "sha256": "99930f0af9aee91e16592d63f497fbdd1e0e08a95ba9eb014e0aa9c3bf70e6f9",
         "asset_id": "99930f0af9aee91e16592d63f497fbdd1e0e08a95ba9eb014e0aa9c3bf70e6f9"
       },
-      "instruction_xml": "现在就剩下丹龙了随后黑猫带着空海和白乐天<pause act=\"red\"/>来到放置杨玉环尸体的山洞<emo type=\"afraid\" level=\"2\">可它却发现杨玉环的尸体</emo>被人给偷走了",
+      "instruction_xml": "现在就剩下丹龙了随后黑猫带着空海和白乐天<pause act=\"red\"/>来到放置杨玉环尸体的山洞<emo type=\"afraid\">可它却发现杨玉环的尸体</emo>被人给偷走了",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "99930f0af9aee91e16592d63f497fbdd1e0e08a95ba9eb014e0aa9c3bf70e6f9",
@@ -28806,7 +28806,7 @@
         "sha256": "715daeaae132684632681d443296dd7d6b9b7b1416b74f7b360ab3ee75559550",
         "asset_id": "715daeaae132684632681d443296dd7d6b9b7b1416b74f7b360ab3ee75559550"
       },
-      "instruction_xml": "其中一个<emo type=\"happy\" level=\"2\">最明显之处是</emo>博士和雷德芬<rate factor=\"0.8\">手握怀表后</rate>二人的婚后生活。",
+      "instruction_xml": "其中一个<emo type=\"happy\">最明显之处是</emo>博士和雷德芬<rate factor=\"0.8\">手握怀表后</rate>二人的婚后生活。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "715daeaae132684632681d443296dd7d6b9b7b1416b74f7b360ab3ee75559550",
@@ -28964,7 +28964,7 @@
         "sha256": "aa8188546b4c62e4d3274dee7f927143d4c4c8ac7fed800db8177c0ceb1eedad",
         "asset_id": "aa8188546b4c62e4d3274dee7f927143d4c4c8ac7fed800db8177c0ceb1eedad"
       },
-      "instruction_xml": "孙一正，字格卿，<rate factor=\"0.8\">陕西西安府</rate>华州渭南县人，军籍，<emo type=\"happy\" level=\"2\">明朝政治人物</emo>、进士出身。",
+      "instruction_xml": "孙一正，字格卿，<rate factor=\"0.8\">陕西西安府</rate>华州渭南县人，军籍，<emo type=\"happy\">明朝政治人物</emo>、进士出身。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "aa8188546b4c62e4d3274dee7f927143d4c4c8ac7fed800db8177c0ceb1eedad",
@@ -29127,7 +29127,7 @@
         "sha256": "e9bbcec8525f5322de2be1cc2b847630b2221976096921bd5d876eed2af7c4eb",
         "asset_id": "e9bbcec8525f5322de2be1cc2b847630b2221976096921bd5d876eed2af7c4eb"
       },
-      "instruction_xml": "历经千辛万苦戴维终于带着毒品找到布莱德<emo type=\"angry\" level=\"2\">但是布莱德居然出尔反尔</emo>拒绝支付佣金<pitch semitones=\"4\">大卫没办法只好报警</pitch>警察冲进来三下五除二抓住了布莱德",
+      "instruction_xml": "历经千辛万苦戴维终于带着毒品找到布莱德<emo type=\"angry\">但是布莱德居然出尔反尔</emo>拒绝支付佣金<pitch semitones=\"4\">大卫没办法只好报警</pitch>警察冲进来三下五除二抓住了布莱德",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "e9bbcec8525f5322de2be1cc2b847630b2221976096921bd5d876eed2af7c4eb",
@@ -29450,7 +29450,7 @@
         "sha256": "3db1e76c15fb82ce32706db35f433aafa6774f3d03c4bdb821343134d9e86126",
         "asset_id": "3db1e76c15fb82ce32706db35f433aafa6774f3d03c4bdb821343134d9e86126"
       },
-      "instruction_xml": "决定了要跟他结婚了我就想着那这个样子<emo type=\"melancholic\" level=\"2\">就一辈子就这样子了</emo>就不要考虑什么还有什么<pitch semitones=\"4\">分开呀离婚啊之类</pitch>的事情",
+      "instruction_xml": "决定了要跟他结婚了我就想着那这个样子<emo type=\"melancholic\">就一辈子就这样子了</emo>就不要考虑什么还有什么<pitch semitones=\"4\">分开呀离婚啊之类</pitch>的事情",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "3db1e76c15fb82ce32706db35f433aafa6774f3d03c4bdb821343134d9e86126",
@@ -29713,7 +29713,7 @@
         "sha256": "f40799e5ca558f2a0240dbaa743c250c6514d3ca14eab599fb14d1ad3d1b6871",
         "asset_id": "f40799e5ca558f2a0240dbaa743c250c6514d3ca14eab599fb14d1ad3d1b6871"
       },
-      "instruction_xml": "尹善道<rate factor=\"1.25\">因丙子胡乱</rate>在往济州岛行进途中偶然被<emo type=\"surprised\" level=\"2\">此处绝美的风景</emo>吸引而留了下来。",
+      "instruction_xml": "尹善道<rate factor=\"1.25\">因丙子胡乱</rate>在往济州岛行进途中偶然被<emo type=\"surprised\">此处绝美的风景</emo>吸引而留了下来。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f40799e5ca558f2a0240dbaa743c250c6514d3ca14eab599fb14d1ad3d1b6871",
@@ -29901,7 +29901,7 @@
         "sha256": "b1bcfa9394c669ee6250d79fd36ced8d455f8c0dd92464e7193cc603f362c90c",
         "asset_id": "b1bcfa9394c669ee6250d79fd36ced8d455f8c0dd92464e7193cc603f362c90c"
       },
-      "instruction_xml": "讲这个刑法的这么一本儿书<rate factor=\"1.25\">我觉得人生还是有很多</rate>这种意外<emo type=\"surprised\" level=\"2\">而且这个意外常常</emo>给人带来一些就是意外的惊喜嘛",
+      "instruction_xml": "讲这个刑法的这么一本儿书<rate factor=\"1.25\">我觉得人生还是有很多</rate>这种意外<emo type=\"surprised\">而且这个意外常常</emo>给人带来一些就是意外的惊喜嘛",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "b1bcfa9394c669ee6250d79fd36ced8d455f8c0dd92464e7193cc603f362c90c",
@@ -30159,7 +30159,7 @@
         "sha256": "0af29063d610c4a8fc90305142d3a1e6fb79c236cb7ce7c697feae6ef93a576a",
         "asset_id": "0af29063d610c4a8fc90305142d3a1e6fb79c236cb7ce7c697feae6ef93a576a"
       },
-      "instruction_xml": "关键时刻他把灵魂转给了黑猫与黑猫合为一体<pitch semitones=\"4\">他继承了黑猫的记忆</pitch>时时刻刻都能听到<emo type=\"melancholic\" level=\"2\">杨玉环在棺材中</emo>绝望的嘶喊声",
+      "instruction_xml": "关键时刻他把灵魂转给了黑猫与黑猫合为一体<pitch semitones=\"4\">他继承了黑猫的记忆</pitch>时时刻刻都能听到<emo type=\"melancholic\">杨玉环在棺材中</emo>绝望的嘶喊声",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "0af29063d610c4a8fc90305142d3a1e6fb79c236cb7ce7c697feae6ef93a576a",
@@ -30427,7 +30427,7 @@
         "sha256": "f5ac79e82eb33a9b09bbe0abcc4adee1b84fdcc43d14069190ddc32db10abe2a",
         "asset_id": "f5ac79e82eb33a9b09bbe0abcc4adee1b84fdcc43d14069190ddc32db10abe2a"
       },
-      "instruction_xml": "鹦鹉洲是位于<emo type=\"sad\" level=\"2\">湖北省武汉市</emo>长江边一处<rate factor=\"1.25\">因江水冲积</rate>而形成的沙洲。",
+      "instruction_xml": "鹦鹉洲是位于<emo type=\"sad\">湖北省武汉市</emo>长江边一处<rate factor=\"1.25\">因江水冲积</rate>而形成的沙洲。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f5ac79e82eb33a9b09bbe0abcc4adee1b84fdcc43d14069190ddc32db10abe2a",
@@ -30585,7 +30585,7 @@
         "sha256": "ad68a518011280c36cc24c3e519b8edd445dc161c93054c21bed60eae96ed046",
         "asset_id": "ad68a518011280c36cc24c3e519b8edd445dc161c93054c21bed60eae96ed046"
       },
-      "instruction_xml": "荔枝娱评称该片<emo type=\"disgusted\" level=\"2\">镜头简单直接</emo>，直接对准美食，<rate factor=\"0.8\">即便在屏幕前</rate>都可以感到扑鼻的香气。",
+      "instruction_xml": "荔枝娱评称该片<emo type=\"disgusted\">镜头简单直接</emo>，直接对准美食，<rate factor=\"0.8\">即便在屏幕前</rate>都可以感到扑鼻的香气。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ad68a518011280c36cc24c3e519b8edd445dc161c93054c21bed60eae96ed046",
@@ -30778,7 +30778,7 @@
         "sha256": "34eee2dbeaa4f040f297dd6c68ea51116681ca4790f97ee3524e4c3c799f7f76",
         "asset_id": "34eee2dbeaa4f040f297dd6c68ea51116681ca4790f97ee3524e4c3c799f7f76"
       },
-      "instruction_xml": "一般相信<emo type=\"sad\" level=\"2\">这种形式的低血压</emo>是因失调或自主神经系统老化未能作出<rate factor=\"1.25\">适当的调节</rate>而起的。",
+      "instruction_xml": "一般相信<emo type=\"sad\">这种形式的低血压</emo>是因失调或自主神经系统老化未能作出<rate factor=\"1.25\">适当的调节</rate>而起的。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "34eee2dbeaa4f040f297dd6c68ea51116681ca4790f97ee3524e4c3c799f7f76",
@@ -30981,7 +30981,7 @@
         "sha256": "276bd66729ec6d2c6e697614697a2959e9949b9e53b116148e5d88aa9c5255d5",
         "asset_id": "276bd66729ec6d2c6e697614697a2959e9949b9e53b116148e5d88aa9c5255d5"
       },
-      "instruction_xml": "但实际拍照表现着实不俗啊<rate factor=\"0.8\">明显感觉是用心啦</rate>如果你重视拍照可以考虑不足方面<emo type=\"disgusted\" level=\"2\">质感还是IQOO的老毛病</emo>啊这个前面屏幕支架是比较宽的",
+      "instruction_xml": "但实际拍照表现着实不俗啊<rate factor=\"0.8\">明显感觉是用心啦</rate>如果你重视拍照可以考虑不足方面<emo type=\"disgusted\">质感还是IQOO的老毛病</emo>啊这个前面屏幕支架是比较宽的",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "276bd66729ec6d2c6e697614697a2959e9949b9e53b116148e5d88aa9c5255d5",
@@ -31289,7 +31289,7 @@
         "sha256": "e2f83b7752022de3c2ffda4113d91758f56a44db14f6bbb4b3f57666901e56f2",
         "asset_id": "e2f83b7752022de3c2ffda4113d91758f56a44db14f6bbb4b3f57666901e56f2"
       },
-      "instruction_xml": "那么一开始<emo type=\"angry\" level=\"2\">是不是国有股不准流转啊</emo>对吧它是一个慢慢的递进过程<pitch semitones=\"4\">就是因为我们的政府</pitch>还没有学会如何对金融市场进行管理",
+      "instruction_xml": "那么一开始<emo type=\"angry\">是不是国有股不准流转啊</emo>对吧它是一个慢慢的递进过程<pitch semitones=\"4\">就是因为我们的政府</pitch>还没有学会如何对金融市场进行管理",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "e2f83b7752022de3c2ffda4113d91758f56a44db14f6bbb4b3f57666901e56f2",
@@ -31577,7 +31577,7 @@
         "sha256": "0af135905045989d7e405e209e684861b9a5e3cd65382ebcfb40588315f2ad69",
         "asset_id": "0af135905045989d7e405e209e684861b9a5e3cd65382ebcfb40588315f2ad69"
       },
-      "instruction_xml": "我没动<emo type=\"afraid\" level=\"2\">否则顶子就塌了</emo>只是摘下了上边儿挂着的八宝然后<pitch semitones=\"-4\">抱着一大堆东西</pitch>回了家之后",
+      "instruction_xml": "我没动<emo type=\"afraid\">否则顶子就塌了</emo>只是摘下了上边儿挂着的八宝然后<pitch semitones=\"-4\">抱着一大堆东西</pitch>回了家之后",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "0af135905045989d7e405e209e684861b9a5e3cd65382ebcfb40588315f2ad69",
@@ -31780,7 +31780,7 @@
         "sha256": "fecbd562bb4e281b28969fa8db197205f6cc401db256ea34cbbd40e4f5018f83",
         "asset_id": "fecbd562bb4e281b28969fa8db197205f6cc401db256ea34cbbd40e4f5018f83"
       },
-      "instruction_xml": "归根结底，应该由亚洲人民<emo type=\"calm\" level=\"2\">经营亚洲事务，解决亚洲问题</emo>，维护亚洲安全。<pitch semitones=\"-4\">亚洲人民有能力和智慧</pitch>通过加强合作实现该地区的和平与穩定。",
+      "instruction_xml": "归根结底，应该由亚洲人民<emo type=\"calm\">经营亚洲事务，解决亚洲问题</emo>，维护亚洲安全。<pitch semitones=\"-4\">亚洲人民有能力和智慧</pitch>通过加强合作实现该地区的和平与穩定。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "fecbd562bb4e281b28969fa8db197205f6cc401db256ea34cbbd40e4f5018f83",
@@ -32078,7 +32078,7 @@
         "sha256": "31b5fb4ad84e94f0476a810d88c7a969c2e41ecea6b0876817971d61f4c1d55e",
         "asset_id": "31b5fb4ad84e94f0476a810d88c7a969c2e41ecea6b0876817971d61f4c1d55e"
       },
-      "instruction_xml": "包子呢<pitch semitones=\"-4\">在这个四十五杀视频里呢</pitch>打架除了对手很菜基本上没啥漏洞所以呢那些一直说他什么压枪有问题啊打架有问题的同学<emo type=\"calm\" level=\"2\">不要再去质疑打架了</emo>啊质疑打架呢说明真的你还没有玩明白这个游戏",
+      "instruction_xml": "包子呢<pitch semitones=\"-4\">在这个四十五杀视频里呢</pitch>打架除了对手很菜基本上没啥漏洞所以呢那些一直说他什么压枪有问题啊打架有问题的同学<emo type=\"calm\">不要再去质疑打架了</emo>啊质疑打架呢说明真的你还没有玩明白这个游戏",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "31b5fb4ad84e94f0476a810d88c7a969c2e41ecea6b0876817971d61f4c1d55e",
@@ -32516,7 +32516,7 @@
         "sha256": "6bfe38307ac1583d2e1b0baa3f54991b90193791acb7faf70faecefa25e7c722",
         "asset_id": "6bfe38307ac1583d2e1b0baa3f54991b90193791acb7faf70faecefa25e7c722"
       },
-      "instruction_xml": "僧人只能坐在座位上不停地念经<pitch semitones=\"4\">而且鬼魂已经将他包围</pitch>吉尔妈妈挣脱老奶奶之后把推车狠狠地撞向她<emo type=\"surprised\" level=\"2\">老奶奶被撞的血肉模糊</emo>吉尔妈妈在杀了人之后已经开始<pause act=\"ins\"/>精神失常",
+      "instruction_xml": "僧人只能坐在座位上不停地念经<pitch semitones=\"4\">而且鬼魂已经将他包围</pitch>吉尔妈妈挣脱老奶奶之后把推车狠狠地撞向她<emo type=\"surprised\">老奶奶被撞的血肉模糊</emo>吉尔妈妈在杀了人之后已经开始<pause act=\"ins\"/>精神失常",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6bfe38307ac1583d2e1b0baa3f54991b90193791acb7faf70faecefa25e7c722",
@@ -32894,7 +32894,7 @@
         "sha256": "359629cd69ba361b2bdb9530c0a8000b175aeb26876558e4710b78b54514f36d",
         "asset_id": "359629cd69ba361b2bdb9530c0a8000b175aeb26876558e4710b78b54514f36d"
       },
-      "instruction_xml": "因为它的价格呢也就是两千出头儿<pitch semitones=\"-4\">部分平台甚至还有更高的优惠</pitch>不过<pause act=\"ins\"/>我觉得它确实可以算得上是<emo type=\"happy\" level=\"2\">比两千元档以下更全面的产品了</emo>在性能和功能都不错的前提下",
+      "instruction_xml": "因为它的价格呢也就是两千出头儿<pitch semitones=\"-4\">部分平台甚至还有更高的优惠</pitch>不过<pause act=\"ins\"/>我觉得它确实可以算得上是<emo type=\"happy\">比两千元档以下更全面的产品了</emo>在性能和功能都不错的前提下",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "359629cd69ba361b2bdb9530c0a8000b175aeb26876558e4710b78b54514f36d",
@@ -33257,7 +33257,7 @@
         "sha256": "18c9488e11658422c7e1f353790689cd8c38457f2ba9d1e21f1d12ea2846a48d",
         "asset_id": "18c9488e11658422c7e1f353790689cd8c38457f2ba9d1e21f1d12ea2846a48d"
       },
-      "instruction_xml": "被当成救命稻草的小丑<rate factor=\"0.8\">就彻底死机了</rate>为什么连特制机器人都会死机<emo type=\"angry\" level=\"2\">难道是德国压根就是在忽悠苏联吗</emo>谢比纳打去电话询问情况<pause act=\"red\"/>却得到了一个令人愤怒的消息",
+      "instruction_xml": "被当成救命稻草的小丑<rate factor=\"0.8\">就彻底死机了</rate>为什么连特制机器人都会死机<emo type=\"angry\">难道是德国压根就是在忽悠苏联吗</emo>谢比纳打去电话询问情况<pause act=\"red\"/>却得到了一个令人愤怒的消息",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "18c9488e11658422c7e1f353790689cd8c38457f2ba9d1e21f1d12ea2846a48d",
@@ -33615,7 +33615,7 @@
         "sha256": "f28dddc06f1c70fd6e868b5bdb97ebeda217dd931aced7bdd01fe88eb6592e9e",
         "asset_id": "f28dddc06f1c70fd6e868b5bdb97ebeda217dd931aced7bdd01fe88eb6592e9e"
       },
-      "instruction_xml": "自私的胖子打开舱门让八号仔咬他<rate factor=\"1.25\">不料八号仔根本没有理会直接</rate>把他打飞放出恶魔<pause act=\"red\"/>这下机<emo type=\"afraid\" level=\"2\">舱可乱了套吸血鬼四处咬人大家都跑</emo>到驾驶室门前寻求生机",
+      "instruction_xml": "自私的胖子打开舱门让八号仔咬他<rate factor=\"1.25\">不料八号仔根本没有理会直接</rate>把他打飞放出恶魔<pause act=\"red\"/>这下机<emo type=\"afraid\">舱可乱了套吸血鬼四处咬人大家都跑</emo>到驾驶室门前寻求生机",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f28dddc06f1c70fd6e868b5bdb97ebeda217dd931aced7bdd01fe88eb6592e9e",
@@ -33958,7 +33958,7 @@
         "sha256": "434e81e13c5faff28a65726de0118031e51a4351072c90fd2b365e634ab17d9f",
         "asset_id": "434e81e13c5faff28a65726de0118031e51a4351072c90fd2b365e634ab17d9f"
       },
-      "instruction_xml": "我们中国人是深受传统文化中仁政非攻<rate factor=\"1.25\">和为贵思想</rate>影响的<pause act=\"red\"/>因此我<emo type=\"calm\" level=\"2\">无论如何也不明白</emo>怎么会发生这种事情",
+      "instruction_xml": "我们中国人是深受传统文化中仁政非攻<rate factor=\"1.25\">和为贵思想</rate>影响的<pause act=\"red\"/>因此我<emo type=\"calm\">无论如何也不明白</emo>怎么会发生这种事情",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "434e81e13c5faff28a65726de0118031e51a4351072c90fd2b365e634ab17d9f",
@@ -34201,7 +34201,7 @@
         "sha256": "99a126dce1d62e93a4ead22c45f5c851e2df27aec675fae110cf98dbb8ecdf49",
         "asset_id": "99a126dce1d62e93a4ead22c45f5c851e2df27aec675fae110cf98dbb8ecdf49"
       },
-      "instruction_xml": "确实能力有限<pitch semitones=\"4\">先赔偿五万块钱</pitch>那林生斌<pause act=\"ins\"/>不是要成立一个那个潼臻一生的基金以<emo type=\"sad\" level=\"2\">后的话他们再尽己所能给这个基金</emo>捐一些钱了",
+      "instruction_xml": "确实能力有限<pitch semitones=\"4\">先赔偿五万块钱</pitch>那林生斌<pause act=\"ins\"/>不是要成立一个那个潼臻一生的基金以<emo type=\"sad\">后的话他们再尽己所能给这个基金</emo>捐一些钱了",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "99a126dce1d62e93a4ead22c45f5c851e2df27aec675fae110cf98dbb8ecdf49",
@@ -37264,7 +37264,7 @@
         "sha256": "66d22e8d697bfcfaa078c0d6888677b6971a361c47b1acc0df8ddffb6db5a208",
         "asset_id": "66d22e8d697bfcfaa078c0d6888677b6971a361c47b1acc0df8ddffb6db5a208"
       },
-      "instruction_xml": "五一农村居民点<emo type=\"happy\" level=\"2\">是俄罗斯联邦</emo>沃洛格达州<sub targ=\"索科尔区\">恰戈多夏区</sub>所属的一个农村居民点。",
+      "instruction_xml": "五一农村居民点<emo type=\"happy\">是俄罗斯联邦</emo>沃洛格达州<sub targ=\"索科尔区\">恰戈多夏区</sub>所属的一个农村居民点。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "66d22e8d697bfcfaa078c0d6888677b6971a361c47b1acc0df8ddffb6db5a208",
@@ -37447,7 +37447,7 @@
         "sha256": "ce97d382c0fd8fbddb71e1efad258002fa6c596a39a327211e6f37301eeccde4",
         "asset_id": "ce97d382c0fd8fbddb71e1efad258002fa6c596a39a327211e6f37301eeccde4"
       },
-      "instruction_xml": "大家都在说为什么李佳琦不直播为什么李佳琦<ins>另外</ins>休息因为疫情发不了快递大家都出不来<emo type=\"afraid\" level=\"2\">然后整个工厂都没复工都没有货</emo>出来然后我就好不容易",
+      "instruction_xml": "大家都在说为什么李佳琦不直播为什么李佳琦<ins>另外</ins>休息因为疫情发不了快递大家都出不来<emo type=\"afraid\">然后整个工厂都没复工都没有货</emo>出来然后我就好不容易",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ce97d382c0fd8fbddb71e1efad258002fa6c596a39a327211e6f37301eeccde4",
@@ -37770,7 +37770,7 @@
         "sha256": "9c5c25e072a883112367daaf808de300e74dfb483ca5b0ec0ec276026e493193",
         "asset_id": "9c5c25e072a883112367daaf808de300e74dfb483ca5b0ec0ec276026e493193"
       },
-      "instruction_xml": "韦载获得诏书后就立刻<emo type=\"happy\" level=\"2\">投降，陈霸先安抚他</emo>，以韦翽监督义兴，他则<del>跟随陈霸先</del>作谋略。",
+      "instruction_xml": "韦载获得诏书后就立刻<emo type=\"happy\">投降，陈霸先安抚他</emo>，以韦翽监督义兴，他则<del>跟随陈霸先</del>作谋略。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "9c5c25e072a883112367daaf808de300e74dfb483ca5b0ec0ec276026e493193",
@@ -37963,7 +37963,7 @@
         "sha256": "6f23e9c51bedc7803113cf5b843aa0b1ceb4a96cb1b1efc212372182322f2b0b",
         "asset_id": "6f23e9c51bedc7803113cf5b843aa0b1ceb4a96cb1b1efc212372182322f2b0b"
       },
-      "instruction_xml": "广州珍宝巴士是<emo type=\"calm\" level=\"2\">广州珍宝巴士有限公司</emo>和广州市白马巴士有限公司<ins>简称</ins>两间公司的并称。",
+      "instruction_xml": "广州珍宝巴士是<emo type=\"calm\">广州珍宝巴士有限公司</emo>和广州市白马巴士有限公司<ins>简称</ins>两间公司的并称。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6f23e9c51bedc7803113cf5b843aa0b1ceb4a96cb1b1efc212372182322f2b0b",
@@ -38161,7 +38161,7 @@
         "sha256": "a5a5b39dbb2d1146c9165ffacaf697902c81c8b4d10320bcc388ee896d724534",
         "asset_id": "a5a5b39dbb2d1146c9165ffacaf697902c81c8b4d10320bcc388ee896d724534"
       },
-      "instruction_xml": "李超决定开始减肥经过朋友介绍李超<emo type=\"afraid\" level=\"2\">从黑龙江哈尔滨</emo>专程来到<sub targ=\"辽宁沈阳\">吉林长春</sub>的这家专业减肥医院进行减肥",
+      "instruction_xml": "李超决定开始减肥经过朋友介绍李超<emo type=\"afraid\">从黑龙江哈尔滨</emo>专程来到<sub targ=\"辽宁沈阳\">吉林长春</sub>的这家专业减肥医院进行减肥",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "a5a5b39dbb2d1146c9165ffacaf697902c81c8b4d10320bcc388ee896d724534",
@@ -38399,7 +38399,7 @@
         "sha256": "07fc76239374ce1a8f52328964c649d9b7474990b07e3f0b47eb40d0f887d235",
         "asset_id": "07fc76239374ce1a8f52328964c649d9b7474990b07e3f0b47eb40d0f887d235"
       },
-      "instruction_xml": "预备阶段<emo type=\"angry\" level=\"2\">而停在了预备阶段</emo>是由于<ins>比如说</ins>意志以内的原因还是意志以外的原因呢意志以外的原因",
+      "instruction_xml": "预备阶段<emo type=\"angry\">而停在了预备阶段</emo>是由于<ins>比如说</ins>意志以内的原因还是意志以外的原因呢意志以外的原因",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "07fc76239374ce1a8f52328964c649d9b7474990b07e3f0b47eb40d0f887d235",
@@ -38612,7 +38612,7 @@
         "sha256": "ed6f1876f5de12c3c6f00fa4f71e5e46072c8ebe0b0cd1f2f0bee3094eb1d667",
         "asset_id": "ed6f1876f5de12c3c6f00fa4f71e5e46072c8ebe0b0cd1f2f0bee3094eb1d667"
       },
-      "instruction_xml": "除此之外<emo type=\"calm\" level=\"2\">为了增加挑战的难度</emo>舅公不仅设置了很多限制条款还需要布鲁斯特向所有人隐瞒自己挑战的内容否则<del>他的花销便会视为无效</del>而信托公司则告诉布鲁斯特",
+      "instruction_xml": "除此之外<emo type=\"calm\">为了增加挑战的难度</emo>舅公不仅设置了很多限制条款还需要布鲁斯特向所有人隐瞒自己挑战的内容否则<del>他的花销便会视为无效</del>而信托公司则告诉布鲁斯特",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ed6f1876f5de12c3c6f00fa4f71e5e46072c8ebe0b0cd1f2f0bee3094eb1d667",
@@ -38980,7 +38980,7 @@
         "sha256": "5e8f3c3e04fb876a3c7c79a826a3f5f31086f17ebc9ebcede150f5a472bb5e9c",
         "asset_id": "5e8f3c3e04fb876a3c7c79a826a3f5f31086f17ebc9ebcede150f5a472bb5e9c"
       },
-      "instruction_xml": "探照灯对使用光学式<sub targ=\"雷达系统\">投弹瞄准器</sub>的轰炸机也能<emo type=\"angry\" level=\"2\">造成相当程度</emo>的干扰。",
+      "instruction_xml": "探照灯对使用光学式<sub targ=\"雷达系统\">投弹瞄准器</sub>的轰炸机也能<emo type=\"angry\">造成相当程度</emo>的干扰。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "5e8f3c3e04fb876a3c7c79a826a3f5f31086f17ebc9ebcede150f5a472bb5e9c",
@@ -39143,7 +39143,7 @@
         "sha256": "fe0f97583793b872becd27faa05fcef5044f3602239bacd21a0da67355f893ff",
         "asset_id": "fe0f97583793b872becd27faa05fcef5044f3602239bacd21a0da67355f893ff"
       },
-      "instruction_xml": "新列辛顿是<ins>众所周知</ins>位于美国阿拉巴马州<emo type=\"surprised\" level=\"2\">塔斯卡卢萨县</emo>的一个非建制地区。",
+      "instruction_xml": "新列辛顿是<ins>众所周知</ins>位于美国阿拉巴马州<emo type=\"surprised\">塔斯卡卢萨县</emo>的一个非建制地区。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "fe0f97583793b872becd27faa05fcef5044f3602239bacd21a0da67355f893ff",
@@ -39301,7 +39301,7 @@
         "sha256": "c95769eaca207b1df234c4caccd308b76c959a222f8c1d3414bb6e1507dbe8b3",
         "asset_id": "c95769eaca207b1df234c4caccd308b76c959a222f8c1d3414bb6e1507dbe8b3"
       },
-      "instruction_xml": "新亚姆斯科耶<emo type=\"melancholic\" level=\"2\">农村居民点是</emo>俄罗斯联邦<sub targ=\"莫斯科州\">布良斯克州</sub>谢夫斯克区所属的一个农村居民点。",
+      "instruction_xml": "新亚姆斯科耶<emo type=\"melancholic\">农村居民点是</emo>俄罗斯联邦<sub targ=\"莫斯科州\">布良斯克州</sub>谢夫斯克区所属的一个农村居民点。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "c95769eaca207b1df234c4caccd308b76c959a222f8c1d3414bb6e1507dbe8b3",
@@ -39504,7 +39504,7 @@
         "sha256": "88eb8d524970e73144a6ceca804a5336bc96caa81239b124f9a195f108890120",
         "asset_id": "88eb8d524970e73144a6ceca804a5336bc96caa81239b124f9a195f108890120"
       },
-      "instruction_xml": "不同的组织参与普<emo type=\"melancholic\" level=\"2\">及有关这种建筑</emo>相关的<del>古典建筑</del>和教育项目特征的一般知识。",
+      "instruction_xml": "不同的组织参与普<emo type=\"melancholic\">及有关这种建筑</emo>相关的<del>古典建筑</del>和教育项目特征的一般知识。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "88eb8d524970e73144a6ceca804a5336bc96caa81239b124f9a195f108890120",
@@ -39692,7 +39692,7 @@
         "sha256": "435584ee065822e6463ee1c9c6c504ad5816b8af7db9c7eb4b93757de0d522bc",
         "asset_id": "435584ee065822e6463ee1c9c6c504ad5816b8af7db9c7eb4b93757de0d522bc"
       },
-      "instruction_xml": "退役后<emo type=\"surprised\" level=\"2\">考取公务人员</emo>特种考试三等考试外交事务职系<sub targ=\"国际新闻人员\">外交领事人员</sub>西班牙文组。",
+      "instruction_xml": "退役后<emo type=\"surprised\">考取公务人员</emo>特种考试三等考试外交事务职系<sub targ=\"国际新闻人员\">外交领事人员</sub>西班牙文组。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "435584ee065822e6463ee1c9c6c504ad5816b8af7db9c7eb4b93757de0d522bc",
@@ -39880,7 +39880,7 @@
         "sha256": "6c39a511eb333c017fccd257d6232fdf4630d5269a79b8f051e6f1e79bffc4f4",
         "asset_id": "6c39a511eb333c017fccd257d6232fdf4630d5269a79b8f051e6f1e79bffc4f4"
       },
-      "instruction_xml": "这为陆军参谋长<del>侯艾尔沙德</del>发动军事政变<emo type=\"disgusted\" level=\"2\">实行军法统治</emo>埋下伏线。",
+      "instruction_xml": "这为陆军参谋长<del>侯艾尔沙德</del>发动军事政变<emo type=\"disgusted\">实行军法统治</emo>埋下伏线。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6c39a511eb333c017fccd257d6232fdf4630d5269a79b8f051e6f1e79bffc4f4",
@@ -40038,7 +40038,7 @@
         "sha256": "137fd664bd6b2f8bafabff9ce77d72884c5f8af6bbf9a400e205a6a8a1bcf2b9",
         "asset_id": "137fd664bd6b2f8bafabff9ce77d72884c5f8af6bbf9a400e205a6a8a1bcf2b9"
       },
-      "instruction_xml": "线条还贼流畅<ins>我必须得说一下</ins>总之就没有缺点这个太屌了它自带的这个刷子也很好用头很扁的但是如果你想要化比较长的可能它的宽度就<emo type=\"disgusted\" level=\"2\">没有那么合适宽的刷子</emo>我很喜欢用这把的KIKO的六十二号",
+      "instruction_xml": "线条还贼流畅<ins>我必须得说一下</ins>总之就没有缺点这个太屌了它自带的这个刷子也很好用头很扁的但是如果你想要化比较长的可能它的宽度就<emo type=\"disgusted\">没有那么合适宽的刷子</emo>我很喜欢用这把的KIKO的六十二号",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "137fd664bd6b2f8bafabff9ce77d72884c5f8af6bbf9a400e205a6a8a1bcf2b9",
@@ -40441,7 +40441,7 @@
         "sha256": "107101511350c753731787296d5d15b62eb087baa0ea8609ae59d542210f97cd",
         "asset_id": "107101511350c753731787296d5d15b62eb087baa0ea8609ae59d542210f97cd"
       },
-      "instruction_xml": "该片透过通过<del>一种精神病症</del>的讲述方式来<emo type=\"sad\" level=\"2\">描写现代社会</emo>中的异化的现象。",
+      "instruction_xml": "该片透过通过<del>一种精神病症</del>的讲述方式来<emo type=\"sad\">描写现代社会</emo>中的异化的现象。",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "107101511350c753731787296d5d15b62eb087baa0ea8609ae59d542210f97cd",
@@ -40614,7 +40614,7 @@
         "sha256": "231f22b12532a4a841b39834bb35489792f2fc5750ee6a07d945c422ac9c985c",
         "asset_id": "231f22b12532a4a841b39834bb35489792f2fc5750ee6a07d945c422ac9c985c"
       },
-      "instruction_xml": "堆起更坚固的城墙也总有种子<emo type=\"melancholic\" level=\"2\">能在一片荒芜之中开出</emo>娇艳的花来我们从来没有<ins>永远不要</ins>低估天灾人祸降临时人类有多么渺小我们也更应该<pause act=\"ins\"/>相信在浩劫之后生命之张力与韧性有多么的顽强",
+      "instruction_xml": "堆起更坚固的城墙也总有种子<emo type=\"melancholic\">能在一片荒芜之中开出</emo>娇艳的花来我们从来没有<ins>永远不要</ins>低估天灾人祸降临时人类有多么渺小我们也更应该<pause act=\"ins\"/>相信在浩劫之后生命之张力与韧性有多么的顽强",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "231f22b12532a4a841b39834bb35489792f2fc5750ee6a07d945c422ac9c985c",
@@ -41017,7 +41017,7 @@
         "sha256": "f5c59f3890fcde7a900f0e9a53446516382ab021945f702e2854e3de5b05b8af",
         "asset_id": "f5c59f3890fcde7a900f0e9a53446516382ab021945f702e2854e3de5b05b8af"
       },
-      "instruction_xml": "真相开始被层层揭开首先是<emo type=\"calm\" level=\"2\">谢比纳他指出爆炸</emo>的反应炉其实当初还没完工<ins>说真的</ins>就投入使用了是厂长等人当年故意伪造了确认完工的文件<pause act=\"red\"/>而他们之所以这么干则只是为了赶在年前完成任务",
+      "instruction_xml": "真相开始被层层揭开首先是<emo type=\"calm\">谢比纳他指出爆炸</emo>的反应炉其实当初还没完工<ins>说真的</ins>就投入使用了是厂长等人当年故意伪造了确认完工的文件<pause act=\"red\"/>而他们之所以这么干则只是为了赶在年前完成任务",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f5c59f3890fcde7a900f0e9a53446516382ab021945f702e2854e3de5b05b8af",
@@ -41430,7 +41430,7 @@
         "sha256": "8d5ebb5f18dab03b8b3508f641c1d51bf04d606140d7020ea0ed5f0c8abc9bbc",
         "asset_id": "8d5ebb5f18dab03b8b3508f641c1d51bf04d606140d7020ea0ed5f0c8abc9bbc"
       },
-      "instruction_xml": "广大节目的观众们说一句<pause act=\"ins\"/>欢迎就我以上提到的几项核心业务就是<emo type=\"happy\" level=\"2\">直播带货综艺演出</emo>广告代言婚丧嫁娶主持旺铺<del>开张剪彩等等</del>等等如果有需要跟我们团队联系会给你服务好",
+      "instruction_xml": "广大节目的观众们说一句<pause act=\"ins\"/>欢迎就我以上提到的几项核心业务就是<emo type=\"happy\">直播带货综艺演出</emo>广告代言婚丧嫁娶主持旺铺<del>开张剪彩等等</del>等等如果有需要跟我们团队联系会给你服务好",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "8d5ebb5f18dab03b8b3508f641c1d51bf04d606140d7020ea0ed5f0c8abc9bbc",
@@ -41818,7 +41818,7 @@
         "sha256": "f4b58cd9678e9e9863f8c60856e225a81987750f9f016831455fbd0c89a13f84",
         "asset_id": "f4b58cd9678e9e9863f8c60856e225a81987750f9f016831455fbd0c89a13f84"
       },
-      "instruction_xml": "但事实真的如表面我们所看到的那样<pause act=\"ins\"/>吗影片最后亚瑟杀<emo type=\"surprised\" level=\"2\">了莫瑞被警方带走后哥谭市陷入混乱亚瑟</emo>在警车中放声大笑此时的亚瑟或<sub targ=\"也许是病症发作，也许是内心狂喜\">许是颠笑症发作或许是发自内心的</sub>颠笑但到底是哪一种已经不重要了",
+      "instruction_xml": "但事实真的如表面我们所看到的那样<pause act=\"ins\"/>吗影片最后亚瑟杀<emo type=\"surprised\">了莫瑞被警方带走后哥谭市陷入混乱亚瑟</emo>在警车中放声大笑此时的亚瑟或<sub targ=\"也许是病症发作，也许是内心狂喜\">许是颠笑症发作或许是发自内心的</sub>颠笑但到底是哪一种已经不重要了",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f4b58cd9678e9e9863f8c60856e225a81987750f9f016831455fbd0c89a13f84",
@@ -42266,7 +42266,7 @@
         "sha256": "a1b84d7ce6391206c36e819937a929b9f9b1717d488682f2aaa14139d409b8f8",
         "asset_id": "a1b84d7ce6391206c36e819937a929b9f9b1717d488682f2aaa14139d409b8f8"
       },
-      "instruction_xml": "眼窝深深凹下去的那种无光神态<sub targ=\"步履蹒跚仿佛在泥潭中行走\">走起路来就像脚上拷了沉重的铅球</sub>这些都能让观众时时体验到亚瑟沉重挣扎的宿命<pause act=\"red\"/>而在强调模仿的表现派上<emo type=\"angry\" level=\"2\">菲尼克斯在表演失常或疯癫状态时又渗透</emo>进对卓别林一些夸张舞姿的致敬",
+      "instruction_xml": "眼窝深深凹下去的那种无光神态<sub targ=\"步履蹒跚仿佛在泥潭中行走\">走起路来就像脚上拷了沉重的铅球</sub>这些都能让观众时时体验到亚瑟沉重挣扎的宿命<pause act=\"red\"/>而在强调模仿的表现派上<emo type=\"angry\">菲尼克斯在表演失常或疯癫状态时又渗透</emo>进对卓别林一些夸张舞姿的致敬",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "a1b84d7ce6391206c36e819937a929b9f9b1717d488682f2aaa14139d409b8f8",
@@ -42749,7 +42749,7 @@
         "sha256": "8b5df736fdeb9baf762134d0bf8cd796d5f8be558b9bc3e6b6011a127911a322",
         "asset_id": "8b5df736fdeb9baf762134d0bf8cd796d5f8be558b9bc3e6b6011a127911a322"
       },
-      "instruction_xml": "利用这个心理更大胆的去尝试一些新鲜事物<pause act=\"red\"/>我需要给大家科普<emo type=\"disgusted\" level=\"2\">一个概念开不开挂和</emo>职业选手是真的没啥关系因为他是职业选手所以不会开挂的<del>逻辑就好比在说</del>因为他是职业运动员所以他不会用兴奋剂一样扯淡",
+      "instruction_xml": "利用这个心理更大胆的去尝试一些新鲜事物<pause act=\"red\"/>我需要给大家科普<emo type=\"disgusted\">一个概念开不开挂和</emo>职业选手是真的没啥关系因为他是职业选手所以不会开挂的<del>逻辑就好比在说</del>因为他是职业运动员所以他不会用兴奋剂一样扯淡",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "8b5df736fdeb9baf762134d0bf8cd796d5f8be558b9bc3e6b6011a127911a322",
@@ -43222,7 +43222,7 @@
         "sha256": "ba885d5bea8a5733bd712832ad73f3eb22f362f5b3207b2b8ee07db4656940bf",
         "asset_id": "ba885d5bea8a5733bd712832ad73f3eb22f362f5b3207b2b8ee07db4656940bf"
       },
-      "instruction_xml": "汤七七呀<sub targ=\"你别这样\">汤七七呀</sub>我是一个<pitch semitones=\"4\">知识分子诶</pitch>你为什么<emo type=\"disgusted\" level=\"2\">一定要逼我呢</emo>一定要逼我天天在你面前丢记忆卡",
+      "instruction_xml": "汤七七呀<sub targ=\"你别这样\">汤七七呀</sub>我是一个<pitch semitones=\"4\">知识分子诶</pitch>你为什么<emo type=\"disgusted\">一定要逼我呢</emo>一定要逼我天天在你面前丢记忆卡",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "ba885d5bea8a5733bd712832ad73f3eb22f362f5b3207b2b8ee07db4656940bf",
@@ -43450,7 +43450,7 @@
         "sha256": "8960a495fafe1867c146171f1a757d4a30ad55bdcee623d6d8a611aa30146cba",
         "asset_id": "8960a495fafe1867c146171f1a757d4a30ad55bdcee623d6d8a611aa30146cba"
       },
-      "instruction_xml": "立马儿感觉<rate factor=\"0.8\">里边凉飕飕的</rate>如果九爷<del>躺在里边儿</del>估计几十年<emo type=\"afraid\" level=\"2\">都不会腐烂吧</emo>地仙葬还真不是盖的",
+      "instruction_xml": "立马儿感觉<rate factor=\"0.8\">里边凉飕飕的</rate>如果九爷<del>躺在里边儿</del>估计几十年<emo type=\"afraid\">都不会腐烂吧</emo>地仙葬还真不是盖的",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "8960a495fafe1867c146171f1a757d4a30ad55bdcee623d6d8a611aa30146cba",
@@ -43668,7 +43668,7 @@
         "sha256": "5f290528e68daeba28e5d82fdb421619b4af722286c0ef2dc52c0c3d57bfbd22",
         "asset_id": "5f290528e68daeba28e5d82fdb421619b4af722286c0ef2dc52c0c3d57bfbd22"
       },
-      "instruction_xml": "后来没办法<pitch semitones=\"-4\">就让一些人来了</pitch>来了以后呢<del>这些人来了很奇怪坐在我床边</del>儿跟我说话的时<emo type=\"surprised\" level=\"2\">候儿老摸我的脉搏</emo>是吧老摸我的脉搏非常有意思最后呢这六个亿的债务",
+      "instruction_xml": "后来没办法<pitch semitones=\"-4\">就让一些人来了</pitch>来了以后呢<del>这些人来了很奇怪坐在我床边</del>儿跟我说话的时<emo type=\"surprised\">候儿老摸我的脉搏</emo>是吧老摸我的脉搏非常有意思最后呢这六个亿的债务",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "5f290528e68daeba28e5d82fdb421619b4af722286c0ef2dc52c0c3d57bfbd22",
@@ -44026,7 +44026,7 @@
         "sha256": "8e162bb439562024c21d3a9466d14c8b455ff6b77737a8c202f1ea7425aeb3ff",
         "asset_id": "8e162bb439562024c21d3a9466d14c8b455ff6b77737a8c202f1ea7425aeb3ff"
       },
-      "instruction_xml": "比如说<emo type=\"sad\" level=\"2\">老公我我跟你说</emo>老公我今天特别喜欢<ins>真的好看</ins>一个包儿我能不能买或者是什么<pitch semitones=\"-4\">我我不是想听到你跟我说</pitch>咱俩要不要",
+      "instruction_xml": "比如说<emo type=\"sad\">老公我我跟你说</emo>老公我今天特别喜欢<ins>真的好看</ins>一个包儿我能不能买或者是什么<pitch semitones=\"-4\">我我不是想听到你跟我说</pitch>咱俩要不要",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "8e162bb439562024c21d3a9466d14c8b455ff6b77737a8c202f1ea7425aeb3ff",
@@ -44289,7 +44289,7 @@
         "sha256": "642c714019989d331d7e03ef932ffad74a0676f723ba0f2e7329d2611d12dd39",
         "asset_id": "642c714019989d331d7e03ef932ffad74a0676f723ba0f2e7329d2611d12dd39"
       },
-      "instruction_xml": "是而且<emo type=\"melancholic\" level=\"2\">当初我劝了他两次</emo>他才来<ins>没几天就入职了</ins>然后他就辞职就过来了然后辞职的他辞职的第二天他才知道<rate factor=\"1.25\">他原来的公司倒闭</rate>了每个人都发了一笔钱只有他",
+      "instruction_xml": "是而且<emo type=\"melancholic\">当初我劝了他两次</emo>他才来<ins>没几天就入职了</ins>然后他就辞职就过来了然后辞职的他辞职的第二天他才知道<rate factor=\"1.25\">他原来的公司倒闭</rate>了每个人都发了一笔钱只有他",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "642c714019989d331d7e03ef932ffad74a0676f723ba0f2e7329d2611d12dd39",
@@ -44612,7 +44612,7 @@
         "sha256": "6905caa57df5131f590a381e855c1e50969e2cb2bbefdc4e98cbd2357d765134",
         "asset_id": "6905caa57df5131f590a381e855c1e50969e2cb2bbefdc4e98cbd2357d765134"
       },
-      "instruction_xml": "就在墨线上<rate factor=\"0.8\">拴上一根银针插在脚下</rate>在变换方位后<emo type=\"calm\" level=\"2\">继续牵引墨线</emo>一共走了九九八十一步<sub targ=\"三枚铜钱\">九根银针</sub>被我以品字形全部插好",
+      "instruction_xml": "就在墨线上<rate factor=\"0.8\">拴上一根银针插在脚下</rate>在变换方位后<emo type=\"calm\">继续牵引墨线</emo>一共走了九九八十一步<sub targ=\"三枚铜钱\">九根银针</sub>被我以品字形全部插好",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6905caa57df5131f590a381e855c1e50969e2cb2bbefdc4e98cbd2357d765134",
@@ -44885,7 +44885,7 @@
         "sha256": "79ec3bfa85a31cdc73efdbcca600ae808cf77f7742f2e28d2ad3fd6f69c13219",
         "asset_id": "79ec3bfa85a31cdc73efdbcca600ae808cf77f7742f2e28d2ad3fd6f69c13219"
       },
-      "instruction_xml": "然后呢<emo type=\"sad\" level=\"2\">欠了六个亿的这个债务之后呢</emo>其实我们的朋友圈子<pitch semitones=\"4\">也会发生一些奇怪的变化</pitch>啊我就这么说<del>吧我原来有个公司叫</del>老罗和<pause act=\"ins\"/>他的朋友们后来呢我从事这个直播业务的公司叫交个朋友",
+      "instruction_xml": "然后呢<emo type=\"sad\">欠了六个亿的这个债务之后呢</emo>其实我们的朋友圈子<pitch semitones=\"4\">也会发生一些奇怪的变化</pitch>啊我就这么说<del>吧我原来有个公司叫</del>老罗和<pause act=\"ins\"/>他的朋友们后来呢我从事这个直播业务的公司叫交个朋友",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "79ec3bfa85a31cdc73efdbcca600ae808cf77f7742f2e28d2ad3fd6f69c13219",
@@ -45298,7 +45298,7 @@
         "sha256": "3906cad7f6b4679c752e14852e830353880242c20491050f94438fd8c91c222b",
         "asset_id": "3906cad7f6b4679c752e14852e830353880242c20491050f94438fd8c91c222b"
       },
-      "instruction_xml": "小女孩的父<emo type=\"angry\" level=\"2\">亲就是家暴男但妻子太软弱也</emo>不敢说每次家暴男都从中脱手当时小黑哥还揍了家暴男<pause act=\"red\"/>而这时<ins>竟然</ins>家暴男和妻子就被绑在教室<rate factor=\"0.8\">里他们彼此的身</rate>上插满了铁条痛不欲生",
+      "instruction_xml": "小女孩的父<emo type=\"angry\">亲就是家暴男但妻子太软弱也</emo>不敢说每次家暴男都从中脱手当时小黑哥还揍了家暴男<pause act=\"red\"/>而这时<ins>竟然</ins>家暴男和妻子就被绑在教室<rate factor=\"0.8\">里他们彼此的身</rate>上插满了铁条痛不欲生",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "3906cad7f6b4679c752e14852e830353880242c20491050f94438fd8c91c222b",
@@ -45686,7 +45686,7 @@
         "sha256": "6d657cf0d65ac408d36644374de8c317576924de8d04a31359699c82b0a9b850",
         "asset_id": "6d657cf0d65ac408d36644374de8c317576924de8d04a31359699c82b0a9b850"
       },
-      "instruction_xml": "然后<pause act=\"red\"/>穿着黑色的水裤儿和布鞋<rate factor=\"1.25\">手里我会拿着纸巾</rate>时不时的<emo type=\"calm\" level=\"2\">我会擦脑门儿啊擦眼睛</emo>可能当时<del>很多人认为我是热的</del>其实不是我是疼",
+      "instruction_xml": "然后<pause act=\"red\"/>穿着黑色的水裤儿和布鞋<rate factor=\"1.25\">手里我会拿着纸巾</rate>时不时的<emo type=\"calm\">我会擦脑门儿啊擦眼睛</emo>可能当时<del>很多人认为我是热的</del>其实不是我是疼",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "6d657cf0d65ac408d36644374de8c317576924de8d04a31359699c82b0a9b850",
@@ -45979,7 +45979,7 @@
         "sha256": "f060e00dc487ea80f56ec9a2f8733d80f9e7665842627d7656fb7347854c6dea",
         "asset_id": "f060e00dc487ea80f56ec9a2f8733d80f9e7665842627d7656fb7347854c6dea"
       },
-      "instruction_xml": "影片对此没有过多的解释<pause act=\"red\"/>而是给了一个极为开放的结局<emo type=\"afraid\" level=\"2\">如果这句情话真的是托马斯所为</emo>那整部电影<rate factor=\"1.25\">的方向就更加黑暗了</rate>因为那就证明<sub targ=\"潘妮在撒谎\">潘妮并没有说谎</sub>托马斯和潘妮确实有一腿",
+      "instruction_xml": "影片对此没有过多的解释<pause act=\"red\"/>而是给了一个极为开放的结局<emo type=\"afraid\">如果这句情话真的是托马斯所为</emo>那整部电影<rate factor=\"1.25\">的方向就更加黑暗了</rate>因为那就证明<sub targ=\"潘妮在撒谎\">潘妮并没有说谎</sub>托马斯和潘妮确实有一腿",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "f060e00dc487ea80f56ec9a2f8733d80f9e7665842627d7656fb7347854c6dea",
@@ -46377,7 +46377,7 @@
         "sha256": "916e4498b76b012386a93b80efdbe8ce52f50633e24a81e91f7802b61ada889c",
         "asset_id": "916e4498b76b012386a93b80efdbe8ce52f50633e24a81e91f7802b61ada889c"
       },
-      "instruction_xml": "不仅非常的鲜甜<emo type=\"happy\" level=\"2\">还有一股淡淡的奶香味</emo>但是紫胆我还没有试过那今天咱们这个就是紫胆<pitch semitones=\"-4\">而且是巨大的紫胆</pitch>这一个差不多八两左右<sub targ=\"算下来一个要一百块钱\">平均下来一个差不多一百多一点点</sub>相对于这么大的海胆来说<pause act=\"ins\"/>已经算是非常的便宜了",
+      "instruction_xml": "不仅非常的鲜甜<emo type=\"happy\">还有一股淡淡的奶香味</emo>但是紫胆我还没有试过那今天咱们这个就是紫胆<pitch semitones=\"-4\">而且是巨大的紫胆</pitch>这一个差不多八两左右<sub targ=\"算下来一个要一百块钱\">平均下来一个差不多一百多一点点</sub>相对于这么大的海胆来说<pause act=\"ins\"/>已经算是非常的便宜了",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "916e4498b76b012386a93b80efdbe8ce52f50633e24a81e91f7802b61ada889c",
@@ -46855,7 +46855,7 @@
         "sha256": "421460cbcce809d7ee37ee92650cc2790aa2a3343cc5d3d08a77ecf942395ab4",
         "asset_id": "421460cbcce809d7ee37ee92650cc2790aa2a3343cc5d3d08a77ecf942395ab4"
       },
-      "instruction_xml": "所以阿曼达也有了丰富的经验<emo type=\"surprised\" level=\"2\">开始满房子找线索</emo>终于在墙上找到了录音带<ins>就在这时</ins>竖锯熟悉的声音开始回荡在房间里竖锯开始解释游戏规则<pitch semitones=\"4\">保险箱有解药</pitch>而且<pause act=\"ins\"/>密码和每个人都有关",
+      "instruction_xml": "所以阿曼达也有了丰富的经验<emo type=\"surprised\">开始满房子找线索</emo>终于在墙上找到了录音带<ins>就在这时</ins>竖锯熟悉的声音开始回荡在房间里竖锯开始解释游戏规则<pitch semitones=\"4\">保险箱有解药</pitch>而且<pause act=\"ins\"/>密码和每个人都有关",
       "annotations": {
         "source_alignment": {
           "audio_sha256": "421460cbcce809d7ee37ee92650cc2790aa2a3343cc5d3d08a77ecf942395ab4",

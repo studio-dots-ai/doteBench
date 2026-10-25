@@ -190,7 +190,7 @@ def edit_local(req: LocalRequest):
         ) from exc
 
 
-def main():
+def main(candidate_name="auk_base", *, application=app):
     global engine, identity, weights
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint-dir", required=True, type=Path)
@@ -200,7 +200,7 @@ def main():
     parser.add_argument("--port", default=18000, type=int)
     parser.add_argument("--device", default="cuda:0")
     args = parser.parse_args()
-    runtime = activate_runtime("auk_base")
+    runtime = activate_runtime(candidate_name)
     import sys
 
     sys.path.insert(0, str(runtime / "src"))
@@ -222,7 +222,7 @@ def main():
                     digest.update(chunk)
             if digest.hexdigest() != expected:
                 raise ValueError(f"Weight checksum mismatch: {group}/{relative}")
-    identity = runtime_identity("auk_base")
+    identity = runtime_identity(candidate_name)
     engine = AukInfer(
         str(args.checkpoint_dir / "config.yaml"),
         str(args.checkpoint_dir / "auk_base.safetensors"),
@@ -231,7 +231,7 @@ def main():
     )
     import uvicorn
 
-    uvicorn.run(app, host=args.host, port=args.port)
+    uvicorn.run(application, host=args.host, port=args.port)
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ from dotebench.instructions import parse_instruction
         '<sub targ="one">same</sub> same <sub targ="two">same</sub>',
         "<del>all</del><ins>new</ins>",
         "<ins>你好</ins><del>世界</del><ins>朋友</ins>",
-        '<emo type="happy" level="2">same</emo><ins>new</ins> same',
+        '<emo type="happy">same</emo><ins>new</ins> same',
         '<rate factor="2">a</rate> <rate factor="0.5">b</rate>',
         '<pause act="ins"/>a<pause act="red"/>',
     ],
@@ -31,7 +31,7 @@ def test_plan_xml_ownership(xml):
 
 
 def test_acoustic_span_excludes_adjacent_insert():
-    steps = plan_operations('<emo type="happy" level="2">same</emo><ins>new</ins> same')
+    steps = plan_operations('<emo type="happy">same</emo><ins>new</ins> same')
     assert [s.operation_index for s in steps] == [1, 0]
     op = parse_instruction(steps[1].instruction_xml).operations[0]
     assert op.content == "same"
@@ -60,7 +60,7 @@ def test_text_chain_accepts_semantically_irrelevant_whitespace_rendering():
 @pytest.mark.parametrize(
     ("suffix", "kind", "content"),
     [
-        ('<emo type="happy" level="2"> b</emo> ', "emo", "b"),
+        ('<emo type="happy"> b</emo> ', "emo", "b"),
         ('<pause act="ins"/> b ', "pause", ""),
     ],
 )

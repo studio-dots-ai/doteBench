@@ -41,7 +41,7 @@ def test_cli_wiring(monkeypatch, tmp_path):
 @pytest.mark.parametrize("language", ["en", "zh"])
 def test_ming_prefix_and_no_second_emotion(language, tmp_path):
     q = request(
-        '<emo type="happy" level="2">Hello</emo> <emo type="sad" level="1">world</emo>',
+        '<emo type="happy">Hello</emo> <emo type="sad">world</emo>',
         language,
     )
     actual = dict(
@@ -163,7 +163,7 @@ def test_mismatched_runtime_is_infrastructure_error(tmp_path):
         ("<del>Hello</del> world", True),
         ('<sub targ="Hello">Hello</sub> world', True),
         ('<ins>你好</ins><del>世界</del><sub targ="朋友">大家</sub>', True),
-        ('<emo type="happy" level="2">Hello</emo>', False),
+        ('<emo type="happy">Hello</emo>', False),
         ('<pitch semitones="3">Hello</pitch>', False),
         ('<rate factor="0.8">Hello</rate>', False),
         ('Hello<pause act="ins"/>', False),

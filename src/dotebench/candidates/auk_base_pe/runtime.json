@@ -1,0 +1,22 @@
+{
+  "upstream": {
+    "url": "https://github.com/Tencent-Hunyuan/AuK.git",
+    "commit": "d9f30ffe4231dbc90b48cc83a35d310fece0b060",
+    "directory": "auk"
+  },
+  "dependencies": [
+    "dotebench.candidates.auk_base.backend"
+  ],
+  "patches": [
+    {
+      "path": "patches/cached-instruction.patch",
+      "sha256": "b949f440a2306634dfe3eac9f0fdd3740047ec61fb581973c1e82a9ebb102971"
+    }
+  ],
+  "files": {
+    "src/auk/infer/pe.py": {
+      "before": "038a2ff339192473a8d9f82ddb460dec85f3ae18d7cf81de5a802de64e34204f",
+      "after": "3df866505fbd01e4baa471424357cd5f5152e15775787672e94ffa3357e2a701"
+    }
+  }
+}

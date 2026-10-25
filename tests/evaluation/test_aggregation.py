@@ -29,6 +29,7 @@ def row(family, successes, errors, length, distance, normalizer):
         {
             "family": family,
             "operation": family,
+            "executed": success,
             "success": success,
             "measurement": {"direction_correct": success, "pause_error_ms": 100.0},
         }
@@ -173,7 +174,20 @@ class Abilities:
         if name == "emotion":
             return {"predicted_emotion": "happy"}
         if name == "f0":
-            return {"spans": [{"median_f0_hz": None} for _ in payload["spans"]]}
+            return {
+                "spans": [
+                    {
+                        key: None
+                        for key in (
+                            "median_f0_hz",
+                            "min_f0_hz",
+                            "max_f0_hz",
+                            "mean_f0_hz",
+                        )
+                    }
+                    for _ in payload["spans"]
+                ]
+            }
         raise AssertionError(name)
 
 
@@ -230,7 +244,7 @@ def test_target_query_coordinates_follow_normalized_xml_projection():
 
 
 def test_whole_emotion_uses_complete_audio():
-    case = make_case('<emo type="happy" level="2">hello</emo>')
+    case = make_case('<emo type="happy">hello</emo>')
     ability = Abilities()
     protocol = DoteBenchEvaluator(ability)
     segments = [WordSegment("hello", 0.5, 1.0)]
@@ -250,7 +264,7 @@ def test_whole_emotion_uses_complete_audio():
 
 
 def test_local_emotion_uses_padded_crop():
-    case = make_case('say <emo type="happy" level="2">hello</emo>')
+    case = make_case('say <emo type="happy">hello</emo>')
     ability = Abilities([[(0.5, 1.0)]])
     protocol = DoteBenchEvaluator(ability)
     segments = [WordSegment("say", 0.1, 0.3), WordSegment("hello", 0.5, 1.0)]
@@ -267,9 +281,9 @@ def test_local_emotion_uses_padded_crop():
     assert (payload["start"], payload["end"]) == (0.5, 1.0)
 
 
-def test_compositional_unvoiced_pitch_is_unmeasurable():
+def test_compositional_pitch_without_source_reference_raises():
     case = make_case(
-        '<pitch semitones="3">hello</pitch> <emo type="happy" level="2">world</emo>',
+        '<pitch semitones="3">hello</pitch> <emo type="happy">world</emo>',
         Annotations(
             source_alignment=SourceAlignment(
                 "0" * 64, "0" * 64, (AlignmentUnit("hello", 0.1, 0.5),)
@@ -277,19 +291,17 @@ def test_compositional_unvoiced_pitch_is_unmeasurable():
         ),
     )
     segments = [WordSegment("hello", 0.1, 0.5), WordSegment("world", 0.7, 1.0)]
-    rows = DoteBenchEvaluator(
-        Abilities([[(0.1, 0.5), (0.7, 1.0)], [(0.1, 0.5)]])
-    )._components(
-        case,
-        wav(),
-        wav(),
-        hypothesis=None,
-        source_segments=segments,
-        target_segments=segments,
-    )
-    assert rows[0]["success"] is None
-    assert rows[0]["measurement"]["pitch_shift_semitones"] is None
-    assert rows[0]["measurement"]["pitch_l1_semitones"] is None
+    with pytest.raises(ValueError, match="no valid source F0"):
+        DoteBenchEvaluator(
+            Abilities([[(0.1, 0.5), (0.7, 1.0)], [(0.1, 0.5)]])
+        )._components(
+            case,
+            wav(),
+            wav(),
+            hypothesis=None,
+            source_segments=segments,
+            target_segments=segments,
+        )
 
 
 @pytest.mark.parametrize(
@@ -401,7 +413,7 @@ def test_pause_overlapping_alignment_clamps_gap():
     ],
 )
 def test_global_wer_language_policy(category, language):
-    case = make_case('<emo type="happy" level="2">你好 world</emo>', language="zh")
+    case = make_case('<emo type="happy">你好 world</emo>', language="zh")
 
     class StopAfterWER(Exception):
         pass
@@ -436,6 +448,7 @@ def test_global_wer_language_policy(category, language):
 def test_prosody_failure_uses_mixed_reference_units():
     case = make_case('<pitch semitones="3">你好 world</pitch>', language="zh")
     protocol = DoteBenchEvaluator(Abilities())
+    protocol._f0 = lambda audio, spans: [{"median_f0_hz": 100} for _ in spans]
     request = SimpleNamespace(
         generation=GenerationResult(case.id, "candidate_error", error="failed"),
         source_audio=Audio(wav()),
@@ -448,7 +461,7 @@ def test_prosody_failure_uses_mixed_reference_units():
 
 def test_compositional_failure_uses_xml_partitioned_target_reference():
     case = make_case(
-        '<sub targ="one two three">one</sub> <emo type="happy" level="2">four</emo>'
+        '<sub targ="one two three">one</sub> <emo type="happy">four</emo>'
     )
     protocol = DoteBenchEvaluator(Abilities())
     request = SimpleNamespace(
@@ -493,7 +506,7 @@ def test_character_edit_masks_preserve_reference_token_overlap(
 
 
 def test_edit_boundaries_use_shared_alignment():
-    case = make_case('say <emo type="happy" level="2">hello</emo>')
+    case = make_case('say <emo type="happy">hello</emo>')
     ability = Abilities([[(0.6, 0.9)]])
     full = [WordSegment("say", 0.1, 0.3), WordSegment("hello", 0.5, 1.0)]
     DoteBenchEvaluator(ability)._components(

@@ -17,7 +17,7 @@ from dotebench.models.base import Audio, GenerationRequest
             "<pitch, semitones=-4>降低</pitch> &amp; <rate, factor=1.20>faster</rate>",
         ),
         (
-            '<emo type="happy" level="2">Hello</emo> <pitch semitones="+3">there</pitch><pause act="red"/>',
+            '<emo type="happy">Hello</emo> <pitch semitones="+3">there</pitch><pause act="red"/>',
             '<emo type="happy" level="2">Hello</emo> <pitch, semitones=+3>there</pitch><pause act="red" level="2"/>',
         ),
         (

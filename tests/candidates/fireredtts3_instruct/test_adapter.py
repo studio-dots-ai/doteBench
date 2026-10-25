@@ -26,7 +26,7 @@ def request(xml, language="en"):
         '<del>This </del><sub targ="wrong">is a sentence</sub>.',
         "<ins>Hello </ins><del>world</del>",
         '<sub targ="new">word</sub> <sub targ="wrong">word</sub>',
-        '汤七七呀<sub targ="你别这样">汤七七呀</sub><emo type="happy" level="2">我是知识分子</emo>',
+        '汤七七呀<sub targ="你别这样">汤七七呀</sub><emo type="happy">我是知识分子</emo>',
         '<pitch semitones="4">Hello</pitch> <sub targ="wrong">world</sub>',
         '<pause act="red"/><pitch semitones="3">Hello</pitch>',
     ],

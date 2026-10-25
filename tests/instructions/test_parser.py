@@ -50,7 +50,7 @@ def test_xml_escapes():
 
 def test_mixed_acoustic_tags_do_not_change_spacing():
     value = parse_instruction(
-        '&quot;<emo type="happy" level="2">Hello</emo>, <sub targ="world">earth</sub>!'
+        '&quot;<emo type="happy">Hello</emo>, <sub targ="world">earth</sub>!'
     )
     assert value.target_text == '"Hello, world!'
     assert value.operations[0].target.start == 1
@@ -75,14 +75,14 @@ def test_acoustic_offsets_preserve_whitespace():
         '<ins bad="1">x</ins>',
         "<sub>x</sub>",
         '<sub targ="">x</sub>',
-        '<emo type="bogus" level="2">x</emo>',
-        '<emo type="happy" level="4">x</emo>',
+        '<emo type="bogus">x</emo>',
+        '<emo type="happy" level="2">x</emo>',
         '<pitch semitones="nan">x</pitch>',
         '<rate factor="0">x</rate>',
         '<pause act="delete"/>',
         '<pause act="ins">x</pause>',
         "<ins><del>x</del></ins>",
-        '<emo type="happy" level="2"><rate factor="1.2">x</rate></emo>',
+        '<emo type="happy"><rate factor="1.2">x</rate></emo>',
         "<ins>x<del>y</ins></del>",
         "<ins>x",
         "<ins/>",
@@ -103,3 +103,8 @@ def test_frozen_text_validation():
         parse_instruction("abc", source_text="def")
     with pytest.raises(ValueError, match="target transcript"):
         parse_instruction("abc", target_text="def")
+
+
+def test_emotion_parameters_only_describe_type():
+    parsed = parse_instruction('say <emo type="happy">hello</emo>')
+    assert dict(parsed.operations[0].params) == {"type": "happy"}

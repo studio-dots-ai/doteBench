@@ -7,10 +7,10 @@ from dotebench.instructions import parse_instruction
 
 
 def model_instruction(instruction_xml):
-    """Use the same fixed pause strength for XML, NL, and expert checkpoints."""
+    """Use the same fixed emotion and pause strength for XML, NL, and expert checkpoints."""
     parse_instruction(instruction_xml)
 
-    def pause(match):
+    def strength(match):
         tag = match.group(0)
         end = "/>" if tag.endswith("/>") else ">"
         return tag[: -len(end)].rstrip() + ' level="2"' + end
@@ -23,7 +23,7 @@ def model_instruction(instruction_xml):
         return f"<{node.tag}, {attribute}={node.attrib[attribute]}>"
 
     native = re.sub(r"<(pitch|rate)\b[^>]*>", prosody, instruction_xml)
-    return re.sub(r"<pause\b[^>]*>", pause, native)
+    return re.sub(r"<(?:emo|pause)\b[^>]*>", strength, native)
 
 
 def compile_request(request, options):

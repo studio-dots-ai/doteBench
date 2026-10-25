@@ -13,6 +13,7 @@ class CandidateSpec:
 CANDIDATES = {
     "identity": CandidateSpec("Identity", ("one_take",), False),
     "auk_base": CandidateSpec("AuKBase"),
+    "auk_base_pe": CandidateSpec("AuKBasePE"),
     "dots_tts_edit": CandidateSpec("DotsTtsEdit", native_runtime=False),
     "ming_uniaudio": CandidateSpec("MingUniAudio"),
     "step_audio_editx": CandidateSpec("StepAudioEditX"),

@@ -10,7 +10,7 @@ from dotebench.instructions import parse_instruction
 @pytest.mark.parametrize(
     "tag,endpoint,control",
     [
-        ('<emo type="happy" level="2">word</emo>', "/edit", "happy"),
+        ('<emo type="happy">word</emo>', "/edit", "happy"),
         ('<rate factor="1.2">word</rate>', "/edit", "faster"),
         ('<pitch semitones="3">word</pitch>', "/edit_freeform", "Raise the pitch"),
         ('<pause act="ins"/>word', "/edit_freeform", "Increase the pauses"),
