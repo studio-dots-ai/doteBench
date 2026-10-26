@@ -183,7 +183,7 @@ wheels = [
 
 [[package]]
 name = "dotebench"
-version = "1.0.0"
+version = "1.0.2rc1"
 source = { editable = "../../" }
 dependencies = [
     { name = "hydra-core" },

@@ -333,7 +333,14 @@ def test_every_public_config_is_standalone(filename, monkeypatch, tmp_path):
         "WEIGHTS_MANIFEST",
     ]:
         monkeypatch.setenv("DOTEBENCH_" + key, str(tmp_path / key))
-    graph = load_service_bundle(Path(__file__).parents[2] / "configs" / filename)
+    overrides = (
+        [f"candidate.options.instruction_cache_dir={tmp_path / 'cache'}"]
+        if filename == "auk_base_pe.yaml"
+        else []
+    )
+    graph = load_service_bundle(
+        Path(__file__).parents[2] / "configs" / filename, overrides=overrides
+    )
     assert graph.roots
     for node in graph.instances.values():
         assert node.command

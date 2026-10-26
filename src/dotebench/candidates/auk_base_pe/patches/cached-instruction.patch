@@ -1,0 +1,29 @@
+--- a/src/auk/infer/pe.py
++++ b/src/auk/infer/pe.py
+@@ -817,6 +817,17 @@
+                 str(params["text"]),
+                 classified.text_language or classified.language,
+             )
++        return self._prepare_generation(
++            classified, params, audio_path=audio_path, asr=asr,
++            instruction_language=instruction_language, llm_calls=llm_calls,
++            target_duration=target_duration,
++        )
++
++    def _prepare_generation(
++        self, classified, params, *, audio_path, asr, instruction_language,
++        llm_calls, target_duration=None, model_instruction=None,
++    ):
++        """Prepare current audio and duration from already enhanced instructions."""
+         normalized_asr_text = None
+         if asr and asr.text:
+             normalized_asr_text = (
+@@ -854,7 +865,7 @@
+         duration_details["applied_duration_sec"] = target_len / MODEL_LATENT_FRAMES_PER_SECOND
+         duration_details["target_len"] = target_len
+
+-        model_instruction = _render_instruction(
++        model_instruction = model_instruction or _render_instruction(
+             classified.task_type,
+             classified.operation_subtype,
+             params,

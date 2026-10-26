@@ -10,7 +10,7 @@ ATTRS = {
     "ins": set(),
     "del": set(),
     "sub": {"targ"},
-    "emo": {"type", "level"},
+    "emo": {"type"},
     "pitch": {"semitones"},
     "rate": {"factor"},
     "pause": {"act"},
@@ -64,9 +64,7 @@ def parse_instruction(
             raise ValueError(f"Empty {kind} region")
         if kind == "sub" and not attrs["targ"]:
             raise ValueError("Empty substitution target")
-        if kind == "emo" and (
-            attrs["type"] not in EMOTIONS or attrs["level"] not in {"1", "2", "3"}
-        ):
+        if kind == "emo" and attrs["type"] not in EMOTIONS:
             raise ValueError("Invalid emotion parameters")
         if kind in {"pitch", "rate"}:
             value = float(attrs["semitones" if kind == "pitch" else "factor"])

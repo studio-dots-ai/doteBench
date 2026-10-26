@@ -68,7 +68,7 @@ def test_following_operations_do_not_change_selected_request():
         "<ins>new </ins>old words",
         "<del>old </del>words",
         "<del>all words</del>",
-        '<emo type="happy" level="2">all words</emo>.',
+        '<emo type="happy">all words</emo>.',
         '<rate factor="2">all words</rate>',
         '<pitch semitones="2">all words</pitch>',
     ],
@@ -261,7 +261,7 @@ def test_identity_step_preserves_current_audio_and_continues(
     from dotebench.models.native import NativeCandidate
 
     r = request(
-        '<pitch semitones="-3">old</pitch> next <emo type="happy" level="2">last</emo>'
+        '<pitch semitones="-3">old</pitch> next <emo type="happy">last</emo>'
     )
     alignment = synthetic_alignment(r)
     units = list(alignment.segments)

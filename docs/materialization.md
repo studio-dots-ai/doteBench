@@ -136,9 +136,9 @@ written. Verification also compares every output manifest with the packaged
 release manifest: XML, case identity and order, language, recipes, seeds,
 parameters, grouping annotations, and text checksums are immutable. Only the
 materialized audio path and checksum may change; alignment audio identity and
-segments may change only with the corresponding waveform. Provider source,
-adapter, and model-lock identities are checked against the release locks. The
-final aggregate digest identifies the contents of one materialization run.
+segments may change only with the corresponding waveform. Provider sources and
+model assets establish reproducibility; software provenance records how the
+data was produced. Verification follows the data and audio contract.
 
 The receipt records the dataset version. Reference manifest hashes use
 category/shard keys; the verifier derives full paths from `release/shards.json`.

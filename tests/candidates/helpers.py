@@ -110,7 +110,9 @@ def assert_native_transport_one_request(adapter_class, tmp_path):
     assert adapter.last_execution_trace.is_file()
 
 
-def assert_cli_wiring(monkeypatch, tmp_path, candidate_name, *, has_aligner=False):
+def assert_cli_wiring(
+    monkeypatch, tmp_path, candidate_name, *, has_aligner=False, overrides=()
+):
     from dotebench import cli
     from dotebench.candidates.registry import CANDIDATES
     from dotebench.services.utils import processes
@@ -158,6 +160,7 @@ def assert_cli_wiring(monkeypatch, tmp_path, candidate_name, *, has_aligner=Fals
             str(tmp_path / "run"),
             "--override",
             "services.candidate.port=19017",
+            *[arg for value in overrides for arg in ("--override", value)],
         ]
     )
     kwargs = runner.call_args.kwargs
@@ -173,3 +176,4 @@ def assert_cli_wiring(monkeypatch, tmp_path, candidate_name, *, has_aligner=Fals
             ":18001"
         )
     kwargs["candidate"].close()
+    return kwargs

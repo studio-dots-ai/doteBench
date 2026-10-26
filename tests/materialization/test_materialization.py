@@ -286,6 +286,12 @@ def test_verifier_binds_service_identities_to_release_locks():
     for identity in services.values():
         identity["adapter"]["module"] = "__main__"
     _verify_service_identities(receipt)
+    # Software provenance may differ while the materialized contract stays valid.
+    receipt["materializer"]["release"] = "older-distribution"
+    receipt["materializer"]["sha256"] = "1" * 64
+    for identity in services.values():
+        identity["adapter"]["sha256"] = "2" * 64
+    _verify_service_identities(receipt)
     receipt["services"]["mimo_audio"]["source"]["commit"] = "0" * 40
     with pytest.raises(ValueError, match="source identity mismatch"):
         _verify_service_identities(receipt)

@@ -36,7 +36,7 @@ def test_cli_wiring(monkeypatch, tmp_path):
 
 def test_mimo_chinese_and_escaping(tmp_path):
     q = request(
-        '<sub targ="你好 &amp; 再见">你好</sub><emo type="happy" level="2">朋友</emo>',
+        '<sub targ="你好 &amp; 再见">你好</sub><emo type="happy">朋友</emo>',
         "zh",
     )
     actual = dict(
@@ -83,7 +83,7 @@ def test_mimo_chinese_and_escaping(tmp_path):
             "Speak with longer pauses throughout.",
         ),
         (
-            '<emo type="melancholic" level="2">甲</emo><emo type="happy" level="2">乙</emo>',
+            '<emo type="melancholic">甲</emo><emo type="happy">乙</emo>',
             "zh",
             "用忧郁的语气说。",
         ),

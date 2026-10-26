@@ -35,6 +35,9 @@ def runtime_identity(name):
         Path(__file__).with_name("audio.py"),
         Path(__file__).with_name("launch.py"),
     ]
+    dependencies.extend(
+        source_path(module) for module in manifest.get("dependencies", [])
+    )
     for patch in manifest["patches"]:
         path = directory / patch["path"]
         if sha256(path) != patch["sha256"]:

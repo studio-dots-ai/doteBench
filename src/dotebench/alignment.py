@@ -218,6 +218,18 @@ def query_intervals(alignment, text, operations, *, side, audio_duration):
     }
 
 
+def pause_anchors_valid(alignment, text, position):
+    """Require positive-duration neighboring words, including at boundaries."""
+    alignment_map(text, alignment)
+    tokens = token_spans(text)
+    if any(a < position < b for a, b in tokens):
+        raise ValueError("Edit point cuts an alignment unit")
+    left = [i for i, (_, b) in enumerate(tokens) if b <= position]
+    right = [i for i, (a, _) in enumerate(tokens) if a >= position]
+    anchors = ([left[-1]] if left else []) + ([right[0]] if right else [])
+    return bool(anchors) and all(alignment[i].duration > 0 for i in anchors)
+
+
 def bound_segments(segments, duration):
     """Intersect model predictions with the physical audio support once."""
     result = []
