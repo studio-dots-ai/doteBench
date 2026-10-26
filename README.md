@@ -159,51 +159,51 @@ the listed systems. AuK uses the official Prompt Enhancer.
   <tbody>
     <tr>
       <td><strong>dots.tts.edit</strong></td>
-      <td align="right"><strong>63.30</strong></td>
-      <td align="right"><strong>48.49</strong></td>
-      <td align="right"><strong>0.779</strong></td>
-      <td align="right"><strong>7.18</strong></td>
-      <td align="right"><strong>1.84</strong></td>
+      <td align="center"><strong>63.30</strong></td>
+      <td align="center"><strong>48.49</strong></td>
+      <td align="center"><strong>0.779</strong></td>
+      <td align="center"><strong>7.18</strong></td>
+      <td align="center"><strong>1.84</strong></td>
     </tr>
     <tr>
       <td>MiMo-Audio-Instruct</td>
-      <td align="right">38.20</td>
-      <td align="right">26.21</td>
-      <td align="right">0.623</td>
-      <td align="right">15.25</td>
-      <td align="right">4.63</td>
+      <td align="center">38.20</td>
+      <td align="center">26.21</td>
+      <td align="center">0.623</td>
+      <td align="center">15.25</td>
+      <td align="center">4.63</td>
     </tr>
     <tr>
       <td>Step-Audio-EditX</td>
-      <td align="right">33.57</td>
-      <td align="right">22.73</td>
-      <td align="right">0.711</td>
-      <td align="right">13.66</td>
-      <td align="right">3.41</td>
+      <td align="center">33.57</td>
+      <td align="center">22.73</td>
+      <td align="center">0.711</td>
+      <td align="center">13.66</td>
+      <td align="center">3.41</td>
     </tr>
     <tr>
       <td>AuK</td>
-      <td align="right">28.43</td>
-      <td align="right">17.11</td>
-      <td align="right">0.759</td>
-      <td align="right">9.40</td>
-      <td align="right">2.92</td>
+      <td align="center">28.43</td>
+      <td align="center">17.11</td>
+      <td align="center">0.759</td>
+      <td align="center">9.40</td>
+      <td align="center">2.92</td>
     </tr>
     <tr>
       <td>Ming-UniAudio</td>
-      <td align="right">18.73</td>
-      <td align="right">9.61</td>
-      <td align="right">0.514</td>
-      <td align="right">13.19</td>
-      <td align="right">4.19</td>
+      <td align="center">18.73</td>
+      <td align="center">9.61</td>
+      <td align="center">0.514</td>
+      <td align="center">13.19</td>
+      <td align="center">4.19</td>
     </tr>
     <tr>
       <td>FireRedTTS3-Instruct</td>
-      <td align="right">18.26</td>
-      <td align="right">9.97</td>
-      <td align="right">0.777</td>
-      <td align="right">7.76</td>
-      <td align="right">2.01</td>
+      <td align="center">18.26</td>
+      <td align="center">9.97</td>
+      <td align="center">0.777</td>
+      <td align="center">7.76</td>
+      <td align="center">2.01</td>
     </tr>
   </tbody>
 </table>
