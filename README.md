@@ -135,18 +135,92 @@ deployment parameters, and capability boundary beside the implementation:
 
 ## Reference results
 
-These reference runs cover 2,081 cases. Operation success averages requested
-operations; all-operations success requires every requested operation in a case
-to succeed. AuK uses the official Prompt Enhancer.
+Precise speech editing requires both successful execution of the requested
+operations and preservation of the source speech. These reference results cover
+all 2,081 cases across the five editing categories. Each value is the arithmetic
+mean of the one-take and sequential results. Bold indicates the best result among
+the listed systems. AuK uses the official Prompt Enhancer.
 
-| Candidate | One-take operation success | Sequential operation success | One-take all operations | Sequential all operations |
-|---|---:|---:|---:|---:|
-| dots.tts.edit | **63.9%** | **62.7%** | **48.8%** | **48.2%** |
-| MiMo-Audio-Instruct | 37.3% | 39.1% | 25.6% | 26.8% |
-| Step-Audio-EditX | 36.0% | 31.1% | 24.9% | 20.6% |
-| Ming-UniAudio | 18.7% | 18.8% | 8.7% | 10.5% |
-| FireRedTTS3-Instruct | 16.0% | 20.5% | 8.3% | 11.6% |
-| AuK | 23.6% | 33.3% | 12.3% | 21.9% |
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Candidate</th>
+      <th colspan="2">Instruction Following</th>
+      <th colspan="3">Local Preservation</th>
+    </tr>
+    <tr>
+      <th>Operation success (%) ↑</th>
+      <th>All success (%) ↑</th>
+      <th>SIM ↑</th>
+      <th>WDTW-Dur (%) ↓</th>
+      <th>WDTW-F0 (st) ↓</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>dots.tts.edit</strong></td>
+      <td align="center"><strong>63.30</strong></td>
+      <td align="center"><strong>48.49</strong></td>
+      <td align="center"><strong>0.779</strong></td>
+      <td align="center"><strong>7.18</strong></td>
+      <td align="center"><strong>1.84</strong></td>
+    </tr>
+    <tr>
+      <td>MiMo-Audio-Instruct</td>
+      <td align="center">38.20</td>
+      <td align="center">26.21</td>
+      <td align="center">0.623</td>
+      <td align="center">15.25</td>
+      <td align="center">4.63</td>
+    </tr>
+    <tr>
+      <td>Step-Audio-EditX</td>
+      <td align="center">33.57</td>
+      <td align="center">22.73</td>
+      <td align="center">0.711</td>
+      <td align="center">13.66</td>
+      <td align="center">3.41</td>
+    </tr>
+    <tr>
+      <td>AuK</td>
+      <td align="center">28.43</td>
+      <td align="center">17.11</td>
+      <td align="center">0.759</td>
+      <td align="center">9.40</td>
+      <td align="center">2.92</td>
+    </tr>
+    <tr>
+      <td>Ming-UniAudio</td>
+      <td align="center">18.73</td>
+      <td align="center">9.61</td>
+      <td align="center">0.514</td>
+      <td align="center">13.19</td>
+      <td align="center">4.19</td>
+    </tr>
+    <tr>
+      <td>FireRedTTS3-Instruct</td>
+      <td align="center">18.26</td>
+      <td align="center">9.97</td>
+      <td align="center">0.777</td>
+      <td align="center">7.76</td>
+      <td align="center">2.01</td>
+    </tr>
+  </tbody>
+</table>
+
+Operation success measures the fraction of requested operations that succeed;
+All success measures the fraction of cases in which every requested operation
+succeeds. SIM measures speaker similarity between source and edited speech.
+WDTW-Dur and WDTW-F0 measure duration and pitch changes over regions designated
+for preservation by the instruction; st denotes semitones.
+
+Within each execution mode, operation success is pooled over requested operations,
+while All success and SIM weight cases equally. WDTW metrics pool distances and
+normalization terms before division. The two execution-mode scores are then averaged.
+
+On the 240 compositional editing cases, sequential execution increases
+dots.tts.edit's operation success from 68.12% to 68.48% and All success from 37.92%
+to 42.92%. One-take execution achieves higher speaker similarity and lower WDTW errors.
 
 The radars show instruction following, preservation, and quality. Compositional axes report
 Component and All Success ([evaluation protocol](docs/evaluation.md)).
